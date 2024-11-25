@@ -1,35 +1,39 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { Routes, Route } from "react-router-dom"
+
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+import Header from "./components/Header"
+import HomePage from "./components/home-page/HomePage"
+import ServicesPage from "./components/services-page/ServicesPage"
+import BlogPage from "./components/blog-page/BlogPage"
+import EventsPage from "./components/events-page/EventsPage"
+import ContactPage from "./components/contact-page/ContactPage"
+import FAQPage from "./components/faq-page/FAQPage"
+import HelpPage from "./components/help-page/HelpPage"
+import Footer from "./components/Footer"
+
+
+export default function App() {
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="App">
+
+        <Header />
+
+        <Routes>
+          <Route index element={<HomePage />} />
+          <Route path="services" element={<ServicesPage />} />
+          <Route path="blog" element={<BlogPage />} />
+          <Route path="events" element={<EventsPage />} />
+          <Route path="contact" element={<ContactPage />} />
+          <Route path="faq" element={<FAQPage />} />
+          <Route path="help" element={<HelpPage />} />
+        </Routes>
+
+        <Footer />
+
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
-
-export default App
