@@ -7,7 +7,7 @@ export default function FAQPage() {
 
 
   return (
-    <div>
+    <div className="" >
       <h1>This is the FAQ Page.</h1>
     </div>
   )

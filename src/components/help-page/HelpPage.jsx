@@ -7,7 +7,7 @@ export default function HelpPage() {
 
 
   return (
-    <div>
+    <div className="" >
       <h1>This is the Help Page.</h1>
     </div>
   )
