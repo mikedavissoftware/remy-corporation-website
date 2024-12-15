@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 
-[aria-current]:not([aria-current="false"]) {
+[aria-current]:not([aria-current="false"]):not(.sub-category) {
   /* @apply font-bold; */
-  @apply shadow-md;
+  /* @apply shadow-md; */
   /* @apply bg-slate-300; */
-  @apply text-slate-500;
+  /* @apply text-slate-500; */
 }
 
 /* .menu li > *:not(ul):not(.menu-horizontal):not(details):active{
