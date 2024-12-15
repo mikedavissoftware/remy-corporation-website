@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+
+[aria-current]:not([aria-current="false"]) {
+  /* @apply font-bold; */
+  @apply shadow-md;
+  /* @apply bg-slate-300; */
+  @apply text-slate-500;
+}
+
+/* .menu li > *:not(ul):not(.menu-horizontal):not(details):active{
+  @apply text-xs;
+} */
+
 /* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
