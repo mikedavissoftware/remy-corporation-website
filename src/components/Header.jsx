@@ -12,7 +12,7 @@ export default function Header() {
   }
 
   return (
-    <header className="block border-b-2 border-slate-300 shadow-md" >
+    <header className="block fixed w-full border-b-2 border-slate-300 shadow-md" >
       <nav className="navbar bg-white">
         <div className="flex-1">
           <a onClick={closeDetails} className="btn btn-ghost text-xl"><img className="h-full" src="images/header/remy_logo.png" /></a>
@@ -33,9 +33,10 @@ export default function Header() {
             <li className="nav-reg mx-1"><NavLink onClick={closeDetails} to="/services" >Services</NavLink></li>
             <li className="nav-reg mx-1"><NavLink onClick={closeDetails} to="/blog" >Blog</NavLink></li>
             <li className="nav-reg mx-1"><NavLink onClick={closeDetails} to="/events" >Events</NavLink></li>
-            <li className="nav-reg mx-1"><NavLink onClick={closeDetails} to="/contact" >Contact</NavLink></li>
             <li className="nav-reg mx-1"><NavLink onClick={closeDetails} to="/faq" >FAQ</NavLink></li>
             <li className="nav-reg mx-1"><NavLink onClick={closeDetails} to="/help" >Help</NavLink></li>
+
+            <li className="button mx-1"><NavLink onClick={()=>document.getElementById('contact-form-modal').showModal()} to="/contact" >Contact</NavLink></li>
           </ul>
         </div>
       </nav>

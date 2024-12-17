@@ -1,6 +1,9 @@
+import { useState } from "react"
 import { Routes, Route } from "react-router-dom"
+import ScrollToHashElement from "@cascadia-code/scroll-to-hash-element"
 
 import Header from "./components/Header"
+import ContactFormModal from "./components/ContactFormModal"
 import HomePage from "./components/home-page/HomePage"
 import ServicesPage from "./components/services-page/ServicesPage"
 import BlogPage from "./components/blog-page/BlogPage"
@@ -13,11 +16,16 @@ import Footer from "./components/Footer"
 
 export default function App() {
 
+  const [contactOpen, setContactOpen] = useState(true)
+
   return (
     <>
       <div className="App">
+        <ScrollToHashElement behavior="smooth" />
 
-        <Header />
+        <Header setContactOpen={setContactOpen} />
+
+        <ContactFormModal contactOpen={contactOpen} />
 
         <Routes>
           <Route index element={<HomePage />} />
