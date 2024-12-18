@@ -17,6 +17,14 @@ module.exports = {
           "success": "#84cc16",                
           "warning": "#ef4444",                
           "error": "#ffffff",
+          ".btn-sm": {
+            "height": "2.2rem",
+            "min-height": "2.2rem",
+          },
+          // ".btn-ghost": {
+          //   // "height": "4rem",
+          //   "min-height": "2rem",
+          // },
         },
       },
     ],

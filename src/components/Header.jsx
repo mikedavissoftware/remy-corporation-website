@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { NavLink, useMatch } from "react-router-dom"
 
 
@@ -11,11 +11,28 @@ export default function Header() {
     console.log(isOpen)
   }
 
+  const [scrollPosition, setScrollPosition] = useState(0)
+
+  const scrollRange = 300
+
+  const handleScroll = () => {
+    const position = window.scrollY;
+    console.log(position)
+    setScrollPosition((position)); // the "- XXX" is for setting the start position of the header appearance further down
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <header className="block fixed w-full border-b-2 border-slate-300 shadow-md" >
-      <nav className="navbar bg-white">
+      <nav className={`navbar p-4 bg-white transition-all duration-500 ${(scrollPosition < 40) ? ("h-[6rem]") : ("h-[4rem]")}`}>
         <div className="flex-1">
-          <a onClick={closeDetails} className="btn btn-ghost text-xl"><img className="h-full" src="images/header/remy_logo.png" /></a>
+          <a onClick={closeDetails} className={`btn btn-ghost transition-all duration-500 ${(scrollPosition < 40) ? ("h-[4rem]") : ("h-[3rem]")}`}><img className="h-full p-1" src="images/header/remy_logo.png" /></a>
         </div>
         <div className="flex-none">
           <ul className="menu menu-horizontal px-1">
@@ -36,7 +53,10 @@ export default function Header() {
             <li className="nav-reg mx-1"><NavLink onClick={closeDetails} to="/faq" >FAQ</NavLink></li>
             <li className="nav-reg mx-1"><NavLink onClick={closeDetails} to="/help" >Help</NavLink></li>
 
-            <li className="button mx-1"><NavLink onClick={()=>document.getElementById('contact-form-modal').showModal()} to="/contact" >Contact</NavLink></li>
+            <div className="grid grid-cols-1 content-center">
+              <button className="btn btn-sm btn-primary"onClick={()=>document.getElementById('contact-form-modal').showModal()}>Contact Us</button>
+            </div>
+            
           </ul>
         </div>
       </nav>
