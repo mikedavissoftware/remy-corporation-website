@@ -7,8 +7,26 @@ export default function Footer() {
 
 
   return (
-    <footer className="" >
-
+    <footer className="footer grid grid-cols-3 bg-base-200 text-base-content pt-10 px-20 pb-10">
+      <div>
+        <img className="" src="images/header/remy_logo.png" />
+      </div>
+      <div>
+        <h6 className="footer-title">Main Headquarters</h6>
+        <p>
+          1610 15th Street 2nd Floor <br/>
+          Denver, CO. 80202 <br/>
+          <a className="link link-primary" href="tel:3035750058">303.573.0058</a>
+        </p>
+      </div>
+      <div>
+        <h6 className="footer-title">Regional Offices</h6>
+        <p>Philadelphia, PA</p>
+        <p>Boston, MA</p>
+        <p>Tampa, FL</p>
+        <p>Kansas City, MO</p>
+        <p>Dallas, TX</p>
+      </div>
     </footer>
   )
 }
