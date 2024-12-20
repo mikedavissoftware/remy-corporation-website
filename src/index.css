@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+.btn {
+  /* @apply hover:translate-y-[-3px]; */
+  @apply hover:scale-110;
+  @apply transition-all duration-500;
+}
 
 [aria-current]:not([aria-current="false"]):not(.sub-category) {
   /* @apply font-bold; */

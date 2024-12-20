@@ -25,7 +25,7 @@ export default function Header() {
 
   return (
     <div id="header">
-      <header className="fixed w-full border-b-2 border-slate-300 shadow-md bg-black" >
+      <header className="z-10 fixed w-full border-b-2 border-slate-300 shadow-md bg-black" >
         <nav className={`navbar p-4 bg-white transition-all duration-500 ${(scrollPosition < scrollRange) ? ("h-[6rem]") : ("h-[4rem]")}`}>
           <div className="flex-1">
             <a onClick={() => setIsOpen(false)} className={`btn btn-ghost transition-all duration-500 ${(scrollPosition < scrollRange) ? ("h-[4rem]") : ("h-[3rem]")}`}><img className="h-full p-1" src="images/header/remy_logo.png" /></a>
@@ -49,8 +49,8 @@ export default function Header() {
               <li className="mx-1"><NavLink onClick={() => setIsOpen(false)} to="/faq" >FAQ</NavLink></li>
               <li className="mx-1"><NavLink onClick={() => setIsOpen(false)} to="/help" >Help</NavLink></li>
 
-              <div className="grid grid-cols-1 content-center">
-                <button className="btn btn-sm btn-secondary hover:btn-primary"onClick={()=>document.getElementById('contact-form-modal').showModal()}>Contact Us</button>
+              <div className="ml-2 grid grid-cols-1 content-center">
+                <button className="btn btn-sm btn-secondary hover:btn-info"onClick={()=>document.getElementById('contact-form-modal').showModal()}>Contact Us</button>
               </div>
               
             </ul>
