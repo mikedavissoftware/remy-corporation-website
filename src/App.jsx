@@ -11,6 +11,7 @@ import EventsPage from "./components/events-page/EventsPage"
 import FAQPage from "./components/faq-page/FAQPage"
 import HelpPage from "./components/help-page/HelpPage"
 import Footer from "./components/Footer"
+import FooterBottom from "./components/FooterBottom"
 
 
 export default function App() {
@@ -37,6 +38,7 @@ export default function App() {
         
 
         <Footer />
+        <FooterBottom />
       </div>
     </>
   )

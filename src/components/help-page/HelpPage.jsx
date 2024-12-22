@@ -1,15 +1,18 @@
+import { useEffect } from "react"
 
 
 
 
 export default function HelpPage() {
 
-
+  // Scroll to the top when the component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="" >
-      <h1>This is the Help Page.</h1>
-      <div id="help" className="h-96 border-4 border-black"><p>Help</p></div>
+      <div className="h-96 border-4 border-black"><p>Help</p></div>
     </div>
   )
 }

@@ -1,10 +1,11 @@
+import { useEffect } from "react"
 
 
 import HomeHero from "./HomeHero"
 
 export default function HomePage() {
 
-
+  // Scroll to the top when the component mounts
 
   return (
     <div className="" >   
