@@ -1,5 +1,6 @@
 import { useEffect } from "react"
 
+import EventsHero from "./sub/EventsHero"
 
 
 
@@ -12,6 +13,7 @@ export default function EventsPage() {
 
   return (
     <div className="" >
+      <EventsHero/>
       <div className="h-96 border-4 border-black"><p>Events</p></div>
     </div>
   )

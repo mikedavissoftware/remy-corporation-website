@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 
-
+import BlogHero from "./sub/BlogHero"
 
 
 export default function BlogPage() {
@@ -12,6 +12,7 @@ export default function BlogPage() {
 
   return (
     <div className="" >
+      <BlogHero/>
       <div className="h-96 border-4 border-black"><p>Blog</p></div>
     </div>
   )

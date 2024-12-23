@@ -3,7 +3,7 @@ import { FaFacebookF } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
 
-export default function Template() {
+export default function FooterBottom() {
 
 
 
@@ -14,8 +14,9 @@ export default function Template() {
         <li className="transition-all duration-400 hover:text-slate-300"><NavLink to="/terms-and-conditions">Teams and Conditions</NavLink></li>
       </ul>
       <div className="flex justify-between px-20 py-4 bg-black text-white text-xs">
+        <div></div>
         <div>
-          <span >© 2024 Remy Corporation</span>
+          <span>© 2024 Remy Corporation</span>
         </div>
         <div className="flex space-x-6">
           <a href="https://www.facebook.com/remycorp4u" target="_blank">

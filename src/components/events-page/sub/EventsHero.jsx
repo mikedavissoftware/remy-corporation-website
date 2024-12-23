@@ -2,7 +2,7 @@
 
 
 
-export default function HEROTEMPLATE() {
+export default function EventsHero() {
 
 
 
