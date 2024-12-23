@@ -23,10 +23,9 @@ export default function Header() {
     };
   }, []);
 
-  const handleClick = (top) => {
-    e.preventDefault()
+  const handleClick = () => {
     setIsOpen(false)
-    (top) ? (window.scrollTo(0, 0)) : (null)
+    window.scrollTo(0, 0)
   }
 
   return (
@@ -38,22 +37,22 @@ export default function Header() {
           </div>
           <div className="flex-none">
             <ul className="menu menu-horizontal px-1">
-              <li className="mx-1"><NavLink onClick={() => handleClick(true)} to="/" >Home</NavLink></li>
+              <li className="mx-1"><NavLink onClick={() => handleClick()} to="/" >Home</NavLink></li>
               <li className="mx-1">
                 <details open={isOpen} onToggle={(e) => setIsOpen(e.target.open)}>
                   <summary>About</summary>
                   <ul className="bg-base-100 rounded-t-none">
-                    <li className="my-1"><NavLink onClick={() => handleClick(false)} to="/#about" className="sub-category">About Us</NavLink></li>
-                    <li className="my-1"><NavLink onClick={() => handleClick(false)} to="/#focus" className="sub-category">Focus</NavLink></li>
-                    <li className="my-1"><NavLink onClick={() => handleClick(false)} to="/#partnerships" className="sub-category">Partnerships</NavLink></li>
+                    <li className="my-1"><NavLink onClick={() => setIsOpen(false)} to="/#about" className="sub-category">About Us</NavLink></li>
+                    <li className="my-1"><NavLink onClick={() => setIsOpen(false)} to="/#focus" className="sub-category">Focus</NavLink></li>
+                    <li className="my-1"><NavLink onClick={() => setIsOpen(false)} to="/#partnerships" className="sub-category">Partnerships</NavLink></li>
                   </ul>
                 </details>
               </li>
-              <li className="mx-1"><NavLink onClick={() => handleClick(true)} to="/services" >Services</NavLink></li>
-              <li className="mx-1"><NavLink onClick={() => handleClick(true)} to="/blog" >Blog</NavLink></li>
-              <li className="mx-1"><NavLink onClick={() => handleClick(true)} to="/events" >Events</NavLink></li>
-              <li className="mx-1"><NavLink onClick={() => handleClick(true)} to="/faq" >FAQ</NavLink></li>
-              <li className="mx-1"><NavLink onClick={() => handleClick(true)} to="/help" >Help</NavLink></li>
+              <li className="mx-1"><NavLink onClick={() => handleClick()} to="/services" >Services</NavLink></li>
+              <li className="mx-1"><NavLink onClick={() => handleClick()} to="/blog" >Blog</NavLink></li>
+              <li className="mx-1"><NavLink onClick={() => handleClick()} to="/events" >Events</NavLink></li>
+              <li className="mx-1"><NavLink onClick={() => handleClick()} to="/faq" >FAQ</NavLink></li>
+              <li className="mx-1"><NavLink onClick={() => handleClick()} to="/help" >Help</NavLink></li>
 
               <div className="ml-2 grid grid-cols-1 content-center">
                 <button className="btn btn-sm btn-secondary hover:btn-info"onClick={()=>document.getElementById('contact-form-modal').showModal()}>Contact Us</button>

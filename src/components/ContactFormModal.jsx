@@ -52,7 +52,7 @@ export default function ContactFormModal({ contactOpen }) {
 
   return (
     <dialog id="contact-form-modal" className="modal">
-      <div className="modal-box py-8">
+      <div className="modal-box p-8">
         <form method="dialog">
         {/* if there is a button in form, it will close the modal */}
           <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>

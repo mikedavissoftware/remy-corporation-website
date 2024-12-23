@@ -9,9 +9,9 @@ export default function Template() {
 
   return (
     <footer className="bottom-footer" >
-      <ul className="block px-20 py-4 bg-slate-800 text-slate-400 text-xs font-bold">
-        <li className="inline-block mr-6"><NavLink to="/privacy-policy">Privacy Policy</NavLink></li>
-        <li className="inline-block mr-6"><NavLink to="/terms-and-conditions">Teams and Conditions</NavLink></li>
+      <ul className="flex justify-end space-x-6 px-20 py-3 bg-slate-800 text-slate-400 text-xs font-bold">
+        <li className="transition-all duration-400 hover:text-slate-300"><NavLink to="/privacy-policy">Privacy Policy</NavLink></li>
+        <li className="transition-all duration-400 hover:text-slate-300"><NavLink to="/terms-and-conditions">Teams and Conditions</NavLink></li>
       </ul>
       <div className="flex justify-between px-20 py-4 bg-black text-white text-xs">
         <div>
