@@ -4,8 +4,8 @@ import { NavLink, useMatch } from "react-router-dom"
 
 export default function Header() {
 
-  const [isOpen, setIsOpen] = useState(false)
-
+  const [aboutIsOpen, setAboutIsOpen] = useState(false)
+  const [remyPortalIsOpen, setRemyPortalIsOpen] = useState(false)
 
   // SCROLL-BASED HEIGHT CHANGE //
   const [scrollPosition, setScrollPosition] = useState(0)
@@ -24,8 +24,14 @@ export default function Header() {
   }, []);
 
   const handleClick = () => {
-    setIsOpen(false)
+    console.log("activated")
+    setAboutIsOpen(false)
+    setRemyPortalIsOpen(false)
     window.scrollTo(0, 0)
+  }
+
+  const closeOtherMenu = (e) => {
+
   }
 
   return (
@@ -39,23 +45,31 @@ export default function Header() {
             <ul className="menu menu-horizontal px-1">
               <li className="mx-1"><NavLink onClick={() => handleClick()} to="/" >Home</NavLink></li>
               <li className="mx-1">
-                <details open={isOpen} onToggle={(e) => setIsOpen(e.target.open)}>
+                <details open={aboutIsOpen} onToggle={(e) => {setAboutIsOpen(e.target.open)}} onClick={() => {setRemyPortalIsOpen(false)}}>
                   <summary>About</summary>
                   <ul className="bg-base-100 rounded-t-none">
-                    <li className="my-1"><NavLink onClick={() => setIsOpen(false)} to="/#about" className="sub-category">About Us</NavLink></li>
-                    <li className="my-1"><NavLink onClick={() => setIsOpen(false)} to="/#focus" className="sub-category">Focus</NavLink></li>
-                    <li className="my-1"><NavLink onClick={() => setIsOpen(false)} to="/#partnerships" className="sub-category">Partnerships</NavLink></li>
+                    <li className="my-1"><NavLink onClick={() => setAboutIsOpen(false)} to="/#about" className="sub-category">About Us</NavLink></li>
+                    <li className="my-1"><NavLink onClick={() => setAboutIsOpen(false)} to="/#focus" className="sub-category">Focus</NavLink></li>
+                    <li className="my-1"><NavLink onClick={() => setAboutIsOpen(false)} to="/#partnerships" className="sub-category">Partnerships</NavLink></li>
                   </ul>
                 </details>
               </li>
               <li className="mx-1"><NavLink onClick={() => handleClick()} to="/services" >Services</NavLink></li>
               <li className="mx-1"><NavLink onClick={() => handleClick()} to="/blog" >Blog</NavLink></li>
               <li className="mx-1"><NavLink onClick={() => handleClick()} to="/events" >Events</NavLink></li>
-              <li className="mx-1"><NavLink onClick={() => handleClick()} to="/faq" >FAQ</NavLink></li>
-              <li className="mx-1"><NavLink onClick={() => handleClick()} to="/help" >Help</NavLink></li>
+              <li className="mx-1">
+                <details open={remyPortalIsOpen} onToggle={(e) => {setRemyPortalIsOpen(e.target.open)}} onClick={() => {setAboutIsOpen(false)}}>
+                  <summary>Remy Portal</summary>
+                  <ul className="bg-base-100 rounded-t-none">
+                    <li className="my-1"><NavLink onClick={() => setRemyPortalIsOpen(false)} to="/faq" >FAQ</NavLink></li>
+                    <li className="my-1"><NavLink onClick={() => setRemyPortalIsOpen(false)} to="/help" >Help</NavLink></li>
+                    <li className="my-1"><NavLink onClick={() => setRemyPortalIsOpen(false)} to="/login" className="sub-category">Login</NavLink></li>
+                  </ul>
+                </details>
+              </li>
 
               <div className="ml-2 grid grid-cols-1 content-center">
-                <button className="btn btn-sm btn-secondary hover:btn-info"onClick={()=>document.getElementById('contact-form-modal').showModal()}>Contact Us</button>
+                <button className="btn btn-contact btn-secondary hover:btn-info"onClick={()=>document.getElementById('contact-form-modal').showModal()}>Contact Us</button>
               </div>
               
             </ul>

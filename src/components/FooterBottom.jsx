@@ -14,10 +14,8 @@ export default function FooterBottom() {
         <li className="transition-all duration-400 hover:text-slate-300"><NavLink to="/terms-and-conditions">Teams and Conditions</NavLink></li>
       </ul>
       <div className="flex justify-between px-20 py-4 bg-black text-white text-xs">
-        <div></div>
-        <div>
-          <span>© 2024 Remy Corporation</span>
-        </div>
+        {/* <div></div> */}
+        <div><span>© 2024 Remy Corporation</span></div>
         <div className="flex space-x-6">
           <a href="https://www.facebook.com/remycorp4u" target="_blank">
             <FaFacebookF className="h-4 hover:scale-125 hover:opacity-80 transition-all duration-150" />

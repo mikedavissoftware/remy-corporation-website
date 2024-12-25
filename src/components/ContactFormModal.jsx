@@ -2,7 +2,7 @@ import { useState } from "react"
 
 
 
-export default function ContactFormModal({ contactOpen }) {
+export default function ContactFormModal({}) {
 
   const newForm = {
     name: "",
@@ -55,7 +55,7 @@ export default function ContactFormModal({ contactOpen }) {
       <div className="modal-box p-8">
         <form method="dialog">
         {/* if there is a button in form, it will close the modal */}
-          <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+          <button className="btn btn-circle btn-ghost absolute right-2 top-2">✕</button>
         </form>
         <h3 className="font-bold text-lg">Contact Us</h3>
         <p className="py-4">Get in touch using the form below!</p>

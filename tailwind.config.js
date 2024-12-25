@@ -45,7 +45,7 @@ module.exports = {
           "success": "#84cc16",                
           "warning": "#ef4444",                
           "error": "#ffffff",
-          ".btn-sm": {
+          ".btn-contact": {
             "height": "2.2rem",
             "min-height": "2.2rem",
           },

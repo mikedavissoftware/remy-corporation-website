@@ -7,7 +7,7 @@ export default function HelpHero() {
 
 
   return (
-    <div id="PAGENAME-hero" className="hero" style={{backgroundImage: "url(images/home/home-hero.jpg)"}}>
+    <div id="help-hero" className="hero" style={{backgroundImage: "url(images/home/home-hero.jpg)"}}>
       <div className="hero-overlay bg-opacity-40"></div>
       <div className="text-white">
         <div className="max-w-2xl py-24">

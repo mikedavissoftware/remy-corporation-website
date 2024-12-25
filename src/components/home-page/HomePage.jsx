@@ -1,6 +1,7 @@
 
 
 import HomeHero from "./sub/HomeHero"
+import AboutUs from "./sub/AboutUs"
 
 export default function HomePage() {
 
@@ -9,7 +10,8 @@ export default function HomePage() {
     <div className="" >   
       <HomeHero />
 
-      <div id="about" className="h-24"></div>
+      <div id="about" className="h-24 bg-slate-400"></div>
+      <AboutUs />
       <div className="h-96 border-4 border-black"><p>About Us</p></div>
 
       <div id="focus" className="h-24"></div>
