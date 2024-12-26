@@ -7,8 +7,6 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        bybg: '#13242f',
-        bybb: '#80b217',
       },
       backgroundImage: {
         banner: "url('/src/assets/images/backdrop.png')"
@@ -53,5 +51,5 @@ module.exports = {
       },
     ],
   },
-  plugins: [require('daisyui')],
+  plugins: [require("@tailwindcss/typography"), require('daisyui')],
 }
