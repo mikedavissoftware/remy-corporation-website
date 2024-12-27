@@ -70,7 +70,7 @@ export default function Header() {
               </li>
 
               <div className="ml-2 grid grid-cols-1 content-center">
-                <button className="btn btn-contact btn-secondary hover:btn-info"onClick={()=>document.getElementById('contact-form-modal').showModal()}>Contact Us</button>
+                <button className="btn btn-contact btn-secondary hover:btn-info" onClick={()=>document.getElementById('contact-form-modal').showModal()}>Contact Us</button>
               </div>
               
             </ul>
