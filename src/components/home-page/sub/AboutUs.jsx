@@ -26,7 +26,7 @@ export default function AboutUs() {
               The Remy Corporation specializes in recruiting Information Technology Professionals across all industries and all positions. Certified partnerships with Oracle and Workday, Remy supports startups to large enterprises in emerging technologies, Oracle and Workday resources, as well as executive search, consulting, project financing, and payrolling services.
             </p>
             <h4><a href="" className="link text-slate-500 hover:text-orred transition-all duration-200">Oracle Certified Partner</a> | <a href="" className="link text-wdblue hover:text-wdorange transition-all duration-200">Workday Certified Partner</a></h4>
-            <img src="images/general/workday-services-partner.png" className="mt-6 max-h-20"/>
+            <img src="images/general/partners/workday-services-partner.png" className="mt-6 max-h-20"/>
           </div>
         </div>
       </div>
