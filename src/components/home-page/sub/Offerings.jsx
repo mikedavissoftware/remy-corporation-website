@@ -2,19 +2,17 @@
 
 
 
-export default function Template() {
+export default function Offerings() {
 
 
 
   return (
     <div className="p-16 bg-litegold bg-opacity-65" >
-      <div>
-        <h1 className="text-center text-5xl font-semibold tracking-wide">What We Offer</h1>
-      </div>
+      <h1 className="text-center text-5xl font-semibold tracking-wide">What We Offer</h1>
 
       <hr className="border border-[1.5px] border-wdblue rounded-sm mx-auto my-8 w-[3%]"/>
 
-      <div className="grid grid-cols-2 gap-x-16">
+      <div className="grid grid-cols-2 gap-x-16 gap-y-8">
         <div className="">
           <h2 className="text-3xl mb-4">Contracts & Direct Hires</h2>
           <p className="prose-sm">
@@ -27,8 +25,6 @@ export default function Template() {
             Remy Corporation is a one stop shop for all your staffing and consulting needs. We provide payrolling services, especially to Workday clients, for both W2 and 1099 contractors. Our prices are competitive, and experience is unparalleled.
           </p>
         </div>
-      </div>
-      <div className="grid grid-cols-2 gap-x-16 mt-6">
         <div>
           <h2 className="text-3xl mb-4">Decades of Experience</h2>
           <p className="prose-sm">
@@ -43,9 +39,9 @@ export default function Template() {
         </div>
       </div>
 
-      <hr className="border border-[1px] border-wdblue rounded-sm mx-auto my-16 w-[12%]"/>
+      <hr className="border border-[1px] border-wdblue rounded-sm mx-auto my-12 w-[12%]"/>
 
-      <iframe className="mx-auto" width="560" height="315" src="https://www.youtube.com/embed/Yn11n_dCBk8?si=vg8qqYx3zmwX1p1O" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <iframe className="mx-auto mb-8" width="560" height="315" src="https://www.youtube.com/embed/Yn11n_dCBk8?si=vg8qqYx3zmwX1p1O" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
   )
 }

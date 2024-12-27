@@ -49,7 +49,8 @@ export default function Header() {
                   <summary>About</summary>
                   <ul className="bg-base-100 rounded-t-none">
                     <li className="my-1"><NavLink onClick={() => setAboutIsOpen(false)} to="/#about" className="sub-category">About Us</NavLink></li>
-                    <li className="my-1"><NavLink onClick={() => setAboutIsOpen(false)} to="/#focus" className="sub-category">Focus</NavLink></li>
+                    <li className="my-1"><NavLink onClick={() => setAboutIsOpen(false)} to="/#offerings" className="sub-category">Offerings</NavLink></li>
+                    <li className="my-1"><NavLink onClick={() => setAboutIsOpen(false)} to="/#focus-areas" className="sub-category">Focus Areas</NavLink></li>
                     <li className="my-1"><NavLink onClick={() => setAboutIsOpen(false)} to="/#partnerships" className="sub-category">Partnerships</NavLink></li>
                   </ul>
                 </details>
