@@ -7,6 +7,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        "litegold": "#DCDECD",
+        "wdblue": "#0E62BC",
+        "wdbluepastel": "#0A55B6",
+        "wdorange": "#F08A21",
+        "orred": "#F80000",
       },
       backgroundImage: {
         banner: "url('/src/assets/images/backdrop.png')"

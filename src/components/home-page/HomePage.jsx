@@ -2,6 +2,7 @@
 
 import HomeHero from "./sub/HomeHero"
 import AboutUs from "./sub/AboutUs"
+import Offerings from "./sub/Offerings"
 
 export default function HomePage() {
 
@@ -10,14 +11,16 @@ export default function HomePage() {
     <div className="" >   
       <HomeHero />
 
-      <div id="about" className="h-24 bg-slate-400"></div>
+      <div id="about" className="h-[6rem] mt-[-6rem]"></div>
       <AboutUs />
-      <div className="h-96 border-4 border-black"><p>About Us</p></div>
+      
+      <div id="offerings" className="h-[6rem] mt-[-6rem]"></div>
+      <Offerings />
 
-      <div id="focus" className="h-24"></div>
+      <div id="focus" className="h-[6rem] mt-[-6rem]"></div>
       <div className="h-96 border-4 border-black"><p>Focus</p></div>
 
-      <div id="partnerships" className="h-24"></div>
+      <div id="partnerships" className="h-[6rem] mt-[-6rem]"></div>
       <div className="h-96 border-4 border-black"><p>Partnerships</p></div>
     </div>
   )
