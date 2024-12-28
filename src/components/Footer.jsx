@@ -7,7 +7,7 @@ export default function Footer() {
 
 
   return (
-    <footer className="footer grid grid-cols-3 bg-base-200 text-base-content pt-10 px-20 pb-10 space-x-8">
+    <footer className="footer grid grid-cols-3 bg-white border-t-2 border-slate-300 text-base-content pt-10 px-20 pb-10 space-x-8 drop-shadow-[0_-5px_10px_rgba(0,0,0,.40)]">
       <div>
         <img className="" src="images/header/remy_logo.png" />
       </div>

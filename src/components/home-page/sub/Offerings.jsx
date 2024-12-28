@@ -7,12 +7,12 @@ export default function Offerings() {
 
 
   return (
-    <div className="p-16 bg-litegold bg-opacity-65" >
+    <div className="p-16 bg-[radial-gradient(#ffffff,#DCDECD)]" >
       <h1 className="text-center text-5xl font-semibold tracking-wide">What We Offer</h1>
 
       <hr className="border border-[1.5px] border-wdblue rounded-sm mx-auto my-8 w-[3%]"/>
 
-      <div className="grid grid-cols-2 gap-x-16 gap-y-8">
+      <div className="grid grid-cols-2 gap-x-16 gap-y-8 max-w-4xl mx-auto">
         <div className="">
           <h2 className="text-3xl mb-4">Contracts & Direct Hires</h2>
           <p className="prose-sm">
