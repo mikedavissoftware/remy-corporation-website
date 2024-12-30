@@ -8,11 +8,11 @@ export default function Partnerships() {
 
   return (
     <div className="p-16 bg-[radial-gradient(#ffffff,#DCDECD)]" >
-      <h1 className="text-center text-5xl font-semibold tracking-wide">Our Partnerships</h1>
+      <h1 className="text-center text-4xl sm:text-5xl font-semibold tracking-wide">Our Partnerships</h1>
 
       <hr className="border border-[1.5px] border-wdblue rounded-sm mx-auto mt-8 w-[3%]"/>
 
-      <div className="grid grid-cols-3 gap-x-8 gap-y-4 items-center">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-4 items-center max-w-3xl mx-auto">
         <div>
           <img src="images/general/partners/workday-services-partner.png" className="drop-shadow-lg" />
         </div>

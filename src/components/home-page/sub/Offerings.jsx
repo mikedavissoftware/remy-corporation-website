@@ -7,12 +7,12 @@ export default function Offerings() {
 
 
   return (
-    <div className="p-16 bg-[radial-gradient(#ffffff,#DCDECD)]" >
-      <h1 className="text-center text-5xl font-semibold tracking-wide">What We Offer</h1>
+    <div className="px-8 py-16 sm:p-16 bg-[radial-gradient(#ffffff,#DCDECD)]" >
+      <h1 className="text-center text-4xl sm:text-5xl font-semibold tracking-wide">What We Offer</h1>
 
-      <hr className="border border-[1.5px] border-wdblue rounded-sm mx-auto my-8 w-[3%]"/>
+      <hr className="border border-[1.5px] border-wdblue rounded-sm mx-auto my-8 w-[6%] sm:w-[3%]"/>
 
-      <div className="grid grid-cols-2 gap-x-16 gap-y-8 max-w-4xl mx-auto">
+      <div className="grid sm:grid-cols-2 gap-x-16 gap-y-8 max-w-4xl mx-auto">
         <div className="">
           <h2 className="text-3xl mb-4">Contracts & Direct Hires</h2>
           <p className="prose-sm">
@@ -41,7 +41,7 @@ export default function Offerings() {
 
       <hr className="border border-[1px] border-wdblue rounded-sm mx-auto my-12 w-[12%]"/>
 
-      <iframe className="mx-auto mb-8" width="560" height="315" src="https://www.youtube.com/embed/Yn11n_dCBk8?si=vg8qqYx3zmwX1p1O" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <iframe className="mx-auto mb-8 h-36 w-64 md:h-[315px] md:w-[560px]" src="https://www.youtube.com/embed/Yn11n_dCBk8?si=vg8qqYx3zmwX1p1O" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
   )
 }
