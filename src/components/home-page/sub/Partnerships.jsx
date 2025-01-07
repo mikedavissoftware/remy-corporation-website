@@ -7,12 +7,12 @@ export default function Partnerships() {
 
 
   return (
-    <div className="p-16 bg-[radial-gradient(#ffffff,#DCDECD)]" >
-      <h1 className="text-center text-4xl sm:text-5xl font-semibold tracking-wide">Partnerships</h1>
+    <div className="p-8 bg-[radial-gradient(#ffffff,#DCDECD)] md:p-16" >
+      <h1 className="text-4xl font-semibold tracking-wide sm:text-center md:text-5xl">Partnerships</h1>
 
-      <hr className="border border-[1.5px] border-wdblue rounded-sm mx-auto m-8 w-[3%]"/>
+      <hr className="border border-[1.5px] border-wdblue rounded-sm my-8 w-[10%] sm:mx-auto md:w-[3%]"/>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-6 items-center max-w-3xl mx-auto">
+      <div className="grid grid-cols-1 gap-y-8 gap-x-8 items-center max-w-3xl sm:grid-cols-2 md:gap-y-6 md:mx-auto lg:grid-cols-3">
         <div>
           <img src="images/general/partners/workday-services-partner-copy.png" className="drop-shadow-lg" />
         </div>
@@ -20,7 +20,7 @@ export default function Partnerships() {
           <img src="images/general/partners/google-cloud-copy.png" className="drop-shadow-lg" />
         </div>
         <div>
-          <img src="images/general/partners/gsa-contract-holder-copy.png" className="w-full drop-shadow-lg" />
+          <img src="images/general/partners/gsa-contract-holder-copy.png" className="drop-shadow-lg" />
         </div>
         <div>
           <img src="images/general/partners/oracle-gold-partner.png" className="drop-shadow-lg" />

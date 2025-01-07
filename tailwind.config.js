@@ -33,6 +33,13 @@ module.exports = {
         "dark4": '4px 4px 4px rgb(0 0 0 / 0.80)',
         "dark5": '5px 5px 5px rgb(0 0 0 / 0.80)'
       },
+      screens: {
+        sm: '500px',
+        md: '744px',
+        lg: '1024px',
+        xl: '1280px',
+        '2xl': '1536px',
+      },
     },
   },
   daisyui: {

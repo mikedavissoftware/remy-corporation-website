@@ -18,10 +18,10 @@ export default function FooterBottom() {
         <div><span>© 2024 Remy Corporation</span></div>
         <div className="flex space-x-6">
           <a href="https://www.facebook.com/remycorp4u" target="_blank">
-            <FaFacebookF className="h-4 hover:scale-125 hover:opacity-80 transition-all duration-150" />
+            <FaFacebookF className="h-4 transition-all duration-150 hover:scale-125 hover:opacity-80" />
           </a>
           <a href="https://x.com/RemyCorp" target="_blank">
-            <FaXTwitter className="h-4 scale-[150%] hover:scale-[185%] hover:opacity-80 transition-all duration-150" />
+            <FaXTwitter className="h-4 scale-[150%] transition-all duration-150 hover:scale-[185%] hover:opacity-80" />
           </a>
         </div>
       </div>

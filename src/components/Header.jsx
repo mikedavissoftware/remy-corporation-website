@@ -30,12 +30,8 @@ export default function Header() {
     window.scrollTo(0, 0)
   }
 
-  const closeOtherMenu = (e) => {
-
-  }
-
   return (
-    <div id="header">
+    <div id="header-desktop">
       <header className="z-10 fixed w-full border-b-2 border-slate-300 shadow-md bg-black" >
         <nav className={`navbar p-4 bg-white transition-all duration-500 ${(scrollPosition < scrollRange) ? ("h-[6rem]") : ("h-[4rem]")}`}>
           <div className="flex-1">
