@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react"
-import { NavLink, useMatch } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 
 
-export default function Header() {
+export default function HeaderNew({ setContactOpen }) {
 
   const [aboutIsOpen, setAboutIsOpen] = useState(false)
   const [remyPortalIsOpen, setRemyPortalIsOpen] = useState(false)
@@ -31,7 +31,7 @@ export default function Header() {
   }
 
   return (
-    <div id="header-desktop">
+    <div id="header-desktop" className="hidden md:block">
       <header className="z-10 fixed w-full border-b-2 border-slate-300 shadow-md bg-black" >
         <nav className={`navbar p-4 bg-white transition-all duration-500 ${(scrollPosition < scrollRange) ? ("h-[6rem]") : ("h-[4rem]")}`}>
           <div className="flex-1">

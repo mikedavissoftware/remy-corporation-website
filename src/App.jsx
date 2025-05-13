@@ -3,6 +3,8 @@ import { Routes, Route } from "react-router-dom"
 import ScrollToHashElement from "@cascadia-code/scroll-to-hash-element"
 
 import HeaderNew from "./components/HeaderNew"
+import HeaderMobile from "./components/HeaderMobile"
+import HeaderContainer from "./components/HeaderContainer"
 import ContactFormModal from "./components/ContactFormModal"
 import HomePage from "./components/home-page/HomePage"
 import ServicesPage from "./components/services-page/ServicesPage"
@@ -23,7 +25,7 @@ export default function App() {
       <div className="App">
         <ScrollToHashElement behavior="smooth" />
 
-        <HeaderNew setContactOpen={setContactOpen} />
+        <HeaderContainer setContactOpen={setContactOpen} />
 
         <ContactFormModal contactOpen={contactOpen} />
 

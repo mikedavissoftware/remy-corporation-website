@@ -8,9 +8,9 @@ export default function Partnerships() {
 
   return (
     <div className="p-8 bg-[radial-gradient(#ffffff,#DCDECD)] md:p-16" >
-      <h1 className="text-4xl font-semibold tracking-wide sm:text-center md:text-5xl">Partnerships</h1>
+      <h1 className="text-center text-5xl font-semibold tracking-wide">Partnerships</h1>
 
-      <hr className="border border-[1.5px] border-wdblue rounded-sm my-8 w-[10%] sm:mx-auto md:w-[3%]"/>
+      <hr className="border border-[1.5px] border-wdblue rounded-sm mx-auto my-8 w-[6%] md:w-[3%]"/>
 
       <div className="grid grid-cols-1 gap-y-8 gap-x-8 items-center max-w-3xl sm:grid-cols-2 md:gap-y-6 md:mx-auto lg:grid-cols-3">
         <div>
