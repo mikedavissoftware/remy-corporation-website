@@ -7,7 +7,14 @@ export default function ServiceCard() {
 
 
   return (
-    <div className="card w-96 bg-base-100 drop-shadow-medium3">
+    <div className="card w-72 image-full bg-base-100 drop-shadow-medium3">
+      <figure>
+        <img
+          src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+          alt="Shoes"
+          className="opacity-50"
+        />
+      </figure>
       <div className="card-body">
         <span className="badge badge-xs badge-warning">Most Popular</span>
         <div className="flex justify-between">

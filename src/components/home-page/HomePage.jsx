@@ -18,7 +18,9 @@ export default function HomePage() {
       <AboutUs />
 
       <div id="carousel" className="h-[4rem] mt-[-4rem]"></div>
-      <Carousel />
+      <div className="width-screen">
+        <Carousel />
+      </div>
       
       <div id="offerings" className="h-[4rem] mt-[-4rem]"></div>
       <Offerings />
