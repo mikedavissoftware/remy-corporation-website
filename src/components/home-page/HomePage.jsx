@@ -5,7 +5,6 @@ import AboutUs from "./sub/AboutUs"
 import Offerings from "./sub/Offerings"
 import FocusAreas from "./sub/FocusAreas"
 import Partnerships from "./sub/Partnerships"
-import Carousel from "./sub/Carousel"
 
 export default function HomePage() {
 
@@ -17,11 +16,6 @@ export default function HomePage() {
       <div id="about" className="h-[4rem] mt-[-4rem]"></div>
       <AboutUs />
 
-      <div id="carousel" className="h-[4rem] mt-[-4rem]"></div>
-      <div className="width-screen">
-        <Carousel />
-      </div>
-      
       <div id="offerings" className="h-[4rem] mt-[-4rem]"></div>
       <Offerings />
 
