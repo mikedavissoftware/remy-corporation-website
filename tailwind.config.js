@@ -8,7 +8,7 @@ module.exports = {
     extend: {
       colors: {
         "litegold": "#DCDECD",
-        "wdblue": "#0E62BC",
+        "wdblue": "#005CB8",
         "wdbluepastel": "#0A55B6",
         "wdorange": "#F08A21",
         "orred": "#F80000",

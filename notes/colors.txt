@@ -1,0 +1,10 @@
+workday colors
+
+blue
+#005CB8
+
+orange
+#F08A21
+
+gray
+#606060

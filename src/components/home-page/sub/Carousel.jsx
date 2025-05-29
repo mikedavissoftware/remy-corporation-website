@@ -3,30 +3,32 @@ import { useNavigate } from "react-router-dom"
 
 import ServiceCard from "./ServiceCard"
 
+import { focusAreas } from "../../../../db/focus-areas"
+
 
 export default function Carousel() {
 
-
+  console.log(focusAreas[0].industry)
 
   return (
     <>
-    <div className="carousel carousel-center flex -mx-16 ps-[35vw] pe-[35vw]">
+    <div className="carousel-vanilla flex -mx-16 ps-[35vw] pe-[35vw]">
 
       {/* <div className="carousel-item relative w-[25vw] hidden md:inline"></div> */}
 
-      <div id="card1" className="carousel-item relative scale-90 md:scale-100">
+      <div className="carousel-item relative scale-90 md:scale-100">
         <ServiceCard />
       </div>
-      <div id="card2" className="carousel-item relative scale-90 md:scale-100">
+      <div className="carousel-item relative scale-90 md:scale-100">
         <ServiceCard />
       </div>
-      <div id="card3" className="carousel-item relative scale-90 md:scale-100">
+      <div className="carousel-item relative scale-90 md:scale-100">
         <ServiceCard />
       </div>
-      <div id="card4" className="carousel-item relative scale-90 md:scale-100">
+      <div className="carousel-item relative scale-90 md:scale-100">
         <ServiceCard />
       </div>
-      <div id="card5" className="carousel-item relative scale-90 md:scale-100">
+      <div className="carousel-item relative scale-90 md:scale-100">
         <ServiceCard />
       </div>
 
