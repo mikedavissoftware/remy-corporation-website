@@ -2,8 +2,6 @@ import { useEffect } from "react"
 
 import HelpHero from "./sub/HelpHero"
 
-
-
 export default function HelpPage() {
 
   // Scroll to the top when the component mounts

@@ -7,7 +7,7 @@ export default function ServiceCard() {
 
 
   return (
-    <div className="card w-72 image-full bg-base-100 drop-shadow-medium3">
+    <div className="animate fade card w-72 image-full bg-base-100 drop-shadow-medium3 m-6">
       <figure>
         <img
           src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"

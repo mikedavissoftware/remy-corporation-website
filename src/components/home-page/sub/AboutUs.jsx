@@ -1,13 +1,35 @@
-
+import { useRef, useState, useEffect } from "react"
 
 
 
 export default function AboutUs() {
 
-
+  // Beginning of viewport code
+  const containerRef = useRef(null)
+  const [ isVisible, setIsVisible ] = useState(false)
+  const callbackFunction = (entries) => {
+    const [ entry ] = entries
+    if (entry.isIntersecting) {
+      setIsVisible(true)
+    }
+  }
+  const options = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0
+  }
+  useEffect(() => {
+    const observer = new IntersectionObserver(callbackFunction, options)
+    if (containerRef.current) observer.observe(containerRef.current)
+    
+    return () => {
+      if(containerRef.current) observer.unobserve(containerRef.current)
+    }
+  }, [containerRef, options])
+  // Ending of viewport code
 
   return (
-    <div className="bg-[url(images/general/bg-logo.jpg)] bg-cover bg-center bg-no-repeat">
+    <div className={(isVisible) ? ("bg-[url(images/general/bg-logo.jpg)] bg-cover bg-center bg-no-repeat animate delay-1") : ("d-none")} ref={containerRef}>
       
       <div className="px-8 py-16 sm:px-16 sm:pl-0 bg-white bg-opacity-65">
         <div>

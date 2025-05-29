@@ -31,7 +31,7 @@ export default function Carousel() {
 
   return (
     <>
-    <div className="carousel carousel-center relative w-full">
+    <div className="carousel carousel-center flex w-full">
       {/* <div className="absolute z-10 left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
         <a onClick={() => changeSlide(false)} className="btn btn-circle">❮</a>
         <a onClick={() => changeSlide(true)} className="btn btn-circle">❯</a>
@@ -68,11 +68,6 @@ export default function Carousel() {
       <div className="carousel-item relative w-[50vw]"><p></p></div>
 
 
-    </div>
-
-    <div className="flex w-full justify-center gap-2 py-2">
-      <a onClick={() => {navigate(`#card${changeCard(card, false)}`)}} className="btn btn-xs">❮</a>
-      <a onClick={() => {navigate(`#card${changeCard(card, true)}`)}} className="btn btn-xs">❯</a>
     </div>
     </>
   )
