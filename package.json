@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@cascadia-code/scroll-to-hash-element": "^2.0.3",
+    "@material-tailwind/react": "^2.1.10",
     "flickity": "^2.3.0",
     "node": "^21.6.1",
     "npm": "^10.4.0",

@@ -1,5 +1,8 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+
+const withMT = require("@material-tailwind/react/utils/withMT");
+
+module.exports = withMT({
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -46,8 +49,8 @@ module.exports = {
     themes: [
       {
         mytheme: {
-          "primary": "#1E191A",  
-          "secondary": "#BABD9C",
+          "primary": "#005CB8",  
+          "secondary": "#F08A21",
           "accent": "#ACB28E",               
           "neutral": "#E8E9DE",                
           "base-100": "#f4f4f4",                
@@ -64,4 +67,4 @@ module.exports = {
     ],
   },
   plugins: [require("@tailwindcss/typography"), require('daisyui')],
-}
+})
