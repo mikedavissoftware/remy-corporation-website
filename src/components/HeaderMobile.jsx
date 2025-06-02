@@ -8,8 +8,8 @@ export default function HeaderMobile() {
   const [active, setActive] = useState(false)
 
   return (
-    <div id="header-mobile" className="block md:hidden" >
-      <header className="z-10 fixed w-full border-b-2 border-slate-300 shadow-md bg-black">
+    <div id="header-mobile" className="md:hidden" >
+      <header className="z-10 fixed h-20 w-full border-b-2 border-slate-300 shadow-md bg-black">
         <nav className={`navbar p-4 bg-white`}>
           <div className="flex-1">
             <a className={`btn btn-ghost transition-all duration-500`}><img className="h-full p-1" src="images/header/remy_logo.png" /></a>
@@ -30,6 +30,10 @@ export default function HeaderMobile() {
           </div>
         </nav>
       </header>
+      <div className="bg-white h-20"></div>
+      <div className={`${(active) ? ("") : ("")}`}>
+        <div></div>
+      </div>
     </div>
   )
 }
