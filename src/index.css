@@ -18,6 +18,7 @@
 .carousel-vanilla {
   overflow-x: auto;
   scroll-snap-type: x mandatory;
+  /* scroll-snap-stop: always; */
   @media only screen and (max-width: 768px) {
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
@@ -29,7 +30,7 @@
 }
 
 .snap-card-vanilla {
-  scroll-snap-align: center;
+  scroll-snap-align: none center;
 }
 
 /* ENTRANCE ANIMATIONS */

@@ -16,7 +16,7 @@ export default function Carousel() {
 
   return (
     <>
-    <div className="carousel-vanilla flex -mx-16 ps-[35vw] pe-[35vw]">
+    <div className="carousel-vanilla flex -mx-16 ps-[5vw] pe-[5vw]">
 
       {/* <div className="carousel-item relative w-[25vw] hidden md:inline"></div> */}
 
