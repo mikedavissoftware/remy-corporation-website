@@ -10,7 +10,7 @@ export const focusAreas = [
             "Grants Technical Consultant",
             "PeopleSoft Campus Trainer"
         ],
-        image: "public/images/industries/higher-education.jpg"
+        image: "images/industries/higher-education.jpg"
     },
     {
         id: 2,
@@ -21,7 +21,7 @@ export const focusAreas = [
             "ACA Consultant",
             "PeopleSoft HCM Contractor"
         ],
-        image: "public/images/industries/healthcare.jpg"
+        image: "images/industries/healthcare.jpg"
     },
     {
         id: 3,
@@ -34,7 +34,7 @@ export const focusAreas = [
             "Financial Analyst BI",
             "Workday Financials"
         ],
-        image: "public/images/industries/finance.jpg"
+        image: "images/industries/finance.jpg"
     },
     {
         id: 4,
@@ -44,7 +44,7 @@ export const focusAreas = [
             "Java Dev Architect",
             "UI / UX Developer"
         ],
-        image: "public/images/industries/public-sector.jpg"
+        image: "images/industries/public-sector.jpg"
     },
     {
         id: 5,
@@ -57,7 +57,7 @@ export const focusAreas = [
             "Specialist",
             "Expert"
         ],
-        image: "public/images/industries/executive-leadership.jpg"
+        image: "images/industries/executive-leadership.jpg"
     },
     {
         id: 6,
@@ -70,7 +70,7 @@ export const focusAreas = [
             "HR Data Metrics Lead",
             "Lead Cyber Security Engineer",
         ],
-        image: "public/images/industries/cybersecurity.jpg"
+        image: "images/industries/cybersecurity.jpg"
     },
     {
         id: 7,
@@ -83,7 +83,7 @@ export const focusAreas = [
             "Licensing Coordinator",
             "WordPress Developer"
         ],
-        image: "public/images/industries/retail.jpg"
+        image: "images/industries/retail.jpg"
     },
     {
         id: 8,
@@ -96,7 +96,7 @@ export const focusAreas = [
             "IT Scrum Master",
             "Compliance Specialist"
         ],
-        image: "public/images/industries/hospitality.jpg"
+        image: "images/industries/hospitality.jpg"
     },
     {
         id: 9,
@@ -109,7 +109,7 @@ export const focusAreas = [
             "SW DevOps Engineer II",
             "Mechanical Engineer II"
         ],
-        image: "public/images/industries/aerospace.jpg"
+        image: "images/industries/aerospace.jpg"
     },
     {
         id: 10,
@@ -121,6 +121,6 @@ export const focusAreas = [
             "IT Network Engineer",
             "Director of Cloud Data Eng"
         ],
-        image: "public/images/industries/information-technology.jpg"
+        image: "images/industries/information-technology.jpg"
     }
 ]
