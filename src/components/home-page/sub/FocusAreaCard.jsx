@@ -2,7 +2,7 @@
 
 
 
-export default function ServiceCard({ cardInfo }) {
+export default function FocusAreaCard({ cardInfo }) {
 
   const bulletComponents = cardInfo.bullets.map((bullet) => {
     return(
@@ -33,7 +33,7 @@ export default function ServiceCard({ cardInfo }) {
             {bulletComponents}
           </ul>
           <div className="mt-auto">
-            <button className="btn btn-primary btn-block">Subscribe</button>
+            <button className="btn btn-primary btn-block" onClick={()=>document.getElementById(`${cardInfo.cssid}-modal`).showModal()}>Learn More</button>
           </div>
         </div>
       </div>

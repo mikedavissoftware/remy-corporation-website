@@ -7,7 +7,7 @@ export default function OfferingSlide({ offering }) {
 
 
   return (
-    <div className="offering-container hero h-fit bg-[url(/images/home/home-hero.jpg)] bg-opacity-55 bg-center">
+    <div className="offering-container hero h-[80vh] bg-[url(/images/home/home-hero.jpg)] bg-opacity-55 bg-center">
       <div className="hero-overlay bg-opacity-40"></div>
       <div className="hero-content text-white py-24">
         <div className="my-auto mx-4 max-w-4xl space-y-5">

@@ -4,8 +4,6 @@ import { useState } from "react"
 
 export default function ContactFormModal({}) {
 
-  const [contactOpen, setContactOpen] = useState(false)
-
   const newForm = {
     name: "",
     email: "",

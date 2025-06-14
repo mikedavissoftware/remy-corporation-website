@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
-import ServiceCard from "./ServiceCard"
+import FocusAreaCard from "./FocusAreaCard"
 
 import { focusAreas } from "../../../../db/focus-areas"
 
@@ -11,7 +11,7 @@ export default function Carousel() {
   console.log(focusAreas[0].industry)
 
   const focusAreasComponents = focusAreas.map((focusArea) => {
-    return <ServiceCard key={focusArea.id} cardInfo={focusArea} />
+    return <FocusAreaCard key={focusArea.id} cardInfo={focusArea} />
   })
 
   return (

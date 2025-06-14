@@ -5,7 +5,7 @@ import ScrollToHashElement from "@cascadia-code/scroll-to-hash-element"
 import HeaderNew from "./components/HeaderNew"
 import HeaderMobile from "./components/HeaderMobile"
 import HeaderContainer from "./components/HeaderContainer"
-import ContactFormModal from "./components/ContactFormModal"
+import Modals from "./components/Modals"
 import HomePage from "./components/home-page/HomePage"
 import ServicesPage from "./components/services-page/ServicesPage"
 import BlogPage from "./components/blog-page/BlogPage"
@@ -18,8 +18,6 @@ import FooterBottom from "./components/FooterBottom"
 
 export default function App() {
 
-  const [contactOpen, setContactOpen] = useState(true)
-
   
 
   return (
@@ -27,9 +25,9 @@ export default function App() {
       <div className="App">
         <ScrollToHashElement behavior="smooth" />
 
-        <HeaderContainer setContactOpen={setContactOpen} />
+        <HeaderContainer />
 
-        <ContactFormModal contactOpen={contactOpen} />
+        <Modals />
 
         <Routes>
           <Route index element={<HomePage />} />
