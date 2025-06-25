@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, createContext } from "react"
 import { Routes, Route } from "react-router-dom"
 import ScrollToHashElement from "@cascadia-code/scroll-to-hash-element"
 
@@ -15,14 +15,18 @@ import HelpPage from "./components/help-page/HelpPage"
 import Footer from "./components/Footer"
 import FooterBottom from "./components/FooterBottom"
 
+export const GlobalContext = createContext()
+
+
 
 export default function App() {
 
-  
+  const [currentModal, setCurrentModal] = useState("")
 
   return (
     <>
       <div className="App">
+      <GlobalContext.Provider value={{currentModal, setCurrentModal}}>
         <ScrollToHashElement behavior="smooth" />
 
         <HeaderContainer />
@@ -41,6 +45,7 @@ export default function App() {
 
         <Footer />
         <FooterBottom />
+      </GlobalContext.Provider>
       </div>
     </>
   )

@@ -11,6 +11,7 @@ export const focusAreas = [
             "PeopleSoft Campus Trainer"
         ],
         image: "images/industries/higher-education.jpg",
+        description: "",
         cssid: "higher-education"
     },
     {
@@ -23,6 +24,7 @@ export const focusAreas = [
             "PeopleSoft HCM Contractor"
         ],
         image: "images/industries/healthcare.jpg",
+        description: "",
         cssid: "healthcare"
     },
     {
@@ -37,6 +39,7 @@ export const focusAreas = [
             "Workday Financials"
         ],
         image: "images/industries/financial-services.jpg",
+        description: "",
         cssid: "financial-services"
     },
     {
@@ -48,6 +51,7 @@ export const focusAreas = [
             "UI / UX Developer"
         ],
         image: "images/industries/public-sector.jpg",
+        description: "",
         cssid: "public-sector"
     },
     {
@@ -67,6 +71,7 @@ export const focusAreas = [
             "Compliance Specialist"
         ],
         image: "images/industries/retail-hospitality.jpg",
+        description: "",
         cssid: "retail-hospitality"
     },
     {
@@ -81,6 +86,7 @@ export const focusAreas = [
             "Mechanical Engineer II"
         ],
         image: "images/industries/aerospace-defense.jpg",
+        description: "",
         cssid: "aerospace-defense"
     },
     {
@@ -99,6 +105,7 @@ export const focusAreas = [
             "Lead Cyber Security Engineer",
         ],
         image: "images/industries/cybersecurity-it.jpg",
+        description: "",
         cssid: "cybersecurity-it"
     }
 ]

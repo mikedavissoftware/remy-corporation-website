@@ -2,6 +2,8 @@
 
 import ContactFormModal from "./modals/ContactFormModal"
 
+import FocusAreasModal from "./modals/FocusAreasModal"
+
 import AerospaceDefenseModal from "./modals/AerospaceDefenseModal"
 import CyberITModal from "./modals/CyberITModal"
 import FinancialServicesModal from "./modals/FinancialServicesModal"
@@ -19,13 +21,15 @@ export default function Modals() {
     <div className="absolute h-full w-full" >
       <ContactFormModal />
 
-      <AerospaceDefenseModal />
+      <FocusAreasModal />
+
+      {/* <AerospaceDefenseModal />
       <CyberITModal />
       <FinancialServicesModal />
       <HealthcareModal />
       <HigherEducationModal />
       <PublicSectorModal />
-      <RetailHospitalityModal />
+      <RetailHospitalityModal /> */}
     </div>
   )
 }
