@@ -1,7 +1,14 @@
 
 
 import ContactFormModal from "./modals/ContactFormModal"
+
+import AerospaceDefenseModal from "./modals/AerospaceDefenseModal"
+import CyberITModal from "./modals/CyberITModal"
+import FinancialServicesModal from "./modals/FinancialServicesModal"
+import HealthcareModal from "./modals/HealthcareModal"
 import HigherEducationModal from "./modals/HigherEducationModal"
+import PublicSectorModal from "./modals/PublicSectorModal"
+import RetailHospitalityModal from "./modals/RetailHospitalityModal"
 
 
 export default function Modals() {
@@ -12,7 +19,13 @@ export default function Modals() {
     <div className="absolute h-full w-full" >
       <ContactFormModal />
 
+      <AerospaceDefenseModal />
+      <CyberITModal />
+      <FinancialServicesModal />
+      <HealthcareModal />
       <HigherEducationModal />
+      <PublicSectorModal />
+      <RetailHospitalityModal />
     </div>
   )
 }

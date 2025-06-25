@@ -27,7 +27,7 @@ export const focusAreas = [
     },
     {
         id: 3,
-        industry: "Finance",
+        industry: "Financial Services",
         price: 0,
         bullets: [
             "PeopleSoft Financials – Tech",
@@ -36,8 +36,8 @@ export const focusAreas = [
             "Financial Analyst BI",
             "Workday Financials"
         ],
-        image: "images/industries/finance.jpg",
-        cssid: "finance"
+        image: "images/industries/financial-services.jpg",
+        cssid: "financial-services"
     },
     {
         id: 4,
@@ -51,64 +51,27 @@ export const focusAreas = [
         cssid: "public-sector"
     },
     {
-        id: 5,
-        industry: "Executive Leadership",
-        price: 0,
-        bullets: [
-            "Director",
-            "Lead",
-            "Manager",
-            "Specialist",
-            "Expert"
-        ],
-        image: "images/industries/executive-leadership.jpg",
-        cssid: "executive-leadership"
-    },
-    {
-        id: 6,
-        industry: "Cyber Security",
-        price: 0,
-        bullets: [
-            "Full Stack Developer",
-            "Back / Front End Developer",
-            "Microsoft Web/Data Designer",
-            "HR Data Metrics Lead",
-            "Lead Cyber Security Engineer",
-        ],
-        image: "images/industries/cybersecurity.jpg",
-        cssid: "cybersecurity"
-    },
-    {
         id: 7,
-        industry: "Retail",
+        industry: "Retail & Hospitality",
         price: 0,
         bullets: [
             "Global Trade Sr Specialist",
             "Retail Operations Manager",
             "Inventory Planning Analyst",
             "Licensing Coordinator",
-            "WordPress Developer"
-        ],
-        image: "images/industries/retail.jpg",
-        cssid: "retail"
-    },
-    {
-        id: 8,
-        industry: "Hospitality",
-        price: 0,
-        bullets: [
+            "WordPress Developer",
             "Sr Systems Administrator",
             "MS SQL DBA",
             "Quality Assurance Analyst",
             "IT Scrum Master",
             "Compliance Specialist"
         ],
-        image: "images/industries/hospitality.jpg",
-        cssid: "hospitality"
+        image: "images/industries/retail-hospitality.jpg",
+        cssid: "retail-hospitality"
     },
     {
         id: 9,
-        industry: "Aerospace",
+        industry: "Aerospace & Defense",
         price: 0,
         bullets: [
             "Senior Electrical Engineer",
@@ -117,20 +80,25 @@ export const focusAreas = [
             "SW DevOps Engineer II",
             "Mechanical Engineer II"
         ],
-        image: "images/industries/aerospace.jpg",
-        cssid: "aerospace"
+        image: "images/industries/aerospace-defense.jpg",
+        cssid: "aerospace-defense"
     },
     {
         id: 10,
-        industry: "Information Tech",
+        industry: "Cybersecurity & IT",
         price: 0,
         bullets: [
             "Workday Project Manager",
             "IT Project Manager",
             "IT Network Engineer",
-            "Director of Cloud Data Eng"
+            "Director of Cloud Data Eng",
+            "Full Stack Developer",
+            "Back / Front End Developer",
+            "Microsoft Web/Data Designer",
+            "HR Data Metrics Lead",
+            "Lead Cyber Security Engineer",
         ],
-        image: "images/industries/information-technology.jpg",
-        cssid: "information-technology"
+        image: "images/industries/cybersecurity-it.jpg",
+        cssid: "cybersecurity-it"
     }
 ]
