@@ -9,7 +9,17 @@ export default function FocusAreasModal() {
 
   const { currentModal, setCurrentModal } = useContext(GlobalContext)
 
-  const data = focusAreas.find((focusArea) => {
+  console.log(currentModal)
+
+  console.log(focusAreas)
+
+  let data = {
+    cssid: "",
+    industry: "",
+    description: ""
+  }
+
+  data = focusAreas.find((focusArea) => {
     focusArea.cssid == currentModal
   })
 
