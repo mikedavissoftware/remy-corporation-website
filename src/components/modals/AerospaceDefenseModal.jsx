@@ -9,7 +9,7 @@ export default function AerospaceDefenseModal() {
   return (
     <dialog id={`${modalID}-modal`} className="modal" >
       <div className="absolute h-full w-full" onClick={()=>document.getElementById(`${modalID}-modal`).close()}></div>
-      <div className={`modal-box p-8 bg-[url(images/industries/aerospace-defense.jpg)] bg-opacity-85 bg-blend-lighten`}>
+      <div className={`modal-box p-8 bg-[url(public/images/industries/aerospace-defense.jpg)] bg-opacity-85 bg-blend-lighten`}>
         <h3 className="text-center font-bold text-2xl mb-4">
           Aerospace & Defense
         </h3>

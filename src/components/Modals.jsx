@@ -21,15 +21,15 @@ export default function Modals() {
     <div className="absolute h-full w-full" >
       <ContactFormModal />
 
-      {/* <FocusAreasModal /> */}
+      <FocusAreasModal />
 
-      <AerospaceDefenseModal />
+      {/* <AerospaceDefenseModal />
       <CyberITModal />
       <FinancialServicesModal />
       <HealthcareModal />
       <HigherEducationModal />
       <PublicSectorModal />
-      <RetailHospitalityModal />
+      <RetailHospitalityModal /> */}
     </div>
   )
 }
