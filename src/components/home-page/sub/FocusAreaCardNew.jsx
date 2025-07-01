@@ -37,7 +37,7 @@ export default function FocusAreaCard({ cardInfo }) {
             {bulletComponents}
           </ul>
           <div className="mt-auto">
-            <button className="btn btn-primary btn-block" onClick={()=>{setCurrentModal(cardInfo.cssid); document.getElementById(`${"focus-areas-modal"}-modal`).showModal()}}>Learn More</button>
+            <button className="btn btn-primary btn-block" onClick={()=>{setCurrentModal(cardInfo.cssid); document.getElementById(`focus-areas-modal`).showModal()}}>Learn More</button>
           </div>
         </div>
       </div>

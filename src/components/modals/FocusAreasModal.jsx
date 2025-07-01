@@ -1,4 +1,4 @@
-import { useContext } from "react"
+import { useContext, useState, useEffect } from "react"
 
 import { GlobalContext } from "../../App"
 
@@ -9,37 +9,30 @@ export default function FocusAreasModal() {
 
   const { currentModal, setCurrentModal } = useContext(GlobalContext)
 
-  console.log(currentModal)
+  const [industry, setIndustry] = useState("")
+  const [description, setDescription] = useState("")
 
-  console.log(focusAreas)
-
-  let data = {
-    cssid: "",
-    industry: "",
-    description: ""
-  }
-
-  data = () => {
-    (currentModal) ? (
-      focusAreas.find((focusArea) => {
-        focusArea.cssid == currentModal
+  useEffect(() => {
+    if (currentModal) {
+      const focusArea = focusAreas.find((focusArea) => {
+        return focusArea.cssid == currentModal
       })
-    ) : (
-      data
-    )
-  }
+      console.log(focusArea)
+      setIndustry(focusArea.industry)
+      setDescription(focusArea.description)
+    }
+  }, [currentModal])
 
-  console.log(data)
 
   return (
     <dialog id={`focus-areas-modal`} className="modal" >
-      <div className="absolute h-full w-full" onClick={()=>{document.getElementById(`${data.cssid}-modal`).close(); setCurrentModal("")}}></div>
-      <div className={`modal-box p-8 bg-[url(public/images/industries/${data.cssid}.jpg)] bg-opacity-85 bg-blend-lighten`}>
+      <div className="absolute h-full w-full" onClick={()=>{document.getElementById(`focus-areas-modal`).close(); setCurrentModal("")}}></div>
+      <div style={{backgroundImage: `url(public/images/industries/${currentModal}.jpg)`}} className={`modal-box p-8 bg-center bg-cover bg-opacity-85 bg-blend-lighten`}>
         <h3 className="text-center font-bold text-2xl mb-4">
-          {data.industry}
+          {industry}
         </h3>
         <p>
-          {data.description}
+          {description}
         </p>
       </div>
     </dialog>
