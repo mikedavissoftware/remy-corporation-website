@@ -27,7 +27,7 @@ export default function FocusAreasModal() {
   return (
     <dialog id={`focus-areas-modal`} className="modal" >
       <div className="absolute h-full w-full" onClick={()=>{document.getElementById(`focus-areas-modal`).close(); setCurrentModal("")}}></div>
-      <div style={{backgroundImage: `url(public/images/industries/${currentModal}.jpg)`}} className={`modal-box p-8 bg-center bg-cover bg-opacity-85 bg-blend-lighten`}>
+      <div style={{backgroundImage: `url(images/industries/${currentModal}.jpg)`}} className={`modal-box p-8 bg-center bg-cover bg-opacity-85 bg-blend-lighten`}>
         <h3 className="text-center font-bold text-2xl mb-4">
           {industry}
         </h3>
