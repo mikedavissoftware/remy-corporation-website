@@ -1,7 +1,7 @@
 import { useState } from "react"
 
-import HamMenu from "../assets/svg/ham-menu.svg"
-import HamMenuClose from "../assets/svg/ham-menu-close.svg"
+import HamMenu from "../../assets/svg/ham-menu.svg"
+import HamMenuClose from "../../assets/svg/ham-menu-close.svg"
 
 export default function HeaderMobile() {
 
