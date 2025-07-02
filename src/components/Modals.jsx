@@ -4,13 +4,13 @@ import ContactFormModal from "./modals/ContactFormModal"
 
 import FocusAreasModal from "./modals/FocusAreasModal"
 
-import AerospaceDefenseModal from "./modals/AerospaceDefenseModal"
-import CyberITModal from "./modals/CyberITModal"
-import FinancialServicesModal from "./modals/FinancialServicesModal"
-import HealthcareModal from "./modals/HealthcareModal"
-import HigherEducationModal from "./modals/HigherEducationModal"
-import PublicSectorModal from "./modals/PublicSectorModal"
-import RetailHospitalityModal from "./modals/RetailHospitalityModal"
+import AerospaceDefenseModal from "./modals/obsolete/AerospaceDefenseModal"
+import CyberITModal from "./modals/obsolete/CyberITModal"
+import FinancialServicesModal from "./modals/obsolete/FinancialServicesModal"
+import HealthcareModal from "./modals/obsolete/HealthcareModal"
+import HigherEducationModal from "./modals/obsolete/HigherEducationModal"
+import PublicSectorModal from "./modals/obsolete/PublicSectorModal"
+import RetailHospitalityModal from "./modals/obsolete/RetailHospitalityModal"
 
 
 export default function Modals() {

@@ -2,7 +2,7 @@ import { Carousel } from "@material-tailwind/react";
 
 import OfferingSlide from "./OfferingSlide";
 
-import { offerings } from "../../../../db/offerings"
+import { offerings } from "../../../../../db/offerings"
 
 export default function Offerings() {
 
