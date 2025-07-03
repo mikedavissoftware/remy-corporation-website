@@ -2,6 +2,8 @@
 
 const withMT = require("@material-tailwind/react/utils/withMT");
 
+const colors = require('tailwindcss/colors')
+
 module.exports = withMT({
   content: [
     "./index.html",
@@ -15,6 +17,7 @@ module.exports = withMT({
         "wdbluepastel": "#0A55B6",
         "wdorange": "#F08A21",
         "orred": "#F80000",
+        ...colors
       },
       backgroundImage: {
         banner: "url('/src/assets/images/backdrop.png')"
