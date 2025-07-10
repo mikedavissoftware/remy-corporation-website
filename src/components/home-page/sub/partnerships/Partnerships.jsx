@@ -4,27 +4,14 @@ import CaseStudy from "./CaseStudy"
 
 export default function Partnerships() {
 
-  const counter = useRef(0)
+  const count = useRef(0)
+  const timerID = useRef(null)
+  const fadeInTimeOut = useRef(null)
+  const fadeOutTimeOut = useRef(null)
+  const [isPlaying, setIsPlaying] = useState(true)
+  const [isVisible, setIsVisible] = useState(true)
 
   const [current, setCurrent] = useState(0)
-
-  const isPlaying = useRef(true)
-
-  function increment() {
-    counter.current++
-    console.log(counter.current)
-  }
-
-  setInterval(increment, 5000)
-
-  useEffect(() => {
-    console.log("useEffect")
-  }, [counter])
-
-  function handleClick() {
-    console.log("before click: ", )
-    isPlaying.current = !isPlaying.current
-  }
 
   const partnerFiles = [
     "google-cloud-copy.png",
@@ -38,8 +25,59 @@ export default function Partnerships() {
   const text = "ayyyy"
 
   const caseStudyComponents = partnerFiles.map((partnerFile, index) => {
-    return <CaseStudy key={index} index={index} fileName={partnerFile} text={text} current={counter.current} />
+    return <CaseStudy key={index} fileName={partnerFile} text={text} />
   })
+  
+  const interval = 5000
+  const denominator = 10
+  const transitionDuration = Math.floor(interval / denominator)
+
+  const startFader = () => {
+    fadeInTimeOut.current = setTimeout(() => setIsVisible(true), Math.floor(transitionDuration))
+    fadeOutTimeOut.current = setTimeout(() => setIsVisible(false), Math.floor(interval - transitionDuration))
+  }
+
+  const counter = () => {
+    // console.log("counter activated")
+    count.current++
+    setCurrent(count.current % partnerFiles.length)
+    startFader()
+  }
+
+  function startTimer() {
+    if (timerID.current) return;
+    setIsPlaying(true)
+
+    startFader()
+    timerID.current = setInterval(counter, interval)
+  }
+
+  function stopTimer() {
+    setIsPlaying(false)
+    clearInterval(timerID.current)
+    clearTimeout(fadeInTimeOut.current)
+    clearTimeout(fadeOutTimeOut.current)
+    timerID.current = null
+  }
+
+  useEffect(() => {
+    console.log("used effect")
+    startTimer()
+
+    return () => {
+      console.log("cleanup function")
+      stopTimer()
+    }
+  }, [])
+
+  function playPause(playing) {
+    console.log(playing)
+    if (playing) {
+      stopTimer()
+    } else {
+      startTimer()
+    }
+  }
 
   return (
     <div className="p-8 bg-[radial-gradient(#ffffff,#DCDECD)] md:p-16" >
@@ -47,9 +85,11 @@ export default function Partnerships() {
 
       <hr className="border border-[1.5px] border-wdblue rounded-sm mx-auto my-8 w-[6%] md:w-[3%]"/>
       
-        {caseStudyComponents}
+      <div className={`transition-opacity duration-${transitionDuration} ${(isVisible) ? ("opacity-100") : ("opacity-0")}`}>
+        {caseStudyComponents[current]}
+      </div>
 
-      <button onClick={handleClick} className="btn m-4">Stop Timeout</button>
+      <button className="btn" onClick={() => playPause(isPlaying)}>{(isPlaying) ? ("Pause") : ("Play")}</button>
     </div>
   )
 }

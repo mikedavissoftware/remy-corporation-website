@@ -24,8 +24,8 @@ export default function HomePage() {
       <AboutUs />
 
       <div id="partnerships" className="h-[4rem] mt-[-4rem]"></div>
-      <CaseStudyTest />
-      {/* <Partnerships /> */}
+      {/* <CaseStudyTest /> */}
+      <Partnerships />
     </div>
   )
 }
