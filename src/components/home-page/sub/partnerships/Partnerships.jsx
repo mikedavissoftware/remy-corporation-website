@@ -29,12 +29,12 @@ export default function Partnerships() {
   })
   
   const interval = 5000
-  const denominator = 10
-  const transitionDuration = Math.floor(interval / denominator)
+  const transitionDuration = 500
+  const xTranslation = 8
 
   const startFader = () => {
-    fadeInTimeOut.current = setTimeout(() => setIsVisible(true), Math.floor(transitionDuration))
-    fadeOutTimeOut.current = setTimeout(() => setIsVisible(false), Math.floor(interval - transitionDuration))
+    fadeInTimeOut.current = setTimeout(() => setIsVisible(true), transitionDuration)
+    fadeOutTimeOut.current = setTimeout(() => setIsVisible(false), interval - transitionDuration)
   }
 
   const counter = () => {
@@ -85,7 +85,7 @@ export default function Partnerships() {
 
       <hr className="border border-[1.5px] border-wdblue rounded-sm mx-auto my-8 w-[6%] md:w-[3%]"/>
       
-      <div className={`transition-opacity duration-${transitionDuration} ${(isVisible) ? ("opacity-100") : ("opacity-0")}`}>
+      <div className={`transition-all transition-translation duration-${transitionDuration} ${(isVisible) ? (`opacity-100`) : (`opacity-0 -translate-x-${xTranslation}`)}`}>
         {caseStudyComponents[current]}
       </div>
 
