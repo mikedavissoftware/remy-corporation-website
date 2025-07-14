@@ -1,7 +1,7 @@
 
-import { useState, useEffect, useRef } from "react"
+import parse from "html-react-parser"
 
-export default function CaseStudy({ fileName, text }) {
+export default function CaseStudy({ fileName, htmlText }) {
 
 
 
@@ -11,7 +11,7 @@ export default function CaseStudy({ fileName, text }) {
         <img src={`images/general/partners/${fileName}`} className="drop-shadow-lg" />
       </div>
       <div className="col-span-2">
-        <p>{text}</p>
+        <p>{parse(htmlText)}</p>
       </div>
     </div>
   )
