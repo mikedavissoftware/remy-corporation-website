@@ -10,8 +10,10 @@ export default function CaseStudyTest() {
   const [isPlaying, setIsPlaying] = useState(true)
   const [isVisible, setIsVisible] = useState(true)
 
+  const [visible, setVisible] = useState(false)
   const [current, setCurrent] = useState(0)
 
+  const interval = 5000
   const partnerFiles = [
     "google-cloud-copy.png",
     "gsa-contract-holder-copy.png",
@@ -68,8 +70,7 @@ export default function CaseStudyTest() {
 
   return (
     <div className="block h-48" >
-      <p className={`text-2xl text-black transition-opacity duration-${transitionDuration} ${(isVisible) ? ("opacity-100") : ("opacity-0")}`}>{partnerFiles[current]}</p>
-      {/* <h1 className="text-black text-2xl">{isVisible.toString()}</h1> */}
+      <p className="text-2xl text-black">{letters[current]}</p>
       <button className="btn" onClick={() => playPause(isPlaying)}>{(isPlaying) ? ("Pause") : ("Play")}</button>
     </div>
   )
