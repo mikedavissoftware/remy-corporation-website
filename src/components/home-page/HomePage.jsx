@@ -5,6 +5,7 @@ import AboutUs from "./sub/AboutUs"
 import Offerings from "./sub/offerings/Offerings"
 import FocusAreas from "./sub/focus-areas/FocusAreas"
 import Partnerships from "./sub/partnerships/Partnerships"
+import PartnershipsTest from "./sub/partnerships/PartnershipsTest"
 import CaseStudyTest from "./sub/partnerships/CaseStudyTest"
 
 export default function HomePage() {
@@ -25,7 +26,8 @@ export default function HomePage() {
 
       <div id="partnerships" className="h-[4rem] mt-[-4rem]"></div>
       {/* <CaseStudyTest /> */}
-      <Partnerships />
+      {/* <Partnerships /> */}
+      <PartnershipsTest />
     </div>
   )
 }

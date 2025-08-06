@@ -13,7 +13,6 @@ export default function CaseStudyTest() {
   const [visible, setVisible] = useState(false)
   const [current, setCurrent] = useState(0)
 
-  const interval = 5000
   const partnerFiles = [
     "google-cloud-copy.png",
     "gsa-contract-holder-copy.png",
@@ -70,7 +69,7 @@ export default function CaseStudyTest() {
 
   return (
     <div className="block h-48" >
-      <p className="text-2xl text-black">{letters[current]}</p>
+      <p className="text-2xl text-black">{partnerFiles[current]}</p>
       <button className="btn" onClick={() => playPause(isPlaying)}>{(isPlaying) ? ("Pause") : ("Play")}</button>
     </div>
   )

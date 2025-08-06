@@ -28,18 +28,22 @@ export default function Partnerships() {
     return <CaseStudy key={index} fileName={partnerFile} htmlText={htmlText} />
   })
   
-  const interval = 5000
+  const interval = 3000
   const transitionDuration = 500
-  const xTranslation = 8
+  const xTranslation = 4
 
   const startFader = () => {
     fadeInTimeOut.current = setTimeout(() => setIsVisible(true), transitionDuration)
     fadeOutTimeOut.current = setTimeout(() => setIsVisible(false), interval - transitionDuration)
   }
 
-  const counter = () => {
+  const counter = (isPositive) => {
     // console.log("counter activated")
-    count.current++
+    if (isPositive) {
+      count.current++
+    } else {
+      count.current--
+    }
     setCurrent(count.current % partnerFiles.length)
     startFader()
   }
@@ -49,7 +53,7 @@ export default function Partnerships() {
     setIsPlaying(true)
 
     startFader()
-    timerID.current = setInterval(counter, interval)
+    timerID.current = setInterval(counter(true), interval)
   }
 
   function stopTimer() {
@@ -90,6 +94,8 @@ export default function Partnerships() {
       </div>
 
       <button className="btn" onClick={() => playPause(isPlaying)}>{(isPlaying) ? ("Pause") : ("Play")}</button>
+      <button className="btn" onClick={() => counter(false)}>Prev</button>
+      <button className="btn" onClick={() => counter(true)}>Next</button>
     </div>
   )
 }
