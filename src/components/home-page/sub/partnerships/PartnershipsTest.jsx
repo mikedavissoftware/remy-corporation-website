@@ -8,7 +8,7 @@ export default function Partnerships() {
   const timerID = useRef(null)
   const fadeInTimeOut = useRef(null)
   const fadeOutTimeOut = useRef(null)
-  const [isPlaying, setIsPlaying] = useState(null)
+  const [isPlaying, setIsPlaying] = useState(true)
   const [isVisible, setIsVisible] = useState(true)
 
   const [current, setCurrent] = useState(0)
