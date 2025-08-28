@@ -8,7 +8,7 @@ export default function Partnerships() {
   const timerID = useRef(null)
   const fadeInTimeOut = useRef(null)
   const fadeOutTimeOut = useRef(null)
-  const [isPlaying, setIsPlaying] = useState(true)
+  const [isPlaying, setIsPlaying] = useState(null)
   const [isVisible, setIsVisible] = useState(true)
 
   const [current, setCurrent] = useState(0)
@@ -37,29 +37,27 @@ export default function Partnerships() {
     fadeOutTimeOut.current = setTimeout(() => setIsVisible(false), interval - transitionDuration)
   }
 
-  const transition = () => {
-    setIsVisible(false)
-    fadeInTimeOut.current = setTimeout(() => setIsVisible(true), transitionDuration)
-  }
+  const counter = (next) => {
+    if (next) {
+      count.current++
+      setCurrent(count.current % partnerFiles.length)
 
-  const counter = () => {
-    // console.log("counter activated")
-    // if (isPositive) {
-    //   count.current++
-    // } else {
-    //   count.current--
-    // }
-    count.current++
-    setCurrent(count.current % partnerFiles.length)
-    startFader()
+      if (isPlaying) {
+        startFader()
+      }
+    } else {
+      count.current--
+      setCurrent(count.current % partnerFiles.length)
+    }
   }
 
   function startTimer() {
     if (timerID.current) return;
+
     setIsPlaying(true)
 
     startFader()
-    timerID.current = setInterval(counter, interval)
+    timerID.current = setInterval(() => counter(true), interval) // setInterval expects a fxn reference as its first argument, not an actual fxn call, so passing the arrow fxn with the specific fxn call inside it will allow setInterval to repeatedly execute the specific fxn call, instead of only executing the singular time as in the scenario where the specific fxn call is not house "anonymously" within the arrow fxn
   }
 
   function stopTimer() {
@@ -74,22 +72,31 @@ export default function Partnerships() {
     // console.log("used effect")
     startTimer()
 
-    return () => {
+    return () => { // cleanup function runs on component unmount, which responsibly handles resources by clearing timers, removing event listeners, etc
       // console.log("cleanup function")
       stopTimer()
     }
   }, [])
 
-  function playPause(playing) {
-    if (playing) {
-      stopTimer()
+  function playPause() {
+
+    if (isPlaying) {
+      setIsPlaying(false)
     } else {
+      setIsPlaying(true)
       startTimer()
     }
+
   }
 
   function previous() {
+    stopTimer()
+    counter(false)
+  }
 
+  function next() {
+    stopTimer()
+    counter(true)
   }
 
   return (
@@ -104,8 +111,8 @@ export default function Partnerships() {
 
       <div className="space-x-4 drop-shadow-medium3">
         <button className="btn" onClick={() => playPause(isPlaying)}>{(isPlaying) ? ("Pause") : ("Play")}</button>
-        <button className="btn btn-warning" onClick={() => previous}>Prev</button>
-        <button className="btn btn-success" onClick={() => counter(true)}>Next</button>
+        <button className="btn btn-warning" onClick={() => previous()}>Prev</button>
+        <button className="btn btn-success" onClick={() => next()}>Next</button>
       </div>
     </div>
   )
