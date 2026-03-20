@@ -28,7 +28,7 @@ export default function Partnerships() {
     return <CaseStudy key={index} fileName={partnerFile} htmlText={htmlText} />
   })
   
-  const interval = 3000
+  const interval = 10000
   const transitionDuration = 500
   const xTranslation = 4
 

@@ -2,6 +2,11 @@ import { useState, useEffect, useRef } from "react"
 
 import CaseStudy from "./CaseStudy"
 
+import PlayVector from "../../../../assets/svg/play-svgrepo-com.svg"
+import PauseVector from "../../../../assets/svg/pause-svgrepo-com.svg"
+import NextPrevVector from "../../../../assets/svg/fast-forward-svgrepo-com.svg"
+
+
 export default function Partnerships() {
 
   const count = useRef(0)
@@ -10,6 +15,7 @@ export default function Partnerships() {
   const fadeOutTimeOut = useRef(null)
   const [isPlaying, setIsPlaying] = useState(true)
   const [isVisible, setIsVisible] = useState(true)
+  const [reset, setReset] = useState(true)
 
   const [current, setCurrent] = useState(0)
 
@@ -76,17 +82,17 @@ export default function Partnerships() {
       // console.log("cleanup function")
       stopTimer()
     }
-  }, [])
+  }, [reset])
 
   function playPause() {
-
     if (isPlaying) {
       setIsPlaying(false)
+      stopTimer()
     } else {
       setIsPlaying(true)
       startTimer()
+      setReset(!reset)
     }
-
   }
 
   function previous() {
@@ -102,6 +108,7 @@ export default function Partnerships() {
   return (
     <div className="p-8 bg-[radial-gradient(#ffffff,#DCDECD)] md:p-16" >
       <h1 className="text-center text-5xl font-semibold tracking-wide">Partnerships</h1>
+      {/* <h1 className="text-center text-5xl font-semibold tracking-wide">{timerID.current}</h1> */}
 
       <hr className="border border-[1.5px] border-wdblue rounded-sm mx-auto my-8 w-[6%] md:w-[3%]"/>
       
@@ -109,10 +116,16 @@ export default function Partnerships() {
         {caseStudyComponents[current]}
       </div>
 
-      <div className="space-x-4 drop-shadow-medium3">
-        <button className="btn" onClick={() => playPause(isPlaying)}>{(isPlaying) ? ("Pause") : ("Play")}</button>
-        <button className="btn btn-warning" onClick={() => previous()}>Prev</button>
-        <button className="btn btn-success" onClick={() => next()}>Next</button>
+      <div className="h-12 items flex justify-center space-x-4">
+        <button className="h-12 rotate-180 hover:scale-110 transition-all transition-duration-200" onClick={() => previous()}>
+          <img src={NextPrevVector} className="max-h-full"></img>
+        </button>
+        <button className="h-12 hover:scale-110 transition-all transition-duration-200" onClick={() => playPause()}>
+          <img src={(isPlaying) ? (PauseVector) : (PlayVector)} className="max-h-full"></img>
+        </button>
+        <button className="h-12 hover:scale-110 transition-all transition-duration-200" onClick={() => next()}>
+          <img src={NextPrevVector} className="max-h-full"></img>
+        </button>
       </div>
     </div>
   )
