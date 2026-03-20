@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react"
 
-import CaseStudy from "./CaseStudy"
+import CaseStudy from "../CaseStudy"
 
 export default function Partnerships() {
 

@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react"
 
-import CaseStudy from "./CaseStudy"
+import CaseStudy from "../CaseStudy"
 
 export default function Partnerships() {
 
@@ -10,7 +10,6 @@ export default function Partnerships() {
   const fadeOutTimeOut = useRef(null)
   const [isPlaying, setIsPlaying] = useState(true)
   const [isVisible, setIsVisible] = useState(true)
-  const [reset, setReset] = useState(true)
 
   const [current, setCurrent] = useState(0)
 
@@ -29,7 +28,7 @@ export default function Partnerships() {
     return <CaseStudy key={index} fileName={partnerFile} htmlText={htmlText} />
   })
   
-  const interval = 3000
+  const interval = 10000
   const transitionDuration = 500
   const xTranslation = 4
 
@@ -38,27 +37,23 @@ export default function Partnerships() {
     fadeOutTimeOut.current = setTimeout(() => setIsVisible(false), interval - transitionDuration)
   }
 
-  const counter = (next) => {
-    if (next) {
+  const counter = (isPositive) => {
+    // console.log("counter activated")
+    if (isPositive) {
       count.current++
-      setCurrent(count.current % partnerFiles.length)
-
-      if (isPlaying) {
-        startFader()
-      }
     } else {
       count.current--
-      setCurrent(count.current % partnerFiles.length)
     }
+    setCurrent(count.current % partnerFiles.length)
+    startFader()
   }
 
   function startTimer() {
     if (timerID.current) return;
-
     setIsPlaying(true)
 
     startFader()
-    timerID.current = setInterval(() => counter(true), interval) // setInterval expects a fxn reference as its first argument, not an actual fxn call, so passing the arrow fxn with the specific fxn call inside it will allow setInterval to repeatedly execute the specific fxn call, instead of only executing the singular time as in the scenario where the specific fxn call is not house "anonymously" within the arrow fxn
+    timerID.current = setInterval(counter(true), interval)
   }
 
   function stopTimer() {
@@ -73,23 +68,19 @@ export default function Partnerships() {
     // console.log("used effect")
     startTimer()
 
-    return () => { // cleanup function runs on component unmount, which responsibly handles resources by clearing timers, removing event listeners, etc
+    return () => {
       // console.log("cleanup function")
       stopTimer()
     }
-  }, [reset])
+  }, [])
 
-  function playPause() {
-
-    if (isPlaying) {
-      setIsPlaying(false)
+  function playPause(playing) {
+    console.log(playing)
+    if (playing) {
       stopTimer()
     } else {
-      setIsPlaying(true)
       startTimer()
-      setReset(!reset)
     }
-
   }
 
   return (
@@ -102,9 +93,9 @@ export default function Partnerships() {
         {caseStudyComponents[current]}
       </div>
 
-      <div className="drop-shadow-medium3">
-        <button className="btn" onClick={() => playPause()}>{(isPlaying) ? ("Pause") : ("Play")}</button>
-      </div>
+      <button className="btn" onClick={() => playPause(isPlaying)}>{(isPlaying) ? ("Pause") : ("Play")}</button>
+      <button className="btn" onClick={() => counter(false)}>Prev</button>
+      <button className="btn" onClick={() => counter(true)}>Next</button>
     </div>
   )
 }
