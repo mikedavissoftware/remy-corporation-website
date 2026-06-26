@@ -17,38 +17,51 @@ export default function ContactFormModal({}) {
     console.log(formData)
   }
 
+  // function handleSubmit(e) {
+  //   e.preventDefault()
+  //   console.log(formData)
+  //   fetch(`${api}/contact_forms`, {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify(formData),
+  //   }).then((r) => {
+  //     if (r.ok) {
+  //       r.json().then((res) => {
+  //         console.log(res)
+  //         setErrors([])
+  //         setSuccess(res.success)
+  //       });
+  //       setFormData(newForm)
+  //       console.log(success)
+  //       console.log("contact successful")
+  //     } else {
+  //       (r.status === 500) ? (
+  //         setErrors(["Database unreachable."])
+  //       ) : (
+  //         r.json().then((res) => {
+  //           setSuccess([])
+  //           setErrors(res.errors)
+  //         })
+  //       )
+  //       console.log(errors)
+  //       console.log("contact unsuccessful")
+  //     }
+  //   });
+  // }
+
   function handleSubmit(e) {
     e.preventDefault()
-    console.log(formData)
-    fetch(`${api}/contact_forms`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    }).then((r) => {
-      if (r.ok) {
-        r.json().then((res) => {
-          console.log(res)
-          setErrors([])
-          setSuccess(res.success)
-        });
-        setFormData(newForm)
-        console.log(success)
-        console.log("contact successful")
-      } else {
-        (r.status === 500) ? (
-          setErrors(["Database unreachable."])
-        ) : (
-          r.json().then((res) => {
-            setSuccess([])
-            setErrors(res.errors)
-          })
-        )
-        console.log(errors)
-        console.log("contact unsuccessful")
-      }
-    });
+    emailjs.send("mds_gmail", "contact_form_mds", formData, import.meta.env.VITE_CONTACT_FORM_KEY)
+    .then(function(response) {
+      console.log('SUCCESS!', response.status, response.text);
+      setFormData(newForm)
+      setSuccess(true)
+   }, function(error) {
+      console.log('FAILED...', error);
+      setSuccess(false)
+   });
   }
 
   var x = document.getElementById("contact-select");
