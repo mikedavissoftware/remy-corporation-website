@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useRef } from "react"
 
 import emailjs from '@emailjs/browser';
 import ReCAPTCHA from "react-google-recaptcha";
@@ -6,6 +6,8 @@ import ReCAPTCHA from "react-google-recaptcha";
 
 export default function ContactFormModal({}) {
 
+  
+  // // FORM CODE // //
   const newForm = {
     name: "",
     email: "",
@@ -13,53 +15,53 @@ export default function ContactFormModal({}) {
     content: ""
   }
   const [formData, setFormData] = useState(newForm)
-
   function handleChange(e) {
     setFormData({...formData, [e.target.name]: e.target.value})
     console.log(formData)
   }
-
+  // VALIDATION
   const [emailError, setEmailError] = useState(false)
   const [fieldsError, setFieldsError] = useState(false)
-  
+  const asterisk = <span className="text-red-400">*</span>
+  // FORM RESET
   function resetContactForm() {
     setEmailError(false)
     setFieldsError(false)
+    setRecaptchaError(false)
     setFormData(newForm)
+    setAllowSubmit(false)
   }
 
-  const asterisk = <span className="text-red-400">*</span>
+  // // CAPTCHA REF // //
+  const [recaptchaError, setRecaptchaError] = useState(false)
+  const captchaRef = useRef()
 
-  // const [captchaToken, setCaptchaToken] = useState(null);
-
-  // const handleCaptchaChange = (token) => {
-  //   // Token received from Google
-  //   setCaptchaToken(token);
-  // };
-
+  // // SUBMISSION FUNCTION // //
   function handleSubmit(e) {
     console.log("submission")
     e.preventDefault()
 
+    const token = captchaRef.current.getValue()
+
     let error = false
 
+    if (!token) { setRecaptchaError(true) }
     if (!formData.email.includes("@")) { setEmailError(true); error = true } else { setEmailError(false) }
     if (formData.name.length == 0 || formData.email.length == 0 || formData.content.length == 0) { setFieldsError(true); error = true } else { setFieldsError(false) }
 
-    if (!error) {
-      emailjs.send("remycorp_emailjs", "contact_form", formData, import.meta.env.VITE_CONTACT_FORM_KEY)
+    if (!error && token) {
+      emailjs.send("remycorp_emailjs", "contact_form", {...formData, "g-recaptcha-response": token}, import.meta.env.VITE_CONTACT_FORM_KEY)
       .then(function(response) {
         document.getElementById('contact-form-modal').close()
         console.log('SUCCESS!', response.status, response.text);
         setFormData(newForm)
       }, function(error) {
         console.log('FAILED...', error);
-        setErrors({...errors, emailjs: true})
       });
     }
   }
 
-  var x = document.getElementById("contact-select");
+  // var x = document.getElementById("contact-select");
 
   return (
     <dialog id="contact-form-modal" className="modal">
@@ -103,14 +105,21 @@ export default function ContactFormModal({}) {
           {(emailError) ? (
             <p className="text-red-400 text-right font-bold">Invalid email format. Please try again.</p>
           ) : (null)}
+          {(recaptchaError) ? (
+            <p className="text-red-400 text-right font-bold">Please check the box with "I am not a robot".</p>
+          ) : (null)}
 
           <div className="modal-action">
-            {/* <ReCAPTCHA
-              sitekey="6LdNTSsqAAAAANUZ1XiFQehS50ANIjRtrGpVBGUR"
-              onChange={handleCaptchaChange}
-            /> */}
             <button type="submit" className="btn btn-secondary" >Submit</button>
           </div>
+
+          <div className="float-right mt-4">
+            <ReCAPTCHA
+              ref={captchaRef}
+              sitekey="6LfBUSsqAAAAABjuZaqTnIvJGXFZF9dnTMHuZ26c"
+            />
+          </div>
+          
           
         </form>
 
