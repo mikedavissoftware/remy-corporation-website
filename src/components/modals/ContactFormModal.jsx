@@ -37,36 +37,36 @@ export default function ContactFormModal({}) {
   const recaptchaRef = useRef(null)
 
   // // SUBMISSION FUNCTION // //
-  async function handleSubmit(e) {
-    e.preventDefault()
+  async function handleSubmit() {
+    // e.preventDefault()
 
-    let token
-    let error = false
+    // console.log(recaptchaRef.current.getValue())
 
-    if (!formData.email.includes("@")) { setEmailError(true); error = true } else { setEmailError(false) }
-    if (formData.name.length == 0 || formData.email.length == 0 || formData.content.length == 0) { setFieldsError(true); error = true } else { setFieldsError(false) }
+    console.log("submit")
 
-    try {
-      console.log("try")
-      await recaptchaRef.current.execute()
-      token = recaptchaRef.current.getValue()
-      // console.log(token)
-    } catch {
-      setRecaptchaError(true)
-    }
+    // let token
+    // let error = false
 
-    console.log(token)
+    // if (!formData.email.includes("@")) { setEmailError(true); error = true } else { setEmailError(false) }
+    // if (formData.name.length == 0 || formData.email.length == 0 || formData.content.length == 0) { setFieldsError(true); error = true } else { setFieldsError(false) }
 
-    if (!error && token) {
-      emailjs.send("remycorp_emailjs", "contact_form", {...formData, "g-recaptcha-response": token}, import.meta.env.VITE_CONTACT_FORM_KEY)
-      .then(function(response) {
-        document.getElementById('contact-form-modal').close()
-        console.log('SUCCESS!', response.status, response.text);
-        setFormData(newForm)
-      }, function(error) {
-        console.log('FAILED...', error);
-      });
-    }
+    // try {
+    //   console.log("try")
+    //   token = await recaptchaRef.current.execute()
+    // } catch {
+    //   setRecaptchaError(true)
+    // }
+
+    // if (!error && token) {
+    //   emailjs.send("remycorp_emailjs", "contact_form", {...formData, "g-recaptcha-response": token}, import.meta.env.VITE_CONTACT_FORM_KEY)
+    //   .then(function(response) {
+    //     document.getElementById('contact-form-modal').close()
+    //     console.log('SUCCESS!', response.status, response.text);
+    //     setFormData(newForm)
+    //   }, function(error) {
+    //     console.log('FAILED...', error);
+    //   });
+    // }
   }
 
   // var x = document.getElementById("contact-select");
@@ -85,7 +85,7 @@ export default function ContactFormModal({}) {
         <h3 className="font-bold text-2xl mb-4">Contact Us</h3>
 
 
-        <form method="dialog" onSubmit={handleSubmit}>
+        <form method="dialog" onSubmit={(e) => {e.preventDefault(); recaptchaRef.current.execute()}}>
 
           <fieldset className="fieldset">
             <legend className="fieldset-legend my-2">Name: {(fieldsError) ? (asterisk) : (null)}</legend>
@@ -126,7 +126,7 @@ export default function ContactFormModal({}) {
               ref={recaptchaRef}
               sitekey="6LfBUSsqAAAAABjuZaqTnIvJGXFZF9dnTMHuZ26c"
               size="invisible"
-              // onChange={() => console.log("change")}
+              onChange={handleSubmit}
             />
           </div>
           
