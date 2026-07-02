@@ -34,7 +34,7 @@ export default function ContactFormModal({}) {
 
   // // CAPTCHA REF // //
   const [recaptchaError, setRecaptchaError] = useState(false)
-  const recaptchaRef = useRef()
+  const recaptchaRef = useRef(null)
 
   // // SUBMISSION FUNCTION // //
   async function handleSubmit(e) {
