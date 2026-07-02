@@ -48,7 +48,8 @@ export default function ContactFormModal({}) {
 
     try {
       console.log("try")
-      token = await recaptchaRef.current.execute()
+      await recaptchaRef.current.execute()
+      token = recaptchaRef.current.getValue()
       // console.log(token)
     } catch {
       setRecaptchaError(true)
