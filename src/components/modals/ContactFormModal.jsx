@@ -34,20 +34,27 @@ export default function ContactFormModal({}) {
 
   // // CAPTCHA REF // //
   const [recaptchaError, setRecaptchaError] = useState(false)
-  const captchaRef = useRef()
+  const recaptchaRef = useRef()
 
   // // SUBMISSION FUNCTION // //
-  function handleSubmit(e) {
-    console.log("submission")
+  async function handleSubmit(e) {
     e.preventDefault()
 
-    const token = captchaRef.current.getValue()
-
+    let token
     let error = false
 
-    if (!token) { setRecaptchaError(true) }
     if (!formData.email.includes("@")) { setEmailError(true); error = true } else { setEmailError(false) }
     if (formData.name.length == 0 || formData.email.length == 0 || formData.content.length == 0) { setFieldsError(true); error = true } else { setFieldsError(false) }
+
+    try {
+      console.log("try")
+      token = await recaptchaRef.current.execute()
+      // console.log(token)
+    } catch {
+      setRecaptchaError(true)
+    }
+
+    console.log(token)
 
     if (!error && token) {
       emailjs.send("remycorp_emailjs", "contact_form", {...formData, "g-recaptcha-response": token}, import.meta.env.VITE_CONTACT_FORM_KEY)
@@ -69,7 +76,7 @@ export default function ContactFormModal({}) {
       
       <div className="modal-box p-8">
 
-        <form method="dialog">
+        <form method="dialog" className="sm:hidden">
         {/* if there is a button in form, it will close the modal */}
           <button className="btn btn-xs btn-circle btn-ghost absolute right-2 top-2">✕</button>
         </form>
@@ -106,17 +113,19 @@ export default function ContactFormModal({}) {
             <p className="text-red-400 text-right font-bold">Invalid email format. Please try again.</p>
           ) : (null)}
           {(recaptchaError) ? (
-            <p className="text-red-400 text-right font-bold">Please check the box with "I am not a robot".</p>
+            <p className="text-red-400 text-right font-bold">Please check "I am not a robot".</p>
           ) : (null)}
 
           <div className="modal-action">
             <button type="submit" className="btn btn-secondary" >Submit</button>
           </div>
 
-          <div className="float-right mt-4">
+          <div className="float-right mt-4 hidden">
             <ReCAPTCHA
-              ref={captchaRef}
+              ref={recaptchaRef}
               sitekey="6LfBUSsqAAAAABjuZaqTnIvJGXFZF9dnTMHuZ26c"
+              size="invisible"
+              // onChange={() => console.log("change")}
             />
           </div>
           
