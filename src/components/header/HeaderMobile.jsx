@@ -8,7 +8,7 @@ export default function HeaderMobile() {
 
   const [active, setActive] = useState(false)
 
-  const listItemStyle = "m-4 p-2 text-center text-wdblue font-sans font-bold rounded-md active:bg-slate-200"
+  const listItemStyle = "py-4 text-center text-wdblue font-sans font-bold border-t-2 active:bg-slate-200"
 
   function handleClick() {
     set
@@ -36,14 +36,14 @@ export default function HeaderMobile() {
             />
           </div>
         </nav>
-        <div className={`h-fit w-full fixed bg-white/90 transition-all duration-300 ${(active) ? ("") : ("translate-x-[100vw]")}`}>
+        <div className={`h-fit w-full fixed bg-white shadow-lg transition-all duration-300 ${(active) ? ("") : ("translate-x-[100vw]")}`}>
           <ul>
             <Link onClick={() => setActive(false)} to="/#offerings"><li className={listItemStyle}>Offerings</li></Link>
             <Link onClick={() => setActive(false)} to="/#focus-areas"><li className={listItemStyle}>Focus Areas</li></Link>
-            <Link onClick={() => setActive(false)} to="/#about"><li className={listItemStyle}>Offerings</li></Link>
-            <Link onClick={() => setActive(false)} to="/#partnerships"><li className={listItemStyle}>Offerings</li></Link>
-            <Link onClick={() => setActive(false)} to="https://remy-arc.com/portal/" target="_blank" rel="noopener noreferrer"><li className={listItemStyle}>Remy Portal</li></Link>
-            <Link onClick={() => {setActive(false); document.getElementById('contact-form-modal').showModal()}}><li className={listItemStyle}>Contact Us</li></Link>
+            <Link onClick={() => setActive(false)} to="/#about"><li className={listItemStyle}>About Us</li></Link>
+            <Link onClick={() => setActive(false)} to="/#partnerships"><li className={listItemStyle}>Partnerships</li></Link>
+            <Link onClick={() => {setActive(false); document.getElementById('contact-form-modal').showModal()}}><li className={`${listItemStyle} text-white bg-wdorange`}>Contact Us</li></Link>
+            <Link onClick={() => setActive(false)} to="https://remy-arc.com/portal/" target="_blank" rel="noopener noreferrer"><li className={`${listItemStyle} text-white bg-wdorange`}>Remy Portal</li></Link>
           </ul>
         </div>
       </header>

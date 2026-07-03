@@ -45,7 +45,7 @@ export default function ContactFormModal({}) {
 
     let error = false
 
-    if (!token) { setRecaptchaError(true) }
+    if (!token) { setRecaptchaError(true) } else { setRecaptchaError(false) }
     if (!formData.email.includes("@")) { setEmailError(true); error = true } else { setEmailError(false) }
     if (formData.name.length == 0 || formData.email.length == 0 || formData.content.length == 0) { setFieldsError(true); error = true } else { setFieldsError(false) }
 
