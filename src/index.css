@@ -19,10 +19,10 @@
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   /* scroll-snap-stop: always; */
-  @media only screen and (max-width: 768px) {
+  /* @media only screen and (max-width: 768px) { */
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
-  }
+  /* } */
 }
 
 .carousel-vanilla::-webkit-scrollbar {
