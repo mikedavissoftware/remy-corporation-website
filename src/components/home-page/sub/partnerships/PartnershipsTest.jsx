@@ -117,7 +117,7 @@ export default function Partnerships() {
       {/* <div className={`transition-all transition-translation duration-${transitionDuration} ${(isVisible) ? (`opacity-100`) : (`opacity-0 -translate-x-${xTranslation}`)}`}>
         {caseStudyComponents[current]}
       </div> */}
-      <Carousel className="relative z-0" autoplay={true} autoplayDelay={5000} loop={true} transition={{duration: 1}}>
+      <Carousel className="relative z-0" autoplay={false} autoplayDelay={5000} loop={true} transition={{type: "spring", duration: .5}}>
         {caseStudyComponents}
       </Carousel>
 
