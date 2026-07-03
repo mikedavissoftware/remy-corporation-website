@@ -28,6 +28,8 @@ export default function HeaderNew({ setContactOpen }) {
     window.scrollTo(0, 0)
   }
 
+  const listItemStyle = "mx-1 font-bold"
+
   return (
     <div id="header-desktop" className="hidden md:block">
       <header className="z-10 fixed w-full border-b-2 border-slate-300 shadow-md bg-black" >
@@ -37,12 +39,12 @@ export default function HeaderNew({ setContactOpen }) {
           </div>
           <div className="flex-none">
             <ul className="menu menu-horizontal px-1 text-wdblue">
-              <li className="mx-1"><Link onClick={() => handleClick()} to="/" >Home</Link></li>
-              <li className="mx-1"><Link onClick={() => handleClick()} to="/#about" className="sub-category">About Us</Link></li>
-              <li className="mx-1"><Link onClick={() => handleClick()} to="/#offerings" className="sub-category">Offerings</Link></li>
-              <li className="mx-1"><Link onClick={() => handleClick()} to="/#focus-areas" className="sub-category">Focus Areas</Link></li>
-              <li className="mx-1"><Link onClick={() => handleClick()} to="/#partnerships" className="sub-category">Partnerships</Link></li>
-              <li className="mx-1"><Link onClick={() => setRemyPortalIsOpen(false)} to="https://timesheet.remycorp.com/Portal.cfm" target="_blank" rel="noopener noreferrer" className="sub-category">Login</Link></li>
+              <li className={listItemStyle}><Link onClick={() => handleClick()} to="/" >Home</Link></li>
+              <li className={listItemStyle}><Link onClick={() => handleClick()} to="/#about" className="sub-category">About Us</Link></li>
+              <li className={listItemStyle}><Link onClick={() => handleClick()} to="/#offerings" className="sub-category">Offerings</Link></li>
+              <li className={listItemStyle}><Link onClick={() => handleClick()} to="/#focus-areas" className="sub-category">Focus Areas</Link></li>
+              <li className={listItemStyle}><Link onClick={() => handleClick()} to="/#partnerships" className="sub-category">Partnerships</Link></li>
+              <li className={listItemStyle}><Link onClick={() => setRemyPortalIsOpen(false)} to="https://remy-arc.com/portal/" target="_blank" rel="noopener noreferrer" className="sub-category">Remy Portal</Link></li>
               {/* <li className="mx-1">
                 <details open={aboutIsOpen} onToggle={(e) => {setAboutIsOpen(e.target.open)}} onClick={() => {setRemyPortalIsOpen(false)}}>
                   <summary>About</summary>
