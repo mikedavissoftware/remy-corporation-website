@@ -39,12 +39,14 @@ export default function HeaderNew({ setContactOpen }) {
           </div>
           <div className="flex-none">
             <ul className="menu menu-horizontal px-1 text-wdblue">
-              <li className={listItemStyle}><Link onClick={() => handleClick()} to="/" >Home</Link></li>
-              <li className={listItemStyle}><Link onClick={() => handleClick()} to="/#about" className="sub-category">About Us</Link></li>
               <li className={listItemStyle}><Link onClick={() => handleClick()} to="/#offerings" className="sub-category">Offerings</Link></li>
               <li className={listItemStyle}><Link onClick={() => handleClick()} to="/#focus-areas" className="sub-category">Focus Areas</Link></li>
+              <li className={listItemStyle}><Link onClick={() => handleClick()} to="/#about" className="sub-category">About Us</Link></li>
               <li className={listItemStyle}><Link onClick={() => handleClick()} to="/#partnerships" className="sub-category">Partnerships</Link></li>
-              <li className={listItemStyle}><Link onClick={() => setRemyPortalIsOpen(false)} to="https://remy-arc.com/portal/" target="_blank" rel="noopener noreferrer" className="sub-category">Remy Portal</Link></li>
+              <div className="ml-2 grid grid-cols-1 content-center">
+                <button className="btn btn-contact btn-secondary hover:btn-info" onClick={()=>document.getElementById('contact-form-modal').showModal()}>Contact Us</button>
+              </div>
+              <li className={`${listItemStyle} text-wdorange`}><Link onClick={() => setRemyPortalIsOpen(false)} to="https://remy-arc.com/portal/" target="_blank" rel="noopener noreferrer" className="sub-category">Remy Portal</Link></li>
               {/* <li className="mx-1">
                 <details open={aboutIsOpen} onToggle={(e) => {setAboutIsOpen(e.target.open)}} onClick={() => {setRemyPortalIsOpen(false)}}>
                   <summary>About</summary>
@@ -70,9 +72,7 @@ export default function HeaderNew({ setContactOpen }) {
                 </details>
               </li> */}
 
-              <div className="ml-2 grid grid-cols-1 content-center">
-                <button className="btn btn-contact btn-secondary hover:btn-info" onClick={()=>document.getElementById('contact-form-modal').showModal()}>Contact Us</button>
-              </div>
+              
               
             </ul>
           </div>
