@@ -5,7 +5,6 @@ import AboutUs from "./sub/AboutUs"
 import Offerings from "./sub/offerings/Offerings"
 import FocusAreas from "./sub/focus-areas/FocusAreas"
 import PartnershipsTest from "./sub/partnerships/PartnershipsTest"
-import CaseStudyTest from "./sub/partnerships/CaseStudyTest"
 
 export default function HomePage() {
 

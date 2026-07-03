@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from "react"
 
-import CaseStudy from "./CaseStudy"
+import { Carousel } from "@material-tailwind/react"
+
+import CaseStudyNEW from "./CaseStudyNEW"
 
 import PlayVector from "../../../../assets/svg/play-svgrepo-com.svg"
 import PauseVector from "../../../../assets/svg/pause-svgrepo-com.svg"
@@ -31,7 +33,7 @@ export default function Partnerships() {
   const htmlText = "Lorem ipsum dolor sit amet, consectetur adipiscing <strong>elit</strong>, sed do eiusmod tempor <em>incididunt</em> ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 
   const caseStudyComponents = partnerFiles.map((partnerFile, index) => {
-    return <CaseStudy key={index} fileName={partnerFile} htmlText={htmlText} />
+    return <CaseStudyNEW key={index} fileName={partnerFile} htmlText={htmlText} />
   })
   
   const interval = 3000
@@ -112,21 +114,13 @@ export default function Partnerships() {
 
       <hr className="border border-[1.5px] border-wdblue rounded-sm mx-auto my-8 w-[6%] md:w-[3%]"/>
       
-      <div className={`transition-all transition-translation duration-${transitionDuration} ${(isVisible) ? (`opacity-100`) : (`opacity-0 -translate-x-${xTranslation}`)}`}>
+      {/* <div className={`transition-all transition-translation duration-${transitionDuration} ${(isVisible) ? (`opacity-100`) : (`opacity-0 -translate-x-${xTranslation}`)}`}>
         {caseStudyComponents[current]}
-      </div>
+      </div> */}
+      <Carousel className="relative z-0" autoplay={true} autoplayDelay={5000} loop={true} transition={{duration: 1}}>
+        {caseStudyComponents}
+      </Carousel>
 
-      <div className="h-12 items flex justify-center space-x-4">
-        <button className="h-12 rotate-180 hover:scale-110 transition-all transition-duration-200" onClick={() => previous()}>
-          <img src={NextPrevVector} className="max-h-full"></img>
-        </button>
-        <button className="h-12 hover:scale-110 transition-all transition-duration-200" onClick={() => playPause()}>
-          <img src={(isPlaying) ? (PauseVector) : (PlayVector)} className="max-h-full"></img>
-        </button>
-        <button className="h-12 hover:scale-110 transition-all transition-duration-200" onClick={() => next()}>
-          <img src={NextPrevVector} className="max-h-full"></img>
-        </button>
-      </div>
     </div>
   )
 }
