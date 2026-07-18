@@ -71,7 +71,7 @@ export default function ContactFormModal({}) {
     <dialog id="contact-form-modal" className="modal">
       <div className="absolute h-full w-full" onClick={()=>document.getElementById('contact-form-modal').close()}></div>
       
-      <div className={`modal-box p-8 transition-[height] duration-300 ${!submissionSuccess ? "h-[85%]" : "h-56"}`}>
+      <div className={`modal-box p-8 transition-[height] duration-300`}>
 
         <form method="dialog">
         {/* if there is a button in form, it will close the modal */}
