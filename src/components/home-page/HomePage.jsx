@@ -4,7 +4,7 @@ import HomeHero from "./sub/HomeHero"
 import AboutUs from "./sub/AboutUs"
 import Offerings from "./sub/offerings/Offerings"
 import FocusAreas from "./sub/focus-areas/FocusAreas"
-import PartnershipsTest from "./sub/partnerships/PartnershipsTest"
+import PartnershipsTest from "./sub/partnerships/Partnerships"
 
 export default function HomePage() {
 
