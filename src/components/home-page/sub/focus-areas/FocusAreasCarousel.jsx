@@ -8,8 +8,6 @@ import { focusAreas } from "../../../../../db/focus-areas"
 
 export default function FocusAreasCarousel() {
 
-  console.log(focusAreas[0].industry)
-
   const focusAreasComponents = focusAreas.map((focusArea) => {
     return <FocusAreaCardNew key={focusArea.id} cardInfo={focusArea} />
   })

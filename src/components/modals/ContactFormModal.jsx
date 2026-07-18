@@ -24,12 +24,16 @@ export default function ContactFormModal({}) {
   const [fieldsError, setFieldsError] = useState(false)
   const asterisk = <span className="text-red-400">*</span>
   // FORM RESET
+  const [submissionSuccess, setSubmissionSuccess] = useState(true)
   function resetContactForm() {
-    setEmailError(false)
-    setFieldsError(false)
-    setRecaptchaError(false)
-    setFormData(newForm)
-    setAllowSubmit(false)
+    setSubmissionSuccess(true)
+    setTimeout(() => {
+      ()=>document.getElementById('contact-form-modal').close()
+      setEmailError(false)
+      setFieldsError(false)
+      setRecaptchaError(false)
+      setFormData(newForm)
+    }, 5000)
   }
 
   // // CAPTCHA REF // //
@@ -67,7 +71,7 @@ export default function ContactFormModal({}) {
     <dialog id="contact-form-modal" className="modal">
       <div className="absolute h-full w-full" onClick={()=>document.getElementById('contact-form-modal').close()}></div>
       
-      <div className="modal-box p-8">
+      <div className={`modal-box p-8 transition-[height] duration-300 ${!submissionSuccess ? "h-[85%]" : "h-56"}`}>
 
         <form method="dialog">
         {/* if there is a button in form, it will close the modal */}
@@ -76,52 +80,60 @@ export default function ContactFormModal({}) {
 
         <h3 className="font-bold text-2xl mb-4">Contact Us</h3>
 
+        {!submissionSuccess &&
+          <form method="dialog" onSubmit={handleSubmit}>
+            <fieldset className="fieldset">
+              <legend className="fieldset-legend my-2">Name: {(fieldsError) ? (asterisk) : (null)}</legend>
+              <input id="name" name="name" type="text" placeholder="Type name here..." value={formData.name} onChange={handleChange} className="input input-bordered w-full mb-2 max-w-xs border-2 border-wdblue border-opacity-60 focus:border-wdorange" />
 
-        <form method="dialog" onSubmit={handleSubmit}>
+              <legend className="fieldset-legend my-2">Email: {(fieldsError) ? (asterisk) : (null)}</legend>
+              <input id="email" name="email" type="text" placeholder="Type email here..." value={formData.email} onChange={handleChange} className="input input-bordered input-wdblue w-full mb-2 max-w-xs border-2 border-wdblue border-opacity-60 focus:border-wdorange" />
 
-          <fieldset className="fieldset">
-            <legend className="fieldset-legend my-2">Name: {(fieldsError) ? (asterisk) : (null)}</legend>
-            <input id="name" name="name" type="text" placeholder="Type name here..." value={formData.name} onChange={handleChange} className="input input-bordered w-full mb-2 max-w-xs border-2 border-wdblue border-opacity-60 focus:border-wdorange" />
+              <legend className="fieldset-legend my-2">What service can we provide?</legend>
+              <select defaultValue="Choose an area of expertise..." name="type" id="contact-select"  onChange={handleChange} className="select mb-2 border-2 border-wdblue border-opacity-60 text-gray-500 focus:border-wdorange focus:text-black">
+                <option disabled={true} className="text-gray-400">Choose an area of expertise...</option>
+                <option className="text-black">Workday Transformation</option>
+                <option className="text-black">PeopleSoft Excellence</option>
+                <option className="text-black">Oracle Innovation</option>
+                <option className="text-black">IT Consulting & Development</option>
+              </select>
 
-            <legend className="fieldset-legend my-2">Email: {(fieldsError) ? (asterisk) : (null)}</legend>
-            <input id="email" name="email" type="text" placeholder="Type email here..." value={formData.email} onChange={handleChange} className="input input-bordered input-wdblue w-full mb-2 max-w-xs border-2 border-wdblue border-opacity-60 focus:border-wdorange" />
+              <legend className="fieldset-legend my-2">How can we help you? {(fieldsError) ? (asterisk) : (null)}</legend>
+              <textarea id="content" name="content" className="textarea textarea-bordered text-md h-48 w-full border-2 border-wdblue border-opacity-60 focus:border-wdorange" placeholder="Type message here..." value={formData.content} onChange={handleChange} ></textarea>
+            </fieldset>
 
-            <legend className="fieldset-legend my-2">What service can we provide?</legend>
-            <select defaultValue="Choose an area of expertise..." name="type" id="contact-select"  onChange={handleChange} className="select mb-2 border-2 border-wdblue border-opacity-60 text-gray-500 focus:border-wdorange focus:text-black">
-              <option disabled={true} className="text-gray-400">Choose an area of expertise...</option>
-              <option className="text-black">Workday Transformation</option>
-              <option className="text-black">PeopleSoft Excellence</option>
-              <option className="text-black">Oracle Innovation</option>
-              <option className="text-black">IT Consulting & Development</option>
-            </select>
+            {(fieldsError) ? (
+              <p className="text-red-400 text-right font-bold">Please fill out all required fields.</p>
+            ) : (null)}
+            {(emailError) ? (
+              <p className="text-red-400 text-right font-bold">Invalid email format. Please try again.</p>
+            ) : (null)}
+            {(recaptchaError) ? (
+              <p className="text-red-400 text-right font-bold">Please check the box with "I am not a robot".</p>
+            ) : (null)}
 
-            <legend className="fieldset-legend my-2">How can we help you? {(fieldsError) ? (asterisk) : (null)}</legend>
-            <textarea id="content" name="content" className="textarea textarea-bordered text-md h-48 w-full border-2 border-wdblue border-opacity-60 focus:border-wdorange" placeholder="Type message here..." value={formData.content} onChange={handleChange} ></textarea>
-          </fieldset>
+            <div className="modal-action">
+              <button type="submit" className="btn btn-secondary" >Submit</button>
+            </div>
 
-          {(fieldsError) ? (
-            <p className="text-red-400 text-right font-bold">Please fill out all required fields.</p>
-          ) : (null)}
-          {(emailError) ? (
-            <p className="text-red-400 text-right font-bold">Invalid email format. Please try again.</p>
-          ) : (null)}
-          {(recaptchaError) ? (
-            <p className="text-red-400 text-right font-bold">Please check the box with "I am not a robot".</p>
-          ) : (null)}
-
-          <div className="modal-action">
-            <button type="submit" className="btn btn-secondary" >Submit</button>
+            <div className="float-right mt-4">
+              <ReCAPTCHA
+                ref={captchaRef}
+                sitekey="6LfBUSsqAAAAABjuZaqTnIvJGXFZF9dnTMHuZ26c"
+              />
+            </div>
+          </form>
+        }
+        
+        {submissionSuccess && 
+          <div className="text-right">
+            <h4 className="text-green-600 font-bold text-lg my-2">Success!</h4>
+            <p>Thank you for reaching out to us.</p>
+            <p>We will get back to you as soon as possible!</p>
           </div>
-
-          <div className="float-right mt-4">
-            <ReCAPTCHA
-              ref={captchaRef}
-              sitekey="6LfBUSsqAAAAABjuZaqTnIvJGXFZF9dnTMHuZ26c"
-            />
-          </div>
-          
-          
-        </form>
+        }
+        
+        {/* <button onClick={() => setSubmissionSuccess(!submissionSuccess)}>Switch</button> */}
 
       </div>
     </dialog>
