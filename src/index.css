@@ -38,7 +38,9 @@
   /* box-shadow: x y blur spread color inset */
 }
 
-
+html {
+  interpolate-size: allow-keywords;
+}
 
 
 

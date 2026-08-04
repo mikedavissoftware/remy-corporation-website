@@ -6,8 +6,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 
 export default function ContactFormModal({}) {
 
-  
-  // // FORM CODE // //
+  // FORM CODE //
   const newForm = {
     name: "",
     email: "",
@@ -20,48 +19,57 @@ export default function ContactFormModal({}) {
     console.log(formData)
   }
   // VALIDATION
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
   const [emailError, setEmailError] = useState(false)
   const [fieldsError, setFieldsError] = useState(false)
   const asterisk = <span className="text-red-400">*</span>
   // FORM RESET
-  const [submissionSuccess, setSubmissionSuccess] = useState(true)
+  const [submissionSuccess, setSubmissionSuccess] = useState(false)
   function resetContactForm() {
     setSubmissionSuccess(true)
     setTimeout(() => {
-      ()=>document.getElementById('contact-form-modal').close()
-      setEmailError(false)
-      setFieldsError(false)
-      setRecaptchaError(false)
-      setFormData(newForm)
-    }, 5000)
-  }
+      document.getElementById('contact-form-modal').close()
 
-  // // CAPTCHA REF // //
+      setTimeout(() => {
+        setEmailError(false)
+        setFieldsError(false)
+        setRecaptchaError(false)
+
+        setSubmissionSuccess(false)
+        setFormData(newForm)
+      }, 1000)
+    }, 1000)
+  }
+  // CURSOR
+  const [cursorType, setCursorType] = useState('auto')
+
+  // RECAPTCHA REF //
   const [recaptchaError, setRecaptchaError] = useState(false)
   const captchaRef = useRef()
 
-  // // SUBMISSION FUNCTION // //
+  // SUBMISSION FUNCTION //
   function handleSubmit(e) {
     console.log("submission")
+    console.log(email)
     e.preventDefault()
 
     const token = captchaRef.current.getValue()
 
     let error = false
 
-    if (!token) { setRecaptchaError(true) } else { setRecaptchaError(false) }
-    if (!formData.email.includes("@")) { setEmailError(true); error = true } else { setEmailError(false) }
+    if (!token) { setRecaptchaError(true); error = true } else { setRecaptchaError(false) }
+    if (!emailRegex.test(formData.email)) { setEmailError(true); error = true; console.log("email error") } else { setEmailError(false) }
     if (formData.name.length == 0 || formData.email.length == 0 || formData.content.length == 0) { setFieldsError(true); error = true } else { setFieldsError(false) }
 
     if (!error && token) {
-      emailjs.send("remycorp_emailjs", "contact_form", {...formData, "g-recaptcha-response": token}, import.meta.env.VITE_CONTACT_FORM_KEY)
-      .then(function(response) {
-        document.getElementById('contact-form-modal').close()
-        console.log('SUCCESS!', response.status, response.text);
-        setFormData(newForm)
-      }, function(error) {
-        console.log('FAILED...', error);
-      });
+      resetContactForm()
+      // emailjs.send("remycorp_emailjs", "contact_form", {...formData, "g-recaptcha-response": token}, import.meta.env.VITE_CONTACT_FORM_KEY)
+      // .then(function(response) {
+      //   console.log('SUCCESS!', response.status, response.text);
+      //   resetContactForm()
+      // }, function(error) {
+      //   console.log('FAILED...', error);
+      // });
     }
   }
 
@@ -69,9 +77,8 @@ export default function ContactFormModal({}) {
 
   return (
     <dialog id="contact-form-modal" className="modal">
-      <div className="absolute h-full w-full" onClick={()=>document.getElementById('contact-form-modal').close()}></div>
       
-      <div className={`modal-box p-8 transition-[height] duration-300`}>
+      <div className={`modal-box p-8`}>
 
         <form method="dialog">
         {/* if there is a button in form, it will close the modal */}
@@ -134,8 +141,10 @@ export default function ContactFormModal({}) {
         }
         
         {/* <button onClick={() => setSubmissionSuccess(!submissionSuccess)}>Switch</button> */}
-
+        
       </div>
+
+      <form method="dialog" className="modal-backdrop"><button onMouseOver={() => setCursorType('default')} onMouseOut={() => setCursorTypesetCursorType('auto')} style={{cursor: cursorType}}></button></form>
     </dialog>
   )
 }
