@@ -62,14 +62,14 @@ export default function ContactFormModal({}) {
     if (formData.name.length == 0 || formData.email.length == 0 || formData.content.length == 0) { setFieldsError(true); error = true } else { setFieldsError(false) }
 
     if (!error && token) {
-      resetContactForm()
-      // emailjs.send("remycorp_emailjs", "contact_form", {...formData, "g-recaptcha-response": token}, import.meta.env.VITE_CONTACT_FORM_KEY)
-      // .then(function(response) {
-      //   console.log('SUCCESS!', response.status, response.text);
-      //   resetContactForm()
-      // }, function(error) {
-      //   console.log('FAILED...', error);
-      // });
+      // resetContactForm()
+      emailjs.send("remycorp_emailjs", "contact_form", {...formData, "g-recaptcha-response": token}, import.meta.env.VITE_CONTACT_FORM_KEY)
+      .then(function(response) {
+        console.log('SUCCESS!', response.status, response.text);
+        resetContactForm()
+      }, function(error) {
+        console.log('FAILED...', error);
+      });
     }
   }
 
