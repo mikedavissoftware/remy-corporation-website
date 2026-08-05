@@ -1,20 +1,34 @@
+import { useContext } from "react"
 
+import { GlobalContext } from "../../../../App"
 
 
 
 export default function FocusAreaCard({ cardInfo }) {
 
-  const bulletComponents = cardInfo.bullets.map((bullet) => {
-    return(
-      <li>
+  const { currentModal, setCurrentModal } = useContext(GlobalContext)
+
+  const bulletComponents = cardInfo.bullets.map((bullet, index) => {
+    return (
+      <li key={index}>
         <svg xmlns="http://www.w3.org/2000/svg" className="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
         <span>{bullet}</span>
       </li>
     )
   })
 
+  const padding = (value) => {
+    if (cardInfo.id == 1) {
+      return `pl-${value}`
+    } else if (cardInfo.id == 10) {
+      return `pr-${value / 2}`
+    } else {
+      return ""
+    }
+  }
+
   return (
-    <div className="carousel-item relative scale-95 md:scale-100">
+    <div className={`carousel-item relative scale-95 md:scale-100 ${padding(16)} sm:p-0`}>
       <div className="snap-card-vanilla animate fade card w-72 image-full bg-base-100 drop-shadow-medium3 md:m-6 inline-block flex-col">
         <figure>
           <img
@@ -33,7 +47,7 @@ export default function FocusAreaCard({ cardInfo }) {
             {bulletComponents}
           </ul>
           <div className="mt-auto">
-            <button className="btn btn-primary btn-block" onClick={()=>{document.getElementById(`${cardInfo.cssid}-modal`).showModal()}}>Learn More</button>
+            <button className="btn btn-primary btn-block" onClick={()=>{setCurrentModal(cardInfo.cssid); document.getElementById(`focus-areas-modal`).showModal()}}>Learn More</button>
           </div>
         </div>
       </div>

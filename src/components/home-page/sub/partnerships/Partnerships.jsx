@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react"
 
 import { Carousel } from "@material-tailwind/react"
 
-import CaseStudyNEW from "./CaseStudyNEW"
+import CaseStudyNEW from "./CaseStudy"
 
 import PlayVector from "../../../../assets/svg/play-svgrepo-com.svg"
 import PauseVector from "../../../../assets/svg/pause-svgrepo-com.svg"
@@ -109,7 +109,7 @@ export default function Partnerships() {
 
   return (
     <div className="bg-[radial-gradient(#ffffff,#DCDECD)]" >
-      <h1 className="px-8 py-16 text-center text-5xl font-semibold tracking-wide">Partnerships</h1>
+      <h1 className="px-8 pt-16 text-center text-4xl sm:text-5xl font-semibold tracking-wide">Partnerships</h1>
       {/* <h1 className="text-center text-5xl font-semibold tracking-wide">{timerID.current}</h1> */}
 
       <hr className="border border-[1.5px] border-wdblue rounded-sm mx-auto my-8 w-[6%] md:w-[3%]"/>

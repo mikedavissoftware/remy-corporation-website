@@ -6,8 +6,8 @@ export default function FocusAreas() {
 
 
   return (
-    <div className="px-16 sm:pl-0 bg-white bg-opacity-65" >
-      <h1 className="text-center text-5xl font-semibold tracking-wide">Our Focus Areas</h1>
+    <div className="px-16 py-16 sm:pl-16 bg-white bg-opacity-65" >
+      <h1 className="text-center text-4xl sm:text-5xl font-semibold tracking-wide">Our Focus Areas</h1>
 
       <hr className="border border-[1.5px] border-wdblue rounded-sm mx-auto my-8 w-[6%] md:w-[3%]"/>
 
