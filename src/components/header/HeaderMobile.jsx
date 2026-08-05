@@ -43,7 +43,7 @@ export default function HeaderMobile() {
             <Link onClick={() => setActive(false)} to="/#about"><li className={listItemStyle}>About Us</li></Link>
             <Link onClick={() => setActive(false)} to="/#partnerships"><li className={listItemStyle}>Partnerships</li></Link>
             <Link onClick={() => {setActive(false); document.getElementById('contact-form-modal').showModal()}}><li className={`${listItemStyle} text-white bg-wdorange`}>Contact Us</li></Link>
-            <Link onClick={() => setActive(false)} to="https://remy-arc.com/portal/" target="_blank" rel="noopener noreferrer"><li className={`${listItemStyle} text-white bg-wdblue`}>Remy Portal</li></Link>
+            <Link onClick={() => setActive(false)} to="https://remy-arc.com/portal/" target="_blank" rel="noopener noreferrer"><li className={`${listItemStyle} text-white bg-wdblue`}>Remy ARC</li></Link>
           </ul>
         </div>
       </header>

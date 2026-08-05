@@ -1,6 +1,6 @@
 
 
-import HeaderNewNew from "./HeaderNewNew"
+import Header from "./Header"
 import HeaderMobile from "./HeaderMobile"
 
 export default function HeaderContainer() {
@@ -9,7 +9,7 @@ export default function HeaderContainer() {
 
   return (
     <div className="" >
-      <HeaderNewNew />
+      <Header />
       <HeaderMobile />
     </div>
   )
