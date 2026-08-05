@@ -4,8 +4,7 @@ import { NavLink, Link } from "react-router-dom"
 
 export default function Header({ setContactOpen }) {
 
-  const [aboutIsOpen, setAboutIsOpen] = useState(false)
-  const [remyPortalIsOpen, setRemyPortalIsOpen] = useState(false)
+  const [servicesOpen, setServicesOpen] = useState(false)
 
   // SCROLL-BASED HEIGHT CHANGE //
   const [scrollPosition, setScrollPosition] = useState(0)
@@ -22,11 +21,8 @@ export default function Header({ setContactOpen }) {
   }, []);
   //
 
-  const handleClick = () => {
-    console.log("activated")
-    setAboutIsOpen(false)
-    setRemyPortalIsOpen(false)
-    window.scrollTo(0, 0)
+  const closeServices = () => {
+    setServicesIsOpen(false)
   }
 
   const listItemStyle = "mx-1 font-bold"
@@ -40,14 +36,23 @@ export default function Header({ setContactOpen }) {
       <header className="z-10 fixed w-full border-b-2 border-slate-300 shadow-md bg-black" >
         <nav className={`navbar p-4 bg-white transition-all duration-500 ${(scrollPosition < scrollRange) ? ("h-[6rem]") : ("h-[4rem]")}`}>
           <div className="flex-1">
-            <a onClick={handleClick} className={`btn btn-ghost transition-all duration-500 ${(scrollPosition < scrollRange) ? ("h-[4rem]") : ("h-[3rem]")}`}><img className="h-full p-1" src="images/header/remy_logo.png" /></a>
+            <a onClick={() => closeServices()} href="/#services" className={`btn btn-ghost transition-all duration-500 ${(scrollPosition < scrollRange) ? ("h-[4rem]") : ("h-[3rem]")}`}><img className="h-full p-1" src="images/header/remy_logo.png" /></a>
           </div>
           <div className="flex-none">
             <ul className="menu menu-horizontal px-1 text-wdblue">
-              <li className={listItemStyle}><Link onClick={() => handleClick()} to="/#services" className="sub-category">Services</Link></li>
-              <li className={listItemStyle}><Link onClick={() => handleClick()} to="/#focus-areas" className="sub-category">Focus Areas</Link></li>
-              <li className={listItemStyle}><Link onClick={() => handleClick()} to="/#about" className="sub-category">About</Link></li>
-              <li className={listItemStyle}><Link onClick={() => handleClick()} to="/#partnerships" className="sub-category">Partnerships</Link></li>
+              <li className={listItemStyle}><Link onClick={() => closeServices()} to="/#focus-areas" className="sub-category">Focus Areas</Link></li>
+              <li className={listItemStyle}><Link onClick={() => closeServices()} to="/#about" className="sub-category">About</Link></li>
+              <li className={listItemStyle}><Link onClick={() => closeServices()} to="/#partnerships" className="sub-category">Partnerships</Link></li>
+              <li className={listItemStyle}>
+                <details onToggle={(e) => setServicesOpen(e.target.open)}>
+                  <summary className={`transition-[border-radius] duration-100 ${(servicesOpen) ? ("bg-base-100 rounded-b-none") : ("")}`}>Services</summary>
+                  <ul className="bg-base-100 -translate-y-4 rounded-tl-none">
+                    <li className="my-1"><Link onClick={() => handleClick(false)} to="" className="sub-category">About Us</Link></li>
+                    <li className="my-1"><Link onClick={() => handleClick(false)} to="" className="sub-category">Focus</Link></li>
+                    <li className="my-1"><Link onClick={() => handleClick(false)} to="" className="sub-category">Partnerships</Link></li>
+                  </ul>
+                </details>
+              </li>
               <div className="ml-2 grid grid-cols-1 content-center">
                 <button className="btn btn-contact btn-secondary hover:btn-info" onClick={()=>document.getElementById('contact-form-modal').showModal()}>Contact Us</button>
               </div>
