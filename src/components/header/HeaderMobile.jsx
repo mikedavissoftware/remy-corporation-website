@@ -38,9 +38,9 @@ export default function HeaderMobile() {
         </nav>
         <div className={`h-fit w-full fixed bg-white shadow-lg transition-all duration-300 ${(active) ? ("") : ("translate-x-[100vw]")}`}>
           <ul>
-            <Link onClick={() => setActive(false)} to="/#offerings"><li className={listItemStyle}>Offerings</li></Link>
+            <Link onClick={() => setActive(false)} to="/#services"><li className={listItemStyle}>Services</li></Link>
             <Link onClick={() => setActive(false)} to="/#focus-areas"><li className={listItemStyle}>Focus Areas</li></Link>
-            <Link onClick={() => setActive(false)} to="/#about"><li className={listItemStyle}>About Us</li></Link>
+            <Link onClick={() => setActive(false)} to="/#about"><li className={listItemStyle}>About</li></Link>
             <Link onClick={() => setActive(false)} to="/#partnerships"><li className={listItemStyle}>Partnerships</li></Link>
             <Link onClick={() => {setActive(false); document.getElementById('contact-form-modal').showModal()}}><li className={`${listItemStyle} text-white bg-wdorange`}>Contact Us</li></Link>
             <Link onClick={() => setActive(false)} to="https://remy-arc.com/portal/" target="_blank" rel="noopener noreferrer"><li className={`${listItemStyle} text-white bg-wdblue`}>Remy ARC</li></Link>

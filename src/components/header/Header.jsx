@@ -44,9 +44,9 @@ export default function Header({ setContactOpen }) {
           </div>
           <div className="flex-none">
             <ul className="menu menu-horizontal px-1 text-wdblue">
-              <li className={listItemStyle}><Link onClick={() => handleClick()} to="/#offerings" className="sub-category">Offerings</Link></li>
+              <li className={listItemStyle}><Link onClick={() => handleClick()} to="/#services" className="sub-category">Services</Link></li>
               <li className={listItemStyle}><Link onClick={() => handleClick()} to="/#focus-areas" className="sub-category">Focus Areas</Link></li>
-              <li className={listItemStyle}><Link onClick={() => handleClick()} to="/#about" className="sub-category">About Us</Link></li>
+              <li className={listItemStyle}><Link onClick={() => handleClick()} to="/#about" className="sub-category">About</Link></li>
               <li className={listItemStyle}><Link onClick={() => handleClick()} to="/#partnerships" className="sub-category">Partnerships</Link></li>
               <div className="ml-2 grid grid-cols-1 content-center">
                 <button className="btn btn-contact btn-secondary hover:btn-info" onClick={()=>document.getElementById('contact-form-modal').showModal()}>Contact Us</button>
