@@ -1,8 +1,8 @@
 import { useContext, useState, useEffect } from "react"
 
-import { GlobalContext } from "../../App"
+import { GlobalContext } from "../../../App"
 
-import { focusAreas } from "../../../db/focus-areas"
+import { focusAreas } from "../../../../db/focus-areas"
 
 
 export default function FocusAreasModal() {

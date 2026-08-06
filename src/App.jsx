@@ -2,24 +2,23 @@ import { useState, createContext } from "react"
 import { Routes, Route } from "react-router-dom"
 import ScrollToHashElement from "@cascadia-code/scroll-to-hash-element"
 
-import HeaderContainer from "./components/header/HeaderContainer"
-import Modals from "./components/modals/Modals"
-import HomePage from "./components/home-page/HomePage"
-import WorkforceSolutionsPage from "./components/workforce-solutions-page/WorkforceSolutionsPage"
-import TechConsultingPage from "./components/tech-consulting-page/TechConsultingPage"
-import ManagedOperationsPage from "./components/managed-operations-page/ManagedOperationsPage"
+import HeaderContainer from "./components/global/header/HeaderContainer"
+import Modals from "./components/global/modals/Modals"
 
-import ServicesPage from "./components/services-page/ServicesPage"
-import BlogPage from "./components/blog-page/BlogPage"
-import EventsPage from "./components/events-page/EventsPage"
-import FAQPage from "./components/faq-page/FAQPage"
-import HelpPage from "./components/help-page/HelpPage"
-import Footer from "./components/footer/Footer"
-import FooterBottom from "./components/footer/FooterBottom"
+import HomePage from "./components/pages/home-page/HomePage"
+import WorkforceSolutionsPage from "./components/pages/workforce-solutions-page/WorkforceSolutionsPage"
+import TechConsultingPage from "./components/pages/tech-consulting-page/TechConsultingPage"
+import ManagedOperationsPage from "./components/pages/managed-operations-page/ManagedOperationsPage"
+import ServicesPage from "./components/ARCHIVE/services-page/ServicesPage"
+import BlogPage from "./components/ARCHIVE/blog-page/BlogPage"
+import EventsPage from "./components/ARCHIVE/events-page/EventsPage"
+import FAQPage from "./components/ARCHIVE/faq-page/FAQPage"
+import HelpPage from "./components/ARCHIVE/help-page/HelpPage"
+
+import Footer from "./components/global/footer/Footer"
+import FooterBottom from "./components/global/footer/FooterBottom"
 
 export const GlobalContext = createContext()
-
-
 
 export default function App() {
 

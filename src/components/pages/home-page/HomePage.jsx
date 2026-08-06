@@ -10,7 +10,7 @@ export default function HomePage() {
 
 
   return (
-    <div className="" >   
+    <div id="home-page" className="" >   
       {/* <HomeHero /> */}
 
       <div id="services" className="h-[4rem] mt-[-4rem]"></div>

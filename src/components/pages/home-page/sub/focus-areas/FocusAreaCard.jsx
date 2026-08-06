@@ -1,6 +1,6 @@
 import { useContext } from "react"
 
-import { GlobalContext } from "../../../../App"
+import { GlobalContext } from "../../../../../App"
 
 
 
@@ -43,7 +43,7 @@ export default function FocusAreaCard({ cardInfo }) {
             <h2 className="text-xl font-bold">{cardInfo.industry}</h2>
             {/* <span className="text-xl">$29/mo</span> */}
           </div>
-          <ul className="my-6 flex flex-col gap-2 text-xs">
+          <ul className="my-6 flex flex-col gap-2 text-sm">
             {bulletComponents}
           </ul>
           <div className="mt-auto">

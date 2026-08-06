@@ -1,8 +1,8 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
 
-import HamMenu from "../../assets/svg/ham-menu.svg"
-import HamMenuClose from "../../assets/svg/ham-menu-close.svg"
+import HamMenu from "../../../assets/svg/ham-menu.svg"
+import HamMenuClose from "../../../assets/svg/ham-menu-close.svg"
 import { IoIosArrowUp } from "react-icons/io";
 
 export default function HeaderMobile() {
@@ -13,7 +13,8 @@ export default function HeaderMobile() {
   const listItemStyle = "py-4 text-center text-wdblue font-sans font-bold border-t-2 active:bg-slate-200"
 
   const resetMenu = () => {
-    setActive(!active)
+    console.log("reset")
+    setActive(false)
     setTimeout(() => {
       setServicesOpen(false)
     }, 300)
@@ -43,19 +44,19 @@ export default function HeaderMobile() {
         </nav>
         <div className={`h-fit w-full fixed bg-white shadow-lg transition-all duration-300 ${(active) ? ("") : ("translate-x-[100vw]")}`}>
           <ul>
-            <Link onClick={() => resetMenu} to="/#focus-areas"><li className={listItemStyle}>Focus Areas</li></Link>
-            <Link onClick={() => resetMenu} to="/#about"><li className={listItemStyle}>About</li></Link>
-            <Link onClick={() => resetMenu} to="/#partnerships"><li className={listItemStyle}>Partnerships</li></Link>
+            <Link onClick={() => resetMenu()} to="/#focus-areas"><li className={listItemStyle}>Focus Areas</li></Link>
+            <Link onClick={() => resetMenu()} to="/#about"><li className={listItemStyle}>About</li></Link>
+            <Link onClick={() => resetMenu()} to="/#partnerships"><li className={listItemStyle}>Partnerships</li></Link>
             <Link onClick={() => setServicesOpen(!servicesOpen)} to="/#services"><li className={`${listItemStyle} transition-all duration-200 ${(servicesOpen) ? ("bg-slate-200") : ("")}`}>Services<IoIosArrowUp className={`ml-2 inline-block scale-[1.3] -translate-y-[1px] transition-rotate duration-300 ${(servicesOpen) ? ("") : ("rotate-180")}`}/></li></Link>
             { (servicesOpen) &&
               <>
-              <Link onClick={() => resetMenu} to="/workforce-solutions"><li className={`${listItemStyle} bg-slate-200 w-[95%] mx-auto border-white rounded-b-[10px]`}>Workforce Solutions</li></Link>
-              <Link onClick={() => resetMenu} to="/technology-consulting"><li className={`${listItemStyle} bg-slate-200 w-[90%] mx-auto border-white rounded-b-[10px]`}>Technology Consulting</li></Link>
-              <Link onClick={() => resetMenu} to="/managed-operations"><li className={`${listItemStyle} bg-slate-200 w-[85%] mx-auto border-white rounded-b-[10px]`}>Managed Operations</li></Link>
+              <Link onClick={() => resetMenu()} to="/workforce-solutions"><li className={`${listItemStyle} bg-slate-200 w-[95%] mx-auto border-white rounded-b-[10px]`}>Workforce Solutions</li></Link>
+              <Link onClick={() => resetMenu()} to="/tech-consulting"><li className={`${listItemStyle} bg-slate-200 w-[90%] mx-auto border-white rounded-b-[10px]`}>Technology Consulting</li></Link>
+              <Link onClick={() => resetMenu()} to="/managed-operations"><li className={`${listItemStyle} bg-slate-200 w-[85%] mx-auto border-white rounded-b-[10px]`}>Managed Operations</li></Link>
               </>
             }
-            <Link onClick={() => {resetMenu; document.getElementById('contact-form-modal').showModal()}}><li className={`${listItemStyle} text-slate-900 bg-wdorange`}>Contact Us</li></Link>
-            <Link onClick={() => resetMenu} to="https://remy-arc.com/portal/" target="_blank" rel="noopener noreferrer"><li className={`${listItemStyle} text-white bg-wdblue`}>Remy ARC</li></Link>
+            <Link onClick={() => {resetMenu(); document.getElementById('contact-form-modal').showModal()}}><li className={`${listItemStyle} text-slate-900 bg-wdorange`}>Contact Us</li></Link>
+            <Link onClick={() => resetMenu()} to="https://remy-arc.com/portal/" target="_blank" rel="noopener noreferrer"><li className={`${listItemStyle} text-white bg-wdblue`}>Remy ARC</li></Link>
           </ul>
         </div>
       </header>

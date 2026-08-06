@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom"
 
 import FocusAreaCard from "./FocusAreaCard"
 
-import { focusAreas } from "../../../../../db/focus-areas"
+import { focusAreas } from "../../../../../../db/focus-areas"
 
 
 export default function FocusAreasCarousel() {

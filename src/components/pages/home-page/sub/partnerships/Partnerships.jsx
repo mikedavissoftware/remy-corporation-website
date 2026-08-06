@@ -4,9 +4,9 @@ import { Carousel } from "@material-tailwind/react"
 
 import CaseStudyNEW from "./CaseStudy"
 
-import PlayVector from "../../../../assets/svg/play-svgrepo-com.svg"
-import PauseVector from "../../../../assets/svg/pause-svgrepo-com.svg"
-import NextPrevVector from "../../../../assets/svg/fast-forward-svgrepo-com.svg"
+import PlayVector from "../../../../../assets/svg/play-svgrepo-com.svg"
+import PauseVector from "../../../../../assets/svg/pause-svgrepo-com.svg"
+import NextPrevVector from "../../../../../assets/svg/fast-forward-svgrepo-com.svg"
 
 
 export default function Partnerships() {
