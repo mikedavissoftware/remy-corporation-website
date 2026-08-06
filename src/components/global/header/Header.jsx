@@ -22,7 +22,7 @@ export default function Header({ setContactOpen }) {
   //
 
   const closeServices = () => {
-    setServicesIsOpen(false)
+    setServicesOpen(false)
   }
 
   const listItemStyle = "mx-1 font-bold"
@@ -44,20 +44,20 @@ export default function Header({ setContactOpen }) {
               <li className={listItemStyle}><Link onClick={() => closeServices()} to="/#about" className="sub-category">About</Link></li>
               <li className={listItemStyle}><Link onClick={() => closeServices()} to="/#partnerships" className="sub-category">Partnerships</Link></li>
               <li className={listItemStyle}>
-                <details onToggle={(e) => setServicesOpen(e.target.open)}>
+                <details open={servicesOpen} onToggle={(e) => setServicesOpen(e.target.open)}>
                   <summary className={`transition-[border-radius] duration-100 ${(servicesOpen) ? ("bg-base-100 rounded-b-none") : ("")}`}>Services</summary>
-                  <ul className="bg-base-100 -translate-y-4 rounded-tl-none">
-                    <li className="my-1"><Link onClick={() => handleClick(false)} to="/workforce-solutions" className="sub-category">About Us</Link></li>
-                    <li className="my-1"><Link onClick={() => handleClick(false)} to="/technology-consulting" className="sub-category">Focus</Link></li>
-                    <li className="my-1"><Link onClick={() => handleClick(false)} to="/managed-operations" className="sub-category">Partnerships</Link></li>
+                  <ul className="bg-base-100 -translate-y-4 -translate-x-7 rounded-tr-none">
+                    <li className="my-1"><Link onClick={() => closeServices()} to="/workforce-solutions" className="sub-category">About Us</Link></li>
+                    <li className="my-1"><Link onClick={() => closeServices()} to="/technology-consulting" className="sub-category">Focus</Link></li>
+                    <li className="my-1"><Link onClick={() => closeServices()} to="/managed-operations" className="sub-category">Partnerships</Link></li>
                   </ul>
                 </details>
               </li>
               <div className="ml-2 grid grid-cols-1 content-center">
-                <button className="btn btn-contact btn-secondary hover:btn-info" onClick={()=>document.getElementById('contact-form-modal').showModal()}>Contact Us</button>
+                <button className="btn btn-contact btn-secondary hover:btn-info" onClick={() => {document.getElementById('contact-form-modal').showModal(); closeServices()}}>Contact Us</button>
               </div>
               <div className="ml-2 grid grid-cols-1 content-center">
-                <button className="btn btn-contact btn-primary hover:btn-secondary" onClick={() => openInNewTab("https://remy-arc.com/portal/")}>Remy ARC</button>
+                <button className="btn btn-contact btn-primary hover:btn-secondary" onClick={() => {openInNewTab("https://remy-arc.com/portal/"); closeServices()}}>Remy ARC</button>
               </div>              
             </ul>
           </div>
