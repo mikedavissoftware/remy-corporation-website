@@ -5,6 +5,10 @@ import ScrollToHashElement from "@cascadia-code/scroll-to-hash-element"
 import HeaderContainer from "./components/header/HeaderContainer"
 import Modals from "./components/modals/Modals"
 import HomePage from "./components/home-page/HomePage"
+import WorkforceSolutionsPage from "./components/workforce-solutions-page/WorkforceSolutionsPage"
+import TechConsultingPage from "./components/tech-consulting-page/TechConsultingPage"
+import ManagedOperationsPage from "./components/managed-operations-page/ManagedOperationsPage"
+
 import ServicesPage from "./components/services-page/ServicesPage"
 import BlogPage from "./components/blog-page/BlogPage"
 import EventsPage from "./components/events-page/EventsPage"
@@ -33,6 +37,11 @@ export default function App() {
 
         <Routes>
           <Route index element={<HomePage />} />
+
+          <Route path="workforce-solutions" element={WorkforceSolutionsPage} />
+          <Route path="tech-consulting" element={TechConsultingPage} />
+          <Route path="managed-operations" element={ManagedOperationsPage} />
+
           <Route path="services" element={<ServicesPage />} />
           <Route path="blog" element={<BlogPage />} />
           <Route path="events" element={<EventsPage />} />

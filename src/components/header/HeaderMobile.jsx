@@ -46,12 +46,12 @@ export default function HeaderMobile() {
             <Link onClick={() => resetMenu} to="/#focus-areas"><li className={listItemStyle}>Focus Areas</li></Link>
             <Link onClick={() => resetMenu} to="/#about"><li className={listItemStyle}>About</li></Link>
             <Link onClick={() => resetMenu} to="/#partnerships"><li className={listItemStyle}>Partnerships</li></Link>
-            <Link onClick={() => setServicesOpen(!servicesOpen)} to="/#services"><li className={`${listItemStyle} transition-all duration-200 ${(servicesOpen) ? ("bg-slate-300") : ("")}`}>Services<IoIosArrowUp className={`ml-2 inline-block scale-[1.3] -translate-y-[1px] transition-rotate duration-300 ${(servicesOpen) ? ("rotate-180") : ("")}`}/></li></Link>
+            <Link onClick={() => setServicesOpen(!servicesOpen)} to="/#services"><li className={`${listItemStyle} transition-all duration-200 ${(servicesOpen) ? ("bg-slate-200") : ("")}`}>Services<IoIosArrowUp className={`ml-2 inline-block scale-[1.3] -translate-y-[1px] transition-rotate duration-300 ${(servicesOpen) ? ("") : ("rotate-180")}`}/></li></Link>
             { (servicesOpen) &&
               <>
-              <Link onClick={() => resetMenu} to="/#focus-areas"><li className={`${listItemStyle} bg-slate-200 w-[95%] mx-auto border-white rounded-b-[10px]`}>Focus Areas</li></Link>
-              <Link onClick={() => resetMenu} to="/#about"><li className={`${listItemStyle} bg-slate-200 w-[90%] mx-auto border-white rounded-b-[10px]`}>About</li></Link>
-              <Link onClick={() => resetMenu} to="/#partnerships"><li className={`${listItemStyle} bg-slate-200 w-[85%] mx-auto border-white rounded-b-[10px]`}>Partnerships</li></Link>
+              <Link onClick={() => resetMenu} to="/workforce-solutions"><li className={`${listItemStyle} bg-slate-200 w-[95%] mx-auto border-white rounded-b-[10px]`}>Workforce Solutions</li></Link>
+              <Link onClick={() => resetMenu} to="/technology-consulting"><li className={`${listItemStyle} bg-slate-200 w-[90%] mx-auto border-white rounded-b-[10px]`}>Technology Consulting</li></Link>
+              <Link onClick={() => resetMenu} to="/managed-operations"><li className={`${listItemStyle} bg-slate-200 w-[85%] mx-auto border-white rounded-b-[10px]`}>Managed Operations</li></Link>
               </>
             }
             <Link onClick={() => {resetMenu; document.getElementById('contact-form-modal').showModal()}}><li className={`${listItemStyle} text-slate-900 bg-wdorange`}>Contact Us</li></Link>

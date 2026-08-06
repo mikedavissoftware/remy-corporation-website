@@ -47,9 +47,9 @@ export default function Header({ setContactOpen }) {
                 <details onToggle={(e) => setServicesOpen(e.target.open)}>
                   <summary className={`transition-[border-radius] duration-100 ${(servicesOpen) ? ("bg-base-100 rounded-b-none") : ("")}`}>Services</summary>
                   <ul className="bg-base-100 -translate-y-4 rounded-tl-none">
-                    <li className="my-1"><Link onClick={() => handleClick(false)} to="" className="sub-category">About Us</Link></li>
-                    <li className="my-1"><Link onClick={() => handleClick(false)} to="" className="sub-category">Focus</Link></li>
-                    <li className="my-1"><Link onClick={() => handleClick(false)} to="" className="sub-category">Partnerships</Link></li>
+                    <li className="my-1"><Link onClick={() => handleClick(false)} to="/workforce-solutions" className="sub-category">About Us</Link></li>
+                    <li className="my-1"><Link onClick={() => handleClick(false)} to="/technology-consulting" className="sub-category">Focus</Link></li>
+                    <li className="my-1"><Link onClick={() => handleClick(false)} to="/managed-operations" className="sub-category">Partnerships</Link></li>
                   </ul>
                 </details>
               </li>
