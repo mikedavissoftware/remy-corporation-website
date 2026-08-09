@@ -1,0 +1,54 @@
+.scroll-container {
+  overflow: hidden;
+  width: 100%;
+  background: #f0f0f0;
+  padding: 20px 0;
+  display: flex;
+}
+
+.scroll-track {
+  display: flex;
+  width: max-content;
+  /* Adjust timing (20s) based on your total image count and desired speed */
+  animation: scrollRightToLeft 20s linear infinite;
+}
+
+/* Pause the scrolling animation when a user hovers over an image */
+.scroll-track:hover {
+  animation-play-state: paused;
+}
+
+.scroll-link {
+  display: block;
+  /* Negative margin creates the horizontal overlap effect */
+  margin-right: -40px; 
+  transition: transform 0.3s ease, z-index 0.3s;
+  position: relative;
+  /* Ensures overlapping parts still register correct link boundaries */
+  z-index: 1; 
+}
+
+/* Brings the hovered hyperlinked image to the front and lifts it */
+.scroll-link:hover {
+  transform: scale(1.1) translateY(-10px);
+  z-index: 10;
+}
+
+.scroll-image {
+  width: 150px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+  border: 3px solid white;
+}
+
+@keyframes scrollRightToLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Moves exactly halfway through the duplicated array for a seamless loop */
+    transform: translateX(-50%); 
+  }
+}
