@@ -1,7 +1,6 @@
 .scroll-container {
   overflow: hidden;
   width: 100%;
-  background: #f0f0f0;
   padding: 20px 0;
   display: flex;
 }
@@ -35,12 +34,10 @@
 }
 
 .scroll-image {
-  width: 150px;
-  height: 200px;
+  width: auto;
+  height: 100px;
   object-fit: cover;
-  border-radius: 8px;
   box-shadow: -5px 0 15px rgba(0,0,0,0.2);
-  border: 3px solid white;
 }
 
 @keyframes scrollRightToLeft {

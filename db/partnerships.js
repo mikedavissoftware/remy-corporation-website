@@ -2,18 +2,25 @@ export const partnerships = [
     {
         id: 1,
         fileName: "google-cloud-copy.png",
-        initXPosition: 600,
-        speed: .25,
-        scale: .5,
-        zIndex: 6,
-    }
+    },
+    {
+        id: 2,
+        fileName: "gsa-contract-holder-copy.png",
+    },
+    {
+        id: 3,
+        fileName: "oracle-gold-partner.png",
+    },
+    {
+        id: 4,
+        fileName: "people-soft.png",
+    },
+    {
+        id: 5,
+        fileName: "sap-copy.png",
+    },
+    {
+        id: 6,
+        fileName: "workday-services-partner-copy.png",
+    },   
 ]
-
-// const partnerFiles = [
-// "google-cloud-copy.png",
-// "gsa-contract-holder-copy.png",
-// "oracle-gold-partner.png",
-// "people-soft.png",
-// "sap-copy.png",
-// "workday-services-partner-copy.png",
-// ]
