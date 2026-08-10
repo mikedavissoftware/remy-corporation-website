@@ -1,26 +1,42 @@
 export const partnerships = [
     {
         id: 1,
-        fileName: "google-cloud-copy.png",
+        fileName: "epic.png",
     },
     {
         id: 2,
-        fileName: "gsa-contract-holder-copy.png",
+        fileName: "gsa.png",
     },
     {
         id: 3,
-        fileName: "oracle-gold-partner.png",
+        fileName: "java_edit.png",
     },
     {
         id: 4,
-        fileName: "people-soft.png",
+        fileName: "net.png",
     },
     {
         id: 5,
-        fileName: "sap-copy.png",
+        fileName: "oracle_edit.png",
     },
     {
         id: 6,
-        fileName: "workday-services-partner-copy.png",
-    },   
+        fileName: "peoplesoft.png",
+    },
+    {
+        id: 7,
+        fileName: "salesforce.png",
+    },
+    {
+        id: 8,
+        fileName: "sap.png",
+    },
+    {
+        id: 9,
+        fileName: "snowflake.png",
+    },
+    {
+        id: 10,
+        fileName: "workday.png",
+    },
 ]

@@ -13,6 +13,7 @@
 .track-group {
   display: flex;
   flex-shrink: 0;
+  align-items: center;
   /* width: fit-content; */
   /* Adjust timing (20s) based on your total image count and desired speed */
   
@@ -43,7 +44,7 @@
 
 .scroll-image {
   /* width: auto;
-  height: 10vw; */
+  height: auto; */
   object-fit: cover;
   filter: drop-shadow(3px 3px 5px rgba(0,0,0,0.2));
 }
