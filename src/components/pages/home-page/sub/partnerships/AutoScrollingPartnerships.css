@@ -3,6 +3,8 @@
   width: 100%;
   padding: 20px 0;
   display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .scroll-track {
@@ -10,9 +12,14 @@
   animation: scrollRightToLeft 20s linear infinite;
 }
 
-.scroll-track-reverse {
+.scroll-track-mobile-regular {
   display: flex;
-  animation: scrollLeftToRight 20s linear infinite;
+  animation: scrollRightToLeft 10s linear infinite;
+}
+
+.scroll-track-mobile-reverse {
+  display: flex;
+  animation: scrollLeftToRight 10s linear infinite;
 }
 
 .track-group {
@@ -26,6 +33,11 @@
 
 /* Pause the scrolling animation when a user hovers over an image */
 .scroll-track:has(.scroll-link:hover) {
+  animation-play-state: paused;
+}
+
+/* Pause the scrolling animation when a user hovers over an image */
+.scroll-track-reverse:has(.scroll-link:hover) {
   animation-play-state: paused;
 }
 
@@ -61,5 +73,15 @@
   100% {
     /* Moves exactly halfway through the duplicated array for a seamless loop */
     transform: translateX(var(--loop-r-l-distance, -50%)); 
+  }
+}
+
+@keyframes scrollLeftToRight {
+  0% {
+    transform: translateX(var(--loop-l-r-distance, -50%));
+  }
+  100% {
+    /* Moves exactly halfway through the duplicated array for a seamless loop */
+    transform: translateX(0);
   }
 }

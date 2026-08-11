@@ -47,7 +47,7 @@ export default function PartnershipsScrollerMobile() {
 
   return (
     <div className="scroll-container !flex md:!hidden" >
-      <div className="scroll-track" ref={trackTopRef}>
+      <div className="scroll-track-mobile-regular" ref={trackTopRef}>
         <div className="track-group" ref={groupTopRef}>
           {partnershipImageComponentsTop}
         </div>
@@ -55,11 +55,14 @@ export default function PartnershipsScrollerMobile() {
           {partnershipImageComponentsTop}
         </div>
       </div>
-      <div className="scroll-track-left" ref={trackBottomRef}>
-        <div className="track-group" ref={groupBottomRef}>
+      <div className="scroll-track-mobile-reverse" ref={trackBottomRef}>
+        {/* <div className="track-group" ref={groupBottomRef}>
+          {partnershipImageComponentsBottom}
+        </div> */}
+        <div className="track-group" aria-hidden="true">
           {partnershipImageComponentsBottom}
         </div>
-        <div className="track-group" aria-hidden="true">
+        <div className="track-group" ref={groupBottomRef}>
           {partnershipImageComponentsBottom}
         </div>
       </div>
