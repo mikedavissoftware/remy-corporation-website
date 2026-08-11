@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react"
 
 import PartnershipsScroller from "./PartnershipsScroller"
+import PartnershipsScrollerMobile from "./PartnershipsScrollerMobile"
 
 import PlayVector from "../../../../../assets/svg/play-svgrepo-com.svg"
 import PauseVector from "../../../../../assets/svg/pause-svgrepo-com.svg"
@@ -19,6 +20,7 @@ export default function Partnerships() {
       <hr className="border border-[1.5px] border-wdblue rounded-sm mx-auto mt-8 w-[6%] md:w-[3%]"/>
 
       <PartnershipsScroller />
+      <PartnershipsScrollerMobile />
 
     </div>
   )

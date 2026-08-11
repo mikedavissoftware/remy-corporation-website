@@ -16,7 +16,7 @@ export default function PartnershipsScroller() {
       // Measures the exact pixel width of one complete set of images
       const width = groupRef.current.offsetWidth;
       // Passes the value directly into your CSS keyframes variable
-      trackRef.current.style.setProperty('--loop-distance', `-${width}px`);
+      trackRef.current.style.setProperty('--loop-r-l-distance', `-${width}px`);
     }
   };
 
@@ -34,18 +34,18 @@ export default function PartnershipsScroller() {
   }, []);
 
   // Replace these with your actual image URLs/data
-  const partnerShipImageComponentsDesktop = partnerships.map((partnership) => {
+  const partnershipImageComponentsDesktop = partnerships.map((partnership) => {
     return <a className="scroll-link"><img src={`images/general/partners/${partnership.fileName}`} className="scroll-image h-auto w-48" /></a>
   })
 
   return (
-    <div className="scroll-container" >
+    <div className="scroll-container !hidden md:!flex" >
       <div className="scroll-track" ref={trackRef}>
-        <div className="track-group !hidden md:!flex" ref={groupRef}>
-          {partnerShipImageComponentsDesktop}
+        <div className="track-group" ref={groupRef}>
+          {partnershipImageComponentsDesktop}
         </div>
-        <div className="track-group !hidden md:!flex" aria-hidden="true">
-          {partnerShipImageComponentsDesktop}
+        <div className="track-group" aria-hidden="true">
+          {partnershipImageComponentsDesktop}
         </div>
       </div>
     </div>

@@ -10,6 +10,11 @@
   animation: scrollRightToLeft 20s linear infinite;
 }
 
+.scroll-track-reverse {
+  display: flex;
+  animation: scrollLeftToRight 20s linear infinite;
+}
+
 .track-group {
   display: flex;
   flex-shrink: 0;
@@ -55,6 +60,6 @@
   }
   100% {
     /* Moves exactly halfway through the duplicated array for a seamless loop */
-    transform: translateX(var(--loop-distance, -50%)); 
+    transform: translateX(var(--loop-r-l-distance, -50%)); 
   }
 }
