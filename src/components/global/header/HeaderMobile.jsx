@@ -23,9 +23,9 @@ export default function HeaderMobile() {
   return (
     <div id="header-mobile" className="md:hidden" >
       <header className="z-10 fixed w-full border-b-2 border-slate-300 shadow-md bg-black">
-        <nav className={`navbar p-4 bg-white h-20`}>
+        <nav className={`navbar p-4 bg-white h-16`}>
           <div className="flex-1">
-            <a className={`btn btn-ghost transition-all duration-500`} href="/"><img className="h-full p-1" src="images/header/remy_logo.png" /></a>
+            <a className={`btn btn-ghost transition-all duration-500`} href="/"><img className="h-full py-1 -translate-x-3" src="images/header/remy_logo.png" /></a>
           </div>
           <div className="relative">
             <img
@@ -60,7 +60,7 @@ export default function HeaderMobile() {
           </ul>
         </div>
       </header>
-      <div className="bg-white h-20"></div>
+      <div className="bg-white h-16"></div>
       
     </div>
   )

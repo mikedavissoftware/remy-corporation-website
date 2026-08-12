@@ -36,20 +36,20 @@ export default function Header({ setContactOpen }) {
       <header className="z-10 fixed w-full border-b-2 border-slate-300 shadow-md bg-black" >
         <nav className={`navbar p-4 bg-white transition-all duration-500 ${(scrollPosition < scrollRange) ? ("h-[6rem]") : ("h-[4rem]")}`}>
           <div className="flex-1">
-            <a onClick={() => closeServices()} href="/#services" className={`btn btn-ghost transition-all duration-500 ${(scrollPosition < scrollRange) ? ("h-[4rem]") : ("h-[3rem]")}`}><img className="h-full p-1" src="images/header/remy_logo.png" /></a>
+            <a onClick={() => closeServices()} href="/#services" className={`btn btn-ghost transition-all duration-500 ${(scrollPosition < scrollRange) ? ("h-[4rem]") : ("h-[3rem] -translate-x-4")}`}><img className="h-full p-1" src="images/header/remy_logo.png" /></a>
           </div>
           <div className="flex-none">
-            <ul className="menu menu-horizontal px-1 text-wdblue">
+            <ul className={`transition-all duration-500 menu menu-horizontal text-wdblue ${(scrollPosition < scrollRange) ? ("px-2") : ("px-0")}`}>
               <li className={listItemStyle}><Link onClick={() => closeServices()} to="/#focus-areas" className="sub-category">Focus Areas</Link></li>
               <li className={listItemStyle}><Link onClick={() => closeServices()} to="/#about" className="sub-category">About</Link></li>
               <li className={listItemStyle}><Link onClick={() => closeServices()} to="/#partnerships" className="sub-category">Partnerships</Link></li>
               <li className={listItemStyle}>
                 <details open={servicesOpen} onToggle={(e) => setServicesOpen(e.target.open)}>
                   <summary className={`transition-[border-radius] duration-100 ${(servicesOpen) ? ("bg-base-100 rounded-b-none") : ("")}`}>Services</summary>
-                  <ul className="bg-base-100 -translate-y-4 -translate-x-7 rounded-tr-none">
-                    <li className="my-1"><Link onClick={() => closeServices()} to="/workforce-solutions" className="sub-category">About Us</Link></li>
-                    <li className="my-1"><Link onClick={() => closeServices()} to="/technology-consulting" className="sub-category">Focus</Link></li>
-                    <li className="my-1"><Link onClick={() => closeServices()} to="/managed-operations" className="sub-category">Partnerships</Link></li>
+                  <ul className="bg-base-100 w-[210px] -translate-x-[104.5px] -translate-y-4 rounded-tr-none">
+                    <li className="my-1"><Link onClick={() => closeServices()} to="/workforce-solutions" className="sub-category">Workforce Solutions</Link></li>
+                    <li className="my-1"><Link onClick={() => closeServices()} to="/technology-consulting" className="sub-category">Technology Consulting</Link></li>
+                    <li className="my-1"><Link onClick={() => closeServices()} to="/managed-operations" className="sub-category">Managed Operations</Link></li>
                   </ul>
                 </details>
               </li>
