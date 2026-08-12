@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react"
 
+import { partnerships } from "../../../../../../db/partnerships"
 import PartnershipsScroller from "./PartnershipsScroller"
 import PartnershipsScrollerMobile from "./PartnershipsScrollerMobile"
 
@@ -10,7 +11,18 @@ import NextPrevVector from "../../../../../assets/svg/fast-forward-svgrepo-com.s
 
 export default function Partnerships() {
 
+  const shuffle = (array) => {
+    for (let i = array.length - 1; i > 0; i--) {
+      // Pick a random index from 0 to i
+      const j = Math.floor(Math.random() * (i + 1));
+      
+      // Swap elements array[i] and array[j]
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
 
+  const partnershipsShuffled = shuffle(partnerships)
 
   return (
     <div className="bg-[radial-gradient(#ffffff,#DCDECD)] py-6" >
@@ -19,8 +31,8 @@ export default function Partnerships() {
 
       <hr className="border border-[1.5px] border-wdblue rounded-sm mx-auto mt-8 w-[6%] md:w-[3%]"/>
 
-      <PartnershipsScroller />
-      <PartnershipsScrollerMobile />
+      <PartnershipsScroller partnerships={partnershipsShuffled} />
+      <PartnershipsScrollerMobile partnerships={partnershipsShuffled} />
 
     </div>
   )

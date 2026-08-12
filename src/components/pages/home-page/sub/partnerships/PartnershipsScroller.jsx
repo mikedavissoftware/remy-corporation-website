@@ -1,11 +1,8 @@
 import { useRef, useLayoutEffect } from "react"
 
-import PartnershipImage from "./PartnershipImage"
-
-import { partnerships } from "../../../../../../db/partnerships"
 import "./AutoScrollingPartnerships.css"
 
-export default function PartnershipsScroller() {
+export default function PartnershipsScroller({ partnerships }) {
 
   const trackRef = useRef(null)
   const groupRef = useRef(null)
@@ -19,8 +16,6 @@ export default function PartnershipsScroller() {
       trackRef.current.style.setProperty('--loop-r-l-distance', `-${width}px`);
     }
   };
-
-  // const updateImage
 
   useLayoutEffect(() => {
     // Run on initial mount
@@ -39,7 +34,7 @@ export default function PartnershipsScroller() {
   })
 
   return (
-    <div className="scroll-container !hidden md:!flex" >
+    <div className="scroll-container my-6 !hidden md:!flex" >
       <div className="scroll-track" ref={trackRef}>
         <div className="track-group" ref={groupRef}>
           {partnershipImageComponentsDesktop}
