@@ -53,10 +53,10 @@ export default function Header({ setContactOpen }) {
                   </ul>
                 </details>
               </li>
-              <div className="ml-2 grid grid-cols-1 content-center">
+              <div className="ml-3 grid grid-cols-1 content-center">
                 <button className="btn btn-contact btn-secondary hover:btn-info" onClick={() => {document.getElementById('contact-form-modal').showModal(); closeServices()}}>Contact Us</button>
               </div>
-              <div className="ml-2 grid grid-cols-1 content-center">
+              <div className="ml-4 grid grid-cols-1 content-center">
                 <button className="btn btn-contact btn-primary hover:btn-secondary" onClick={() => {openInNewTab("https://remy-arc.com/portal/"); closeServices()}}>Remy ARC</button>
               </div>              
             </ul>
