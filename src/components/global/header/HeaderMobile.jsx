@@ -55,7 +55,7 @@ export default function HeaderMobile() {
               <Link onClick={() => resetMenu()} to="/managed-operations"><li className={`${listItemStyle} bg-slate-200 w-[85%] mx-auto border-white rounded-b-[10px]`}>Managed Operations</li></Link>
               </>
             }
-            <Link onClick={() => {resetMenu(); document.getElementById('contact-form-modal').showModal()}}><li className={`${listItemStyle} text-slate-900 bg-wdorange`}>Contact Us</li></Link>
+            <Link onClick={() => {resetMenu(); document.getElementById('contact-form-modal').showModal()}}><li className={`${listItemStyle} !text-slate-900 bg-wdorange`}>Contact Us</li></Link>
             <Link onClick={() => resetMenu()} to="https://remy-arc.com/portal/" target="_blank" rel="noopener noreferrer"><li className={`${listItemStyle} text-white bg-wdblue`}>Remy ARC</li></Link>
           </ul>
         </div>

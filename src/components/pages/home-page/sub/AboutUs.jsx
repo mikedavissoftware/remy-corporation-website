@@ -29,7 +29,7 @@ export default function AboutUs() {
   // Ending of viewport code
 
   return (
-    <div className={(isVisible) ? ("bg-[url(images/general/bg-logo.jpg)] bg-cover bg-center bg-no-repeat animate delay-1") : ("d-none")} ref={containerRef}>
+    <div className={(isVisible) ? ("bg-[#DCDECD] animate delay-1") : ("d-none")} ref={containerRef}>
       
       <div className="px-8 py-16 sm:px-16 sm:pl-0 bg-white bg-opacity-65">
         <div>
@@ -40,15 +40,16 @@ export default function AboutUs() {
           <div className="col-start-1 col-span-2 overflow-visible place-items-end sm:ml-[-40px]">
             <img src="images/home/home-about-image.png" className=""/>
           </div>
-          <div className="col-start-3 col-span-3 prose-lg sm:prose-sm">
-            <p className="mt-8 sm:my-0">
-              Remy Corporation is a privately held staffing and consulting agency, providing top talent to leading organizations nationwide. Founded in 1999, Remy has grown to become one of the most competitive IT staffing firms in the United States by focusing on three key principles: <span>Value</span>, Execution and Utilization.
+          <div className="col-start-3 col-span-3 prose-md md:prose-lg">
+            <p className="mt-6 md:mt-0">
+              Founded in 1999, Remy Corporation is a trusted workforce solutions partner connecting organizations with exceptional technology and business professionals across North America and beyond. We help clients build high performing teams by delivering the right expertise at every stage of their business, from strategic initiatives and enterprise transformations to ongoing operational support.
             </p>
-            <p className="mt-8 sm:my-0">
-              The Remy Corporation specializes in recruiting Information Technology Professionals across all industries and all positions. Certified partnerships with Oracle and Workday, Remy supports startups to large enterprises in emerging technologies, Oracle and Workday resources, as well as executive search, consulting, project financing, and payrolling services.
+            <p className="mt-6 md:mt-8">
+              Our capabilities extend far beyond traditional staffing. As a certified Workday and Oracle partner, Remy provides specialized consulting, project-based solutions, managed services, executive search, payrolling, and access to highly skilled professionals across today's most in demand technologies.
             </p>
-            <h4 className="mb-12"><a href="" className="link text-slate-500 hover:text-orred transition-all duration-200">Oracle Certified Partner</a> | <a href="" className="link text-wdblue hover:text-wdorange transition-all duration-200">Workday Certified Partner</a></h4>
-            <img src="images/general/partners/workday-services-partner.png" className="mx-auto sm:mx-0 mt-6 max-h-20"/>
+            <p className="mt-6 md:mt-8">
+              What sets Remy apart is our commitment to building lasting partnerships. We combine industry expertise, a relationship first approach, and a relentless focus on quality to deliver talent and solutions that create measurable business impact.
+            </p>
           </div>
         </div>
       </div>

@@ -16,11 +16,11 @@ export default function HomePage() {
       <div id="services" className="h-[4rem] mt-[-4rem]"></div>
       <Offerings />
 
-      <div id="focus-areas" className="h-[4rem] mt-[-4rem]"></div>
-      <FocusAreas />
-
       <div id="about" className="h-[4rem] mt-[-4rem]"></div>
       <AboutUs />
+
+      <div id="focus-areas" className="h-[4rem] mt-[-4rem]"></div>
+      <FocusAreas />
 
       <div id="partnerships" className="h-[4rem] mt-[-4rem]"></div>
       <PartnershipsTest />
