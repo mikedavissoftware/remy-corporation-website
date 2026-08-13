@@ -6,7 +6,7 @@ export default function FocusAreas() {
 
 
   return (
-    <div className="px-16 py-16 sm:pl-16 bg-[url(images/general/bg-logo.jpg)] bg-cover bg-center bg-no-repeat">
+    <div className="px-16 py-12 sm:pl-16 bg-[url(images/general/bg-logo.jpg)] bg-cover bg-center bg-no-repeat bg-white/60 bg-blend-overlay">
       <h1 className="text-center text-4xl sm:text-5xl font-semibold tracking-wide ">Our Focus Areas</h1>
 
       <hr className="border border-[1.5px] border-wdblue rounded-sm mx-auto my-8 w-[6%] md:w-[3%]"/>

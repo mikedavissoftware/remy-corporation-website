@@ -31,7 +31,7 @@ export default function AboutUs() {
   return (
     <div className={(isVisible) ? ("bg-[#DCDECD] animate delay-1") : ("d-none")} ref={containerRef}>
       
-      <div className="px-8 py-16 sm:px-16 sm:pl-0 bg-white bg-opacity-65">
+      <div className="px-8 py-8 pb-12 sm:py-12 sm:px-16 sm:pl-0 bg-white bg-opacity-65">
         <div>
           <h1 className="text-center text-4xl sm:text-5xl font-semibold tracking-wide">About Us</h1>
         </div>

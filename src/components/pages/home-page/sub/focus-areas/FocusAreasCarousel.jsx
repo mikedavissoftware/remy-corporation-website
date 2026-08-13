@@ -14,7 +14,7 @@ export default function FocusAreasCarousel() {
 
   return (
     <>
-    <div className="carousel-vanilla flex -mx-16 ps-[5vw] pe-[5vw]">
+    <div className="carousel-vanilla flex -mx-16 ps-14 pe-14">
 
       {/* <div className="carousel-item relative w-[25vw] hidden md:inline"></div> */}
 

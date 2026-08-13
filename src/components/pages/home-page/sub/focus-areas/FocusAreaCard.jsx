@@ -17,19 +17,9 @@ export default function FocusAreaCard({ cardInfo }) {
     )
   })
 
-  const padding = (value) => {
-    if (cardInfo.id == 1) {
-      return `pl-${value}`
-    } else if (cardInfo.id == 10) {
-      return `pr-${value / 2}`
-    } else {
-      return ""
-    }
-  }
-
   return (
-    <div className={`carousel-item relative scale-95 md:scale-100 ${padding(16)} sm:p-0`}>
-      <div className="snap-card-vanilla animate fade card w-72 image-full bg-base-100 drop-shadow-medium3 md:m-6 inline-block flex-col">
+    <div className="carousel-item relative scale-95 md:scale-100 sm:p-0">
+      <div className="snap-card-vanilla animate fade card w-72 image-full bg-base-100 drop-shadow-medium3 m-2 md:m-6 inline-block flex-col">
         <figure>
           <img
             src={cardInfo.image}
