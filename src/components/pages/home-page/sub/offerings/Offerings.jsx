@@ -1,23 +1,47 @@
-import { Carousel } from "@material-tailwind/react";
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 
-import OfferingSlide from "./OfferingSlide";
+import { Swiper, SwiperSlide } from 'swiper/react';
 
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+
+import OfferingSlide from './OfferingSlide';
 import { offerings } from "../../../../../../db/offerings"
 
 export default function Offerings() {
 
-  const offeringSlideComponents = offerings.map((offering) => {
-    return <OfferingSlide key={offering.id} offering={offering} />
-  })
-
   return (
-    // <Carousel className="rounded-xl relative" autoplay="true" autoplayDelay="5000" loop="true" transition={{duration: 1.5}}>
-    //   <iframe className="h-screen w-screen" src="https://www.youtube.com/embed/wskShGwowio?si=GI60oqm6PxvYRQfP" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
-    //   <iframe className="h-screen w-screen" src="https://www.youtube.com/embed/wskShGwowio?si=GI60oqm6PxvYRQfP" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
-    //   <iframe className="h-screen w-screen" src="https://www.youtube.com/embed/wskShGwowio?si=GI60oqm6PxvYRQfP" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
-    // </Carousel>
-    <Carousel className="relative z-0" autoplay={true} autoplayDelay={5000} loop={true} transition={{duration: 1}} prevArrow={() => <></>} nextArrow={() => <></>}>
-      {offeringSlideComponents}
-    </Carousel>
+    <Swiper
+      // 1. Pass the modules needed for your features
+      modules={[Navigation, Pagination, Autoplay]}
+      
+      // 2. Map your exact configuration settings as props
+      speed={800}
+      normalizeSlideIndex={false}
+      roundLengths={true}
+      loop={true}
+      loopAddBlankSlides={false}
+      
+      // 3. Let React handle the elements natively with booleans
+      navigation={true}
+      pagination={{ dynamicBullets: true }}
+      autoplay={{ delay: 8000 }}
+      
+      // 4. Fallback observers to prevent layout issues
+      observer={true}
+      observeParents={true}
+      slidesPerView={1}
+    >
+      {offerings.map((offering) => {
+        return (
+          <SwiperSlide>
+            <OfferingSlide key={offering.id} offering={offering} />
+          </SwiperSlide>
+        )
+      })}
+    </Swiper>
   )
 }

@@ -1,5 +1,4 @@
-
-
+import { SwiperSlide } from 'swiper/react';
 
 
 export default function OfferingSlide({ offering }) {
