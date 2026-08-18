@@ -11,12 +11,14 @@ import 'swiper/css/scrollbar';
 import OfferingSlide from './OfferingSlide';
 import { offerings } from "../../../../../../db/offerings"
 
+import './Offerings.css'
+
 export default function Offerings() {
 
   return (
     <Swiper
       // 1. Pass the modules needed for your features
-      modules={[Navigation, Pagination, Autoplay]}
+      modules={[Navigation, Pagination]}
       
       // 2. Map your exact configuration settings as props
       speed={800}
@@ -42,6 +44,9 @@ export default function Offerings() {
           </SwiperSlide>
         )
       })}
+      <div className="mouse-scroll-cont justify-center visible sm:hidden">
+        <div className="mouse rotate-90"></div>
+      </div>
     </Swiper>
   )
 }
