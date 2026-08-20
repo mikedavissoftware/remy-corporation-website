@@ -31,13 +31,13 @@ export default function AboutUs() {
   return (
     <div className={(isVisible) ? ("bg-[#DCDECD] animate delay-1") : ("d-none")} ref={containerRef}>
       
-      <div className="px-8 py-8 pb-12 sm:py-12 sm:px-16 sm:pl-0 bg-white bg-opacity-65">
+      <div className="px-8 py-8 pb-12 md:py-12 md:px-16 md:pl-0 bg-white bg-opacity-65">
         <div>
-          <h1 className="text-center text-4xl sm:text-5xl font-semibold tracking-wide">About Us</h1>
+          <h1 className="text-center text-4xl md:text-5xl font-semibold tracking-wide">About Us</h1>
         </div>
-        <hr className="border border-[1.5px] border-wdorange rounded-sm mx-auto my-8 w-[6%] sm:w-[3%]"/>
-        <div className="sm:grid grid-cols-5 gap-x-16 max-w-5xl mx-auto" >
-          <div className="col-start-1 col-span-2 overflow-visible place-items-end sm:ml-[-40px]">
+        <hr className="border border-[1.5px] border-wdorange rounded-sm mx-auto my-8 w-[6%] md:w-[3%]"/>
+        <div className="md:grid grid-cols-5 gap-x-16 max-w-5xl mx-auto" >
+          <div className="col-start-1 col-span-2 overflow-visible place-items-end md:ml-[-40px]">
             <img src="images/home/home-about-image.png" className=""/>
           </div>
           <div className="col-start-3 col-span-3 prose-md md:prose-lg">

@@ -6,7 +6,7 @@ export default function CaseStudy({ fileName, htmlText }) {
 
 
   return (
-    <div className="grid grid-cols-1 gap-16 items-center max-w-6xl mx-auto sm:grid-cols-2 md:-auto lg:grid-cols-3 sm:h-96 p-8 pb-16 sm:px-0">
+    <div className="grid grid-cols-1 gap-16 items-center max-w-6xl mx-auto md:grid-cols-2 md:-auto lg:grid-cols-3 md:h-96 p-8 pb-16 md:px-0">
       <div className="col-span-1">
         <img src={`images/general/partners/${fileName}`} className="drop-shadow-lg" />
       </div>

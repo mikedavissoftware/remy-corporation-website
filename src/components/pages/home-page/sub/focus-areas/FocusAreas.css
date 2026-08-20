@@ -1,0 +1,32 @@
+.mouse-scroll-cont {
+  @apply !scale-75;
+  position: absolute;
+  bottom: 0%;
+  left: 91.5%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.mouse {
+  @apply border-[2px] border-secondary drop-shadow-glow1;
+  width: 25px;
+  height: 40px;
+  border-radius: 60px;
+  position: flex;
+  justify-self: center;
+  overflow: hidden;
+  &::before {
+    @apply bg-secondary;
+    content: '';
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    top: 7px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    opacity: 1;
+    animation: wheel 1.3s infinite;
+    -webkit-animation: wheel 1.3s infinite;
+  }
+}

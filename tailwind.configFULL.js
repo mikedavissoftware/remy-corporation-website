@@ -71,7 +71,7 @@ module.exports = {
     blur: {
       0: '0',
       none: '0',
-      sm: '4px',
+      md: '4px',
       DEFAULT: '8px',
       md: '12px',
       lg: '16px',
@@ -86,7 +86,7 @@ module.exports = {
     borderOpacity: ({ theme }) => theme('opacity'),
     borderRadius: {
       none: '0px',
-      sm: '0.125rem',
+      md: '0.125rem',
       DEFAULT: '0.25rem',
       md: '0.375rem',
       lg: '0.5rem',
@@ -106,7 +106,7 @@ module.exports = {
       8: '8px',
     },
     boxShadow: {
-      sm: '0 1px 2px 0 rgb(0 0 0 / 0.05)',
+      md: '0 1px 2px 0 rgb(0 0 0 / 0.05)',
       DEFAULT: '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)',
       md: '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
       lg: '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
@@ -176,7 +176,7 @@ module.exports = {
       '3xs': '16rem',
       '2xs': '18rem',
       xs: '20rem',
-      sm: '24rem',
+      md: '24rem',
       md: '28rem',
       lg: '32rem',
       xl: '36rem',
@@ -242,7 +242,7 @@ module.exports = {
     divideOpacity: ({ theme }) => theme('borderOpacity'),
     divideWidth: ({ theme }) => theme('borderWidth'),
     dropShadow: {
-      sm: '0 1px 1px rgb(0 0 0 / 0.05)',
+      md: '0 1px 1px rgb(0 0 0 / 0.05)',
       DEFAULT: ['0 1px 2px rgb(0 0 0 / 0.1)', '0 1px 1px rgb(0 0 0 / 0.06)'],
       md: ['0 4px 3px rgb(0 0 0 / 0.07)', '0 2px 2px rgb(0 0 0 / 0.06)'],
       lg: ['0 10px 8px rgb(0 0 0 / 0.04)', '0 4px 3px rgb(0 0 0 / 0.1)'],
@@ -330,7 +330,7 @@ module.exports = {
     },
     fontSize: {
       xs: ['0.75rem', { lineHeight: '1rem' }],
-      sm: ['0.875rem', { lineHeight: '1.25rem' }],
+      md: ['0.875rem', { lineHeight: '1.25rem' }],
       base: ['1rem', { lineHeight: '1.5rem' }],
       lg: ['1.125rem', { lineHeight: '1.75rem' }],
       xl: ['1.25rem', { lineHeight: '1.75rem' }],
@@ -595,7 +595,7 @@ module.exports = {
       none: 'none',
       0: '0rem',
       xs: '20rem',
-      sm: '24rem',
+      md: '24rem',
       md: '28rem',
       lg: '32rem',
       xl: '36rem',
@@ -745,7 +745,7 @@ module.exports = {
       150: '1.5',
     },
     screens: {
-      sm: '640px',
+      md: '640px',
       md: '768px',
       lg: '1024px',
       xl: '1280px',

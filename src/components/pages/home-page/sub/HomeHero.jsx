@@ -7,7 +7,7 @@ export default function HomeHero() {
 
 
   return (
-    <div id="home-hero" className="hero min-h-[90vh] sm:min-h-[90vh]" style={{backgroundImage: "url(images/home/home-hero.jpg)"}}>
+    <div id="home-hero" className="hero min-h-[90vh] md:min-h-[90vh]" style={{backgroundImage: "url(images/home/home-hero.jpg)"}}>
       <div className="hero-overlay bg-opacity-40"></div>
       <div className="hero-content text-white">
         <div className="mx-4 max-w-4xl space-y-5">

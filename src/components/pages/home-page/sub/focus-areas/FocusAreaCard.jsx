@@ -18,7 +18,7 @@ export default function FocusAreaCard({ cardInfo }) {
   })
 
   return (
-    <div className="carousel-item relative scale-95 md:scale-100 sm:p-0">
+    <div className="carousel-item relative scale-95 md:scale-100 md:p-0">
       <div className="snap-card-vanilla animate fade card w-72 image-full bg-base-100 drop-shadow-medium3 m-2 md:m-6 inline-block flex-col">
         <figure>
           <img

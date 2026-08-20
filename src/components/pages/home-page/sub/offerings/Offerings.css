@@ -1,24 +1,26 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
 
 .mouse-scroll-cont {
+  @apply !scale-75;
   position: absolute;
-  bottom: 1%;
-  left: 50%;
+  bottom: 0%;
+  left: 91.5%;
   transform: translateX(-50%);
   z-index: 10;
 }
 
 .mouse {
+  @apply border-[2px] border-secondary drop-shadow-glow1;
   width: 25px;
   height: 40px;
-  border: 2px solid #fff;
   border-radius: 60px;
   position: flex;
   justify-self: center;
   overflow: hidden;
   &::before {
+    @apply bg-secondary;
     content: '';
     width: 5px;
     height: 5px;
@@ -26,7 +28,6 @@
     top: 7px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #fff;
     border-radius: 50%;
     opacity: 1;
     animation: wheel 1.3s infinite;
@@ -48,63 +49,72 @@
   }
 }
 
-/* Change color, size, and spacing of inactive bullets */
+.swiper-pagination {
+  /* @apply hidden md:inline-block; */
+  padding: 5px;
+}
+
 .swiper-pagination-bullet {
-  @apply hidden md:inline-block;
+  @apply bg-primary border-[2px] border-white drop-shadow-dark1;
   width: 12px;
   height: 12px;
-  background: #cccccc;
+  /* background: #cccccc; */
   opacity: 0.6;
   margin: 0 6px;
   transition: all 0.3s ease;
 }
 
-/* Style the active bullet */
 .swiper-pagination-bullet-active {
-  background: #fff; /* Your brand color */
+  @apply bg-secondary border-[1px];
   opacity: 1;
   width: 24px; /* Makes the active bullet an oblong shape */
   border-radius: 6px;
 }
 
-/* Reposition the entire pagination container if needed */
 .swiper-horizontal > .swiper-pagination-bullets {
   bottom: 10px;
 }
 
 
-/* Style both navigation buttons */
 .swiper-button-prev,
 .swiper-button-next {
-  /* @apply hidden sm:flex; */
-  @apply !top-auto !bottom-2 !text-primary sm:!bottom-auto;
-  width: 15px !important;
-  height: 20px !important;
-  border-radius: 50% !important;
+  /* @apply hidden md:flex; */
+  @apply !text-primary !bg-white !p-1 !drop-shadow-dark1 !opacity-50;
+  width: 40px !important;
+  height: 35px !important;
   transition: all 0.2s ease;
-  stroke: #fff;
-  stroke-width: 3px;
-  paint-order: stroke fill;
+}
+
+@media only screen and (max-width: 768px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    @apply !top-auto !bottom-0 !opacity-100 hidden;
+  }
 }
 
 .swiper-button-prev {
-  @apply !left-2;
+  @apply rounded-tr-md md:!rounded-r-md !-ml-1 !pl-6 !-translate-x-5;
 }
 
 .swiper-button-next {
-  @apply !right-2;
+  @apply rounded-tl-md md:!rounded-l-md !-mr-1 !pr-6 !translate-x-5;
 }
 
-/* Change the size of the actual arrow icon inside */
 .swiper-button-prev::after,
 .swiper-button-next::after {
   font-size: 18px !important;
   font-weight: bold !important;
 }
 
-/* Add hover effects */
 .swiper-button-prev:hover,
 .swiper-button-next:hover {
-  color: #fff !important;
-  transform: scale(1.2);
+  @apply !opacity-100 !text-secondary scale-[115%];
+}
+
+.swiper-button-prev:hover {
+  @apply !-translate-x-4;
+}
+
+.swiper-button-next:hover {
+  @apply !translate-x-4;
 }

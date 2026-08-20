@@ -41,7 +41,7 @@ export default function Offerings() {
 
       <hr className="border border-[1px] border-wdblue rounded-sm mx-auto my-12 w-[12%]"/>
 
-      <iframe className="mx-auto mb-8 h-36 w-64 sm:h-[315px] sm:w-[560px]" src="https://www.youtube.com/embed/Yn11n_dCBk8?si=vg8qqYx3zmwX1p1O" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <iframe className="mx-auto mb-8 h-36 w-64 md:h-[315px] md:w-[560px]" src="https://www.youtube.com/embed/Yn11n_dCBk8?si=vg8qqYx3zmwX1p1O" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
   )
 }

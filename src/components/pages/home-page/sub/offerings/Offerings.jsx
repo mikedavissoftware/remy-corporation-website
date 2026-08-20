@@ -18,7 +18,7 @@ export default function Offerings() {
   return (
     <Swiper
       // 1. Pass the modules needed for your features
-      modules={[Navigation, Pagination]}
+      modules={[Navigation, Pagination, Autoplay]}
       
       // 2. Map your exact configuration settings as props
       speed={800}
@@ -29,7 +29,7 @@ export default function Offerings() {
       
       // 3. Let React handle the elements natively with booleans
       navigation={true}
-      pagination={{ dynamicBullets: true }}
+      pagination={{ dynamicBullets: true, clickable: true }}
       autoplay={{ delay: 8000 }}
       
       // 4. Fallback observers to prevent layout issues
@@ -39,12 +39,12 @@ export default function Offerings() {
     >
       {offerings.map((offering) => {
         return (
-          <SwiperSlide>
-            <OfferingSlide key={offering.id} offering={offering} />
+          <SwiperSlide key={offering.id}>
+            <OfferingSlide offering={offering} />
           </SwiperSlide>
         )
       })}
-      <div className="mouse-scroll-cont justify-center visible sm:hidden">
+      <div className="mouse-scroll-cont justify-center visible md:hidden drop-shadow-">
         <div className="mouse rotate-90"></div>
       </div>
     </Swiper>
