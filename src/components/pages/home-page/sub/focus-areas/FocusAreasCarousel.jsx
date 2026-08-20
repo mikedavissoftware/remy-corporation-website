@@ -19,9 +19,6 @@ export default function FocusAreasCarousel() {
       {/* <div className="carousel-item relative w-[25vw] hidden md:inline"></div> */}
 
       {focusAreasComponents}
-      <div className="mouse-scroll-cont">
-        <div className="mouse rotate-90"></div>
-      </div>
 
       {/* <div className="carousel-item relative w-[25vw] hidden md:inline"></div> */}
 

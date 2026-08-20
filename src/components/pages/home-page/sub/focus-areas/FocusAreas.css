@@ -1,14 +1,6 @@
-.mouse-scroll-cont {
-  @apply !scale-75;
-  position: absolute;
-  bottom: 0%;
-  left: 91.5%;
-  transform: translateX(-50%);
-  z-index: 10;
-}
-
-.mouse {
-  @apply border-[2px] border-secondary drop-shadow-glow1;
+.mouse-fa {
+  @apply border-[2px] border-secondary;
+  margin: -10px 0;
   width: 25px;
   height: 40px;
   border-radius: 60px;

@@ -14,9 +14,9 @@ export default function FocusAreas() {
 
       <FocusAreasCarousel />
 
-      {/* <div className="mouse-scroll-cont">
-        <div className="mouse rotate-90"></div>
-      </div> */}
+      <div className="mouse-scroll-fa-cont">
+        <div className="mouse-fa rotate-90"></div>
+      </div>
 
     </div>
   )
