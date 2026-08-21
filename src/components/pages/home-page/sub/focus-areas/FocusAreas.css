@@ -1,6 +1,6 @@
 .mouse-fa {
   @apply border-[2px] border-secondary;
-  margin: -10px 0;
+  margin: -5px 0;
   width: 25px;
   height: 40px;
   border-radius: 60px;
