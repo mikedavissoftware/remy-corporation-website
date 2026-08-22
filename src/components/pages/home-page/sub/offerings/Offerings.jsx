@@ -21,11 +21,12 @@ export default function Offerings() {
       modules={[Navigation, Pagination, Autoplay]}
       
       // 2. Map your exact configuration settings as props
+      slidesPerGroupAuto={true}
       speed={800}
       normalizeSlideIndex={false}
       roundLengths={true}
       loop={true}
-      loopAddBlankSlides={false}
+      loopAddBlankSlides={true}
       
       // 3. Let React handle the elements natively with booleans
       navigation={true}
@@ -40,11 +41,13 @@ export default function Offerings() {
       {offerings.map((offering) => {
         return (
           <SwiperSlide key={offering.id}>
-            <OfferingSlide offering={offering} />
+            {({ isActive }) => { // isActive is passed down as workaround to allow CSS animations of heading, paragraph, and button
+              return <OfferingSlide offering={offering} isActive={isActive} />
+            }}
           </SwiperSlide>
         )
       })}
-      <div className="mouse-scroll-cont justify-center visible md:hidden drop-shadow-">
+      <div className="mouse-scroll-cont justify-center visible md:hidden">
         <div className="mouse rotate-90"></div>
       </div>
     </Swiper>
