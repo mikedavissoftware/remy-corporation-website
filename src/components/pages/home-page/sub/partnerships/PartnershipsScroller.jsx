@@ -17,6 +17,7 @@ export default function PartnershipsScroller({ partnerships }) {
   };
 
   useLayoutEffect(() => {
+    // console.log("resizeeee")
     // Run on initial mount
     updateLoopDistance();
 
