@@ -16,6 +16,7 @@ export default function LogoBorder() {
         src="images/general/remy_icon_alt.png"
         className=""
         style={{
+          transform: `translateX(-${totalWidth / 2}px)`,
           height: `${width}px`,
           transform: `rotate(${rotation}deg)`,
           opacity: `${opacity}%`,
@@ -63,8 +64,8 @@ export default function LogoBorder() {
     <div
       className={`flex space-x-2`}
       style={{
+        transform: `translateY(${64 - width / 2}px)`,
         gap: `${gap}px`,
-        transform: `translateY(${64 - width / 2}px) translateX(-${totalWidth / 2}px)`,
         backgroundColor: "#FFF",
         background: "linear-gradient(180deg,rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 50%,rgba(255, 255, 255, 1) 100%)"
       }}>

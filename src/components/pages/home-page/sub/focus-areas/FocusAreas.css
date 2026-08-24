@@ -22,3 +22,21 @@
     -webkit-animation: wheel 1.3s infinite;
   }
 }
+
+.carousel-vanilla {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  /* scroll-snap-stop: always; */
+  /* @media only screen and (max-width: 768px) { */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  /* } */
+}
+
+.carousel-vanilla::-webkit-scrollbar {
+  display: none;
+}
+
+.snap-card-vanilla {
+  scroll-snap-align: none center;
+}
