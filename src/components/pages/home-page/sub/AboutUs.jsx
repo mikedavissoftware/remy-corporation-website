@@ -33,7 +33,7 @@ export default function AboutUs() {
       
       <div className="px-8 py-8 pb-12 md:py-12 md:px-16 md:pl-0 bg-white bg-opacity-65">
         <div>
-          <h1 className="text-center text-4xl md:text-5xl font-semibold tracking-wide">About Us</h1>
+          <h1 className="text-center text-4xl md:text-5xl font-semibold tracking-wide">Our Story</h1>
         </div>
         <hr className="border border-[1.5px] border-wdorange rounded-sm mx-auto my-8 w-[6%] md:w-[3%]"/>
         <div className="md:grid grid-cols-5 gap-x-16 max-w-5xl mx-auto" >
