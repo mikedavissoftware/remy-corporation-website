@@ -2,14 +2,27 @@ import { useState, useEffect, useRef } from "react";
 
 export default function LogoBorder() {
 
-  const width = 40
-  const gap = 10
+  const width = 25
+  const gap = 30
   const blur = 1
-  const rotation = 45
+  const rotation = 15
+  const opacity = 15
   const totalWidth = width + gap
 
   const LogoImage = ({ index }) => {
-    return <img key={index} src="images/general/new-icon-2 copy.png" width={`${width}px`} className={`rotate-${rotation}`} />
+    return (
+      <img
+        key={index}
+        src="images/general/remy_icon_alt.png"
+        className=""
+        style={{
+          height: `${width}px`,
+          transform: `rotate(${rotation}deg)`,
+          opacity: `${opacity}%`,
+          filter: `blur(${blur}px)`
+        }}
+      />
+    )
   }
   const createLogoArray = (diffLength, totalLength = 0) => {
     console.log("logo adjustment")
@@ -47,7 +60,14 @@ export default function LogoBorder() {
   }, []);
 
   return (
-    <div className={`flex gap-x-[${gap}px] space-x-2 opacity-30 blur-[${blur}px] translate-y-[42px] -translate-x-[${(totalWidth / 2).toString()}px]`}>
+    <div
+      className={`flex space-x-2`}
+      style={{
+        gap: `${gap}px`,
+        transform: `translateY(${64 - width / 2}px) translateX(-${totalWidth / 2}px)`,
+        backgroundColor: "#FFF",
+        background: "linear-gradient(180deg,rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 50%,rgba(255, 255, 255, 1) 100%)"
+      }}>
       {logoComponents}
     </div>
   )
