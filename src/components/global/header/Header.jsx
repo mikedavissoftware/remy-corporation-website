@@ -27,6 +27,30 @@ export default function Header({ setContactOpen }) {
     setServicesOpen(false)
   }
 
+  const toggleNav = (id, isOpen) => {
+    
+    // Only trigger state updates if the user is actually opening a menu
+    
+
+    if (id === "services-nav") {
+      if (!isOpen) {
+        setServicesOpen(false)
+        return;
+      }
+      setServicesOpen(true);
+      setPartnershipsOpen(false); // Closes partnerships safely
+    }
+    
+    if (id === "partnerships-nav") {
+      if (!isOpen) {
+        setPartnershipsOpen(false)
+        return;
+      }
+      setPartnershipsOpen(true);
+      setServicesOpen(false); // Closes services safely
+    }
+  };
+
   const listItemStyle = "mx-1 font-bold"
 
   const openInNewTab = (url) => {
@@ -38,16 +62,16 @@ export default function Header({ setContactOpen }) {
       <header className="z-10 fixed w-full border-b-2 border-slate-300 shadow-md bg-black" >
         <nav className={`navbar p-4 bg-white transition-all duration-500 ${(scrollPosition < scrollRange) ? ("h-[6rem]") : ("h-[4rem]")}`}>
           <div className="flex-1">
-            <a onClick={() => resetNav()} href="/#services" className={`btn btn-ghost transition-all duration-500 ${(scrollPosition < scrollRange) ? ("h-[4rem]") : ("h-[3rem] -translate-x-4")}`}><img className="h-full p-1" src="images/header/remy_logo.png" /></a>
+            <a onClick={() => resetNav()} href="/" className={`btn btn-ghost transition-all duration-500 ${(scrollPosition < scrollRange) ? ("h-[4rem]") : ("h-[3rem] -translate-x-4")}`}><img className="h-full p-1" src="images/header/remy_logo.png" /></a>
           </div>
           <div className="flex-none">
             <ul className={`transition-all duration-500 menu menu-horizontal text-wdblue ${(scrollPosition < scrollRange) ? ("px-2") : ("px-0")}`}>
               <li className={listItemStyle}><Link onClick={() => resetNav()} to="/#about" className="sub-category">About</Link></li>
               <li className={listItemStyle}><Link onClick={() => resetNav()} to="/#focus-areas" className="sub-category">Focus Areas</Link></li>
               <li className={listItemStyle}>
-                <details open={servicesOpen} onToggle={(e) => {resetNav(); setServicesOpen(e.target.open)}}>
-                  <summary className={`transition-[border-radius] duration-100 ${(servicesOpen) ? ("bg-base-100 rounded-b-none") : ("")}`}>Services</summary>
-                  <ul className="bg-base-100 w-[210px] -translate-x-[104.7px] -translate-y-4 rounded-tr-none">
+                <details id="services-nav" open={servicesOpen} onToggle={(e) => toggleNav(e.target.id, e.target.open)}>
+                  <summary className={`transition-all duration-100 ${(servicesOpen) ? ("bg-base-100 rounded-b-none translate-y-1") : ("")}`}>Services</summary>
+                  <ul className="bg-base-100 w-[210px] -translate-x-[104.7px] -translate-y-3 rounded-tr-none">
                     <li className="my-1"><Link onClick={() => resetNav()} to="/workforce-solutions" className="sub-category">Workforce Solutions</Link></li>
                     <li className="my-1"><Link onClick={() => resetNav()} to="/technology-consulting" className="sub-category">Technology Consulting</Link></li>
                     <li className="my-1"><Link onClick={() => resetNav()} to="/managed-operations" className="sub-category">Managed Operations</Link></li>
@@ -55,9 +79,9 @@ export default function Header({ setContactOpen }) {
                 </details>
               </li>
               <li className={listItemStyle}>
-                <details open={partnershipsOpen} onToggle={(e) => {resetNav(); setPartnershipsOpen(e.target.open)}}>
-                  <summary className={`transition-[border-radius] duration-100 ${(partnershipsOpen) ? ("bg-base-100 rounded-b-none") : ("")}`}>Partnerships</summary>
-                  <ul className="bg-base-100 w-[240px] -translate-y-4 rounded-tl-none">
+                <details id="partnerships-nav" open={partnershipsOpen} onToggle={(e) => toggleNav(e.target.id, e.target.open)}>
+                  <summary className={`transition-all duration-100 ${(partnershipsOpen) ? ("bg-base-100 rounded-b-none translate-y-1") : ("")}`}>Partnerships</summary>
+                  <ul className="bg-base-100 w-[240px] -translate-y-3 rounded-tl-none">
                     <li className="my-1"><Link onClick={() => resetNav()} to="/workforce-solutions" className="sub-category">Workday Services Partner</Link></li>
                     <li className="my-1"><Link onClick={() => resetNav()} to="/technology-consulting" className="sub-category">Oracle Gold Partner</Link></li>
                     <li className="my-1"><Link onClick={() => resetNav()} to="/managed-operations" className="sub-category">GSA Contract</Link></li>
