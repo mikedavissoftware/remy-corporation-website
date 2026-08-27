@@ -22,6 +22,16 @@ export default function HeaderMobile() {
     }, 300)
   }
 
+  const toggleServices = () => {
+    setServicesOpen(!servicesOpen)
+    if (partnershipsOpen) { setPartnershipsOpen(false) }
+  }
+  
+  const togglePartnerships = () => {
+    setPartnershipsOpen(!partnershipsOpen)
+    if (servicesOpen) { setServicesOpen(false) }
+  }
+
   return (
     <div id="header-mobile" className="md:hidden" >
       <header className="z-10 fixed w-full border-b-2 border-slate-300 shadow-md bg-black">
@@ -48,7 +58,7 @@ export default function HeaderMobile() {
           <ul>
             <Link onClick={() => resetMenu()} to="/#about"><li className={listItemStyle}>About</li></Link>
             <Link onClick={() => resetMenu()} to="/#focus-areas"><li className={listItemStyle}>Focus Areas</li></Link>
-            <Link onClick={() => setServicesOpen(!servicesOpen)}><li className={`${listItemStyle} transition-all duration-200 ${(servicesOpen) ? ("bg-slate-200") : ("")}`}>Services<IoIosArrowUp className={`ml-2 inline-block scale-[1.3] -translate-y-[1px] transition-rotate duration-300 ${(servicesOpen) ? ("") : ("rotate-180")}`}/></li></Link>
+            <Link onClick={() => toggleServices()}><li className={`${listItemStyle} transition-all duration-200 ${(servicesOpen) ? ("bg-slate-200") : ("")}`}>Services<IoIosArrowUp className={`ml-2 inline-block scale-[1.3] -translate-y-[1px] transition-rotate duration-300 ${(servicesOpen) ? ("") : ("rotate-180")}`}/></li></Link>
             { (servicesOpen) &&
               <>
               <Link onClick={() => resetMenu()} to="/workforce-solutions"><li className={`${listItemStyle} bg-slate-200 w-[95%] mx-auto border-white rounded-b-[10px]`}>Workforce Solutions</li></Link>
@@ -56,7 +66,7 @@ export default function HeaderMobile() {
               <Link onClick={() => resetMenu()} to="/managed-operations"><li className={`${listItemStyle} bg-slate-200 w-[85%] mx-auto border-white rounded-b-[10px]`}>Managed Operations</li></Link>
               </>
             }
-            <Link onClick={() => setPartnershipsOpen(!partnershipsOpen)}><li className={`${listItemStyle} transition-all duration-200 ${(partnershipsOpen) ? ("bg-slate-200") : ("")}`}>Partnerships<IoIosArrowUp className={`ml-2 inline-block scale-[1.3] -translate-y-[1px] transition-rotate duration-300 ${(partnershipsOpen) ? ("") : ("rotate-180")}`}/></li></Link>
+            <Link onClick={() => togglePartnerships()}><li className={`${listItemStyle} transition-all duration-200 ${(partnershipsOpen) ? ("bg-slate-200") : ("")}`}>Partnerships<IoIosArrowUp className={`ml-2 inline-block scale-[1.3] -translate-y-[1px] transition-rotate duration-300 ${(partnershipsOpen) ? ("") : ("rotate-180")}`}/></li></Link>
             { (partnershipsOpen) &&
               <>
               <Link onClick={() => resetMenu()} to="/workday-services-partner"><li className={`${listItemStyle} bg-slate-200 w-[95%] mx-auto border-white rounded-b-[10px]`}>Workday Services Partner</li></Link>
