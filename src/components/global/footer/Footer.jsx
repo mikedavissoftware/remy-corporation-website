@@ -7,7 +7,7 @@ export default function Footer() {
 
 
   return (
-    <footer className="footer grid grid-cols-1 gap-y-8 gap-x-8 md:grid-cols-2 md:gap-y-6 md:mx-auto lg:grid-cols-3 bg-white border-t-2 border-slate-300 text-base-content pt-10 px-10 pb-10 drop-shadow-[0_-5px_10px_rgba(0,0,0,.40)]">
+    <footer className="footer grid grid-cols-1 gap-y-8 gap-x-8 md:grid-cols-2 md:gap-y-6 md:mx-auto lg:grid-cols-3 bg-white border-t-2 border-slate-300 text-base-content pt-10 px-10 pb-10 drop-shadow-[0_-2px_10px_rgba(0,0,0,.15)]">
       <div>
         <img className="w-auto h-[70px] md:h-[100px] md:p-2" src="images/header/remy_logo.png" />
       </div>

@@ -37,9 +37,9 @@ export default function App() {
         <Routes>
           <Route index element={<HomePage />} />
 
-          <Route path="workforce-solutions" element={WorkforceSolutionsPage} />
-          <Route path="tech-consulting" element={TechConsultingPage} />
-          <Route path="managed-operations" element={ManagedOperationsPage} />
+          <Route path="workforce-solutions" element={<WorkforceSolutionsPage />} />
+          <Route path="tech-consulting" element={<TechConsultingPage />} />
+          <Route path="managed-operations" element={<ManagedOperationsPage />} />
 
           <Route path="services" element={<ServicesPage />} />
           <Route path="blog" element={<BlogPage />} />
