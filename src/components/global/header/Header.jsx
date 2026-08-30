@@ -1,11 +1,8 @@
 import { useState, useEffect } from "react"
-import { NavLink, Link } from "react-router-dom"
+import { NavLink, Link, useNavigate } from "react-router-dom"
 
 
 export default function Header({ setContactOpen }) {
-
-  const [partnershipsOpen, setPartnershipsOpen] = useState(false)
-  const [servicesOpen, setServicesOpen] = useState(false)
 
   // SCROLL-BASED HEIGHT CHANGE //
   const [scrollPosition, setScrollPosition] = useState(0)
@@ -22,31 +19,12 @@ export default function Header({ setContactOpen }) {
   }, []);
   //
 
-  const resetNav = () => {
-    setPartnershipsOpen(false)
-    setServicesOpen(false)
-  }
+  const navigate = useNavigate()
 
-  const toggleNav = (id, isOpen) => {
-    // Only trigger state updates if the user is actually opening a menu
-    if (id === "services-nav") {
-      if (!isOpen) {
-        setServicesOpen(false)
-        return;
-      }
-      setServicesOpen(true);
-      setPartnershipsOpen(false); // Closes partnerships safely
-    }
-    
-    if (id === "partnerships-nav") {
-      if (!isOpen) {
-        setPartnershipsOpen(false)
-        return;
-      }
-      setPartnershipsOpen(true);
-      setServicesOpen(false); // Closes services safely
-    }
-  };
+  const [aboutOpen, setAboutOpen] = useState(false)
+  const [partnershipsOpen, setPartnershipsOpen] = useState(false)
+  const [servicesOpen, setServicesOpen] = useState(false)
+  const [mediaOpen, setMediaOpen] = useState(false)
 
   const listItemStyle = "mx-1 font-bold"
 
@@ -59,32 +37,64 @@ export default function Header({ setContactOpen }) {
       <header className="z-10 fixed w-full border-b-2 border-slate-300 shadow-md bg-black" >
         <nav className={`navbar p-4 bg-white transition-all duration-500 ${(scrollPosition < scrollRange) ? ("h-[6rem]") : ("h-[4rem]")}`}>
           <div className="flex-1">
-            <a onClick={() => resetNav()} href="/#services" className={`btn btn-ghost hover:translate-x-1 transition-all duration-500 ${(scrollPosition < scrollRange) ? ("h-[4rem]") : ("h-[3rem] -translate-x-4")}`}><img className="h-full p-1" src="images/header/remy_logo.png" /></a>
+            <a href="/#services" className={`btn btn-ghost hover:translate-x-1 transition-all duration-500 ${(scrollPosition < scrollRange) ? ("h-[4rem]") : ("h-[3rem] -translate-x-4")}`}><img className="h-full p-1" src="images/header/remy_logo.png" /></a>
           </div>
           <div className="flex-none">
             <ul className={`transition-all duration-500 menu menu-horizontal text-wdblue ${(scrollPosition < scrollRange) ? ("px-2") : ("px-0")}`}>
-              <li className={listItemStyle}><Link onClick={() => resetNav()} to="/#about" className="sub-category">About</Link></li>
-              <li className={listItemStyle}><Link onClick={() => resetNav()} to="/#focus-areas" className="sub-category">Focus Areas</Link></li>
+
+              {/* ABOUT DROPDOWN */}
               <li className={listItemStyle}>
-                <details id="services-nav" open={servicesOpen} onToggle={(e) => toggleNav(e.target.id, e.target.open)}>
-                  <summary className={`transition-all duration-100 ${(servicesOpen) ? ("bg-base-100 rounded-b-none translate-y-1") : ("")}`}>Services</summary>
-                  <ul className="bg-base-100 w-[210px] -translate-x-[104.7px] -translate-y-3 rounded-tr-none">
-                    <li className="my-1"><Link onClick={() => resetNav()} to="/workforce-solutions" className="sub-category">Workforce Solutions</Link></li>
-                    <li className="my-1"><Link onClick={() => resetNav()} to="/technology-consulting" className="sub-category">Technology Consulting</Link></li>
-                    <li className="my-1"><Link onClick={() => resetNav()} to="/managed-operations" className="sub-category">Managed Operations</Link></li>
+                <details id="about-nav" className={`transition-transform duration-100 ${(aboutOpen) ? ("translate-y-1") : ("")}`} open={aboutOpen} onClick={() => navigate("#about")} onMouseEnter={() => setAboutOpen(true)} onMouseLeave={() => setAboutOpen(false)}>
+                  <summary className={`transition-transform transition-colors duration-100 rounded-bl-none ${(aboutOpen) ? ("bg-base-100") : ("")}`}>About</summary>
+
+                  <ul className="bg-base-100 w-[170px] -translate-y-4 rounded-tl-none">
+                    <li className="my-1"><Link to="/#commitment" className="sub-category">Our Commitment</Link></li>
+                    <li className="my-1"><Link to="/#focus-areas" className="sub-category">Our Focus</Link></li>
+                    <li className="my-1"><Link to="/news" className="sub-category">News</Link></li>
+                    <li className="my-1"><Link onClick={(e) => {e.preventDefault(); document.getElementById('contact-form-modal').showModal()}} className="sub-category">Contact Us</Link></li>
                   </ul>
                 </details>
               </li>
+
+              {/* PARTNERSHIPS DROPDOWN */}
               <li className={listItemStyle}>
-                <details id="partnerships-nav" open={partnershipsOpen} onToggle={(e) => toggleNav(e.target.id, e.target.open)}>
-                  <summary className={`transition-all duration-100 ${(partnershipsOpen) ? ("bg-base-100 rounded-b-none translate-y-1") : ("")}`}>Partnerships</summary>
-                  <ul className="bg-base-100 w-[240px] -translate-y-3 rounded-tl-none">
-                    <li className="my-1"><Link onClick={() => resetNav()} to="/workforce-solutions" className="sub-category">Workday Services Partner</Link></li>
-                    <li className="my-1"><Link onClick={() => resetNav()} to="/technology-consulting" className="sub-category">Oracle Gold Partner</Link></li>
-                    <li className="my-1"><Link onClick={() => resetNav()} to="/managed-operations" className="sub-category">GSA Contract</Link></li>
+                <details id="partnerships-nav" className={`transition-transform duration-100 ${(partnershipsOpen) ? ("translate-y-1") : ("")}`} open={partnershipsOpen} onClick={() => navigate("#partnerships")} onMouseEnter={() => setPartnershipsOpen(true)} onMouseLeave={() => setPartnershipsOpen(false)}>
+                  <summary className={`transition-transform transition-colors duration-100 rounded-bl-none ${(partnershipsOpen) ? ("bg-base-100") : ("")}`}>Partnerships</summary>
+
+                  <ul className="bg-base-100 w-[227px] -translate-y-4 rounded-tl-none">
+                    <li className="my-1"><Link to="/workday-services-partner" className="sub-category">Workday Services Partner</Link></li>
+                    <li className="my-1"><Link to="/oracle-gold-partner" className="sub-category">Oracle Gold Partner</Link></li>
+                    <li className="my-1"><Link to="/gsa-contract" className="sub-category">GSA Contract</Link></li>
+                    <li className="my-1"><Link to="/service-now" className="sub-category">ServiceNow</Link></li>
                   </ul>
                 </details>
               </li>
+
+              {/* SERVICES DROPDOWN */}
+              <li className={listItemStyle}>
+                <details id="services-nav" className={`transition-transform duration-100 ${(servicesOpen) ? ("translate-y-1") : ("")}`} open={servicesOpen} onClick={() => navigate("#services")} onMouseEnter={() => setServicesOpen(true)} onMouseLeave={() => setServicesOpen(false)}>
+                  <summary className={`transition-transform transition-colors duration-100 rounded-bl-none ${(servicesOpen) ? ("bg-base-100") : ("")}`}>Services</summary>
+
+                  <ul className="bg-base-100 w-[207px] -translate-y-4 rounded-tl-none">
+                    <li className="my-1"><Link to="/workforce-solutions" className="sub-category">Workforce Solutions</Link></li>
+                    <li className="my-1"><Link to="/technology-consulting" className="sub-category">Technology Consulting</Link></li>
+                    <li className="my-1"><Link to="/managed-operations" className="sub-category">Managed Operations</Link></li>
+                  </ul>
+                </details>
+              </li>
+
+              {/* MEDIA DROPDOWN */}
+              <li className={listItemStyle}>
+                <details id="partnerships-nav" className={`transition-transform duration-100 ${(mediaOpen) ? ("translate-y-1") : ("")}`} open={mediaOpen} onClick={() => navigate("#media")} onMouseEnter={() => setMediaOpen(true)} onMouseLeave={() => setMediaOpen(false)}>
+                  <summary className={`transition-transform transition-colors duration-100 rounded-bl-none ${(mediaOpen) ? ("bg-base-100") : ("")}`}>Media</summary>
+
+                  <ul className="bg-base-100 w-[170px] -translate-y-4 rounded-tl-none">
+                    <li className="my-1"><Link to="/events" className="sub-category">Upcoming Events</Link></li>
+                    <li className="my-1"><Link to="/news" className="sub-category">News</Link></li>
+                  </ul>
+                </details>
+              </li>
+
               <div className="ml-3 grid grid-cols-1 content-center">
                 <button className="btn btn-contact btn-secondary hover:btn-info" onClick={() => {document.getElementById('contact-form-modal').showModal(); resetNav()}}>Contact Us</button>
               </div>
