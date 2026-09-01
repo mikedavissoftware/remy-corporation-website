@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 import HamMenu from "../../../assets/svg/ham-menu.svg"
 import HamMenuClose from "../../../assets/svg/ham-menu-close.svg"
@@ -27,9 +27,14 @@ export default function HeaderMobile() {
     }, 300)
   }
 
-  const toggleAbout = () => {
-    setAboutOpen(!aboutOpen)
+  const navigate = useNavigate()
 
+  const toggleAbout = () => {
+    if (aboutOpen) {
+      console.log("about open")
+      navigate('#about')
+    }
+    setAboutOpen(!aboutOpen)
     setPartnershipsOpen(false)
     setServicesOpen(false)
     setMediaOpen(false)
@@ -37,7 +42,6 @@ export default function HeaderMobile() {
 
   const togglePartnerships = () => {
     setPartnershipsOpen(!partnershipsOpen)
-
     setAboutOpen(false)
     setServicesOpen(false)
     setMediaOpen(false)  
@@ -45,7 +49,6 @@ export default function HeaderMobile() {
 
   const toggleServices = () => {
     setServicesOpen(!servicesOpen)
-
     setAboutOpen(false)
     setPartnershipsOpen(false)
     setMediaOpen(false)  
@@ -53,7 +56,6 @@ export default function HeaderMobile() {
 
   const toggleMedia = () => {
     setMediaOpen(!mediaOpen)
-
     setAboutOpen(false)
     setPartnershipsOpen(false)
     setServicesOpen(false)
@@ -62,7 +64,7 @@ export default function HeaderMobile() {
   return (
     <div id="header-mobile" className="md:hidden" >
       <header className="z-10 fixed w-full border-b-2 border-slate-300 shadow-md bg-black">
-        <nav className={`navbar p-4 bg-white h-16`}>
+        <nav className={`navbar p-4 bg-white h-[7vh]`}>
           <div className="flex-1">
             <a className={`btn btn-ghost transition-all duration-500`} href="/"><img className="h-full py-1 -translate-x-3" src="images/header/remy_logo.png" /></a>
           </div>
@@ -130,7 +132,7 @@ export default function HeaderMobile() {
           </ul>
         </div>
       </header>
-      <div className="bg-white h-16"></div>
+      <div className="bg-white h-[7vh]"></div>
       
     </div>
   )

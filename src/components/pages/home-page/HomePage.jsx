@@ -13,18 +13,16 @@ export default function HomePage() {
 
   return (
     <div id="home-page" className="overflow-hidden" >   
-      {/* <HomeHero /> */}
-
-      <div id="services" className="h-[4rem] mt-[-4rem]"></div>
+      <div id="services" className="h-[7vh] mt-[-7vh]"></div>
       <Offerings />
 
-      <div id="about" className="h-[4rem] mt-[-4rem]"></div>
+      <div id="about" className="h-[7vh] mt-[-7vh]"></div>
       <AboutUs />
 
-      <div id="focus-areas" className="h-[4rem] mt-[-4rem]"><LogoBorder /></div>
+      <div id="focus-areas" className="h-[7vh] mt-[-7vh]"><LogoBorder /></div>
       <FocusAreas />
 
-      <div id="partnerships" className="h-[4rem] mt-[-4rem]"></div>
+      <div id="partnerships" className="h-[7vh] mt-[-7vh]"></div>
       <Partnerships />
     </div>
   )
