@@ -52,7 +52,7 @@ export default function Header({ setContactOpen }) {
                     <li className="my-1"><Link to="/#commitment" className="sub-category">Our Commitment</Link></li>
                     <li className="my-1"><Link to="/#focus-areas" className="sub-category">Our Focus</Link></li>
                     <li className="my-1"><Link to="/news" className="sub-category">News</Link></li>
-                    <li className="my-1"><Link onClick={(e) => {e.preventDefault(); document.getElementById('contact-form-modal').showModal()}} className="sub-category">Contact Us</Link></li>
+                    <li className="my-1 text-wdorange drop-shadow-sm"><Link onClick={(e) => {e.preventDefault(); document.getElementById('contact-form-modal').showModal()}} className="sub-category">Contact Us</Link></li>
                   </ul>
                 </details>
               </li>
