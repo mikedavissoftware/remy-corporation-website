@@ -68,7 +68,7 @@ export default function LogoBorder() {
         transform: `translateY(${64 - width +6}px)`,
         gap: `${gap}px`,
         backgroundColor: "#FFF",
-        background: "linear-gradient(180deg,rgba(255, 255, 255, 0) 0%,rgba(255, 255, 255, 1) 90%)"
+        background: "linear-gradient(180deg,rgba(255, 255, 255, 0) 0%,#f2f2ed 90%)"
       }}>
       {logoComponents}
     </div>

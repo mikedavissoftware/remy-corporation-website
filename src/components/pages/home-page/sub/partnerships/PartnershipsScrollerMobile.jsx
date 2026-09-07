@@ -34,10 +34,10 @@ export default function PartnershipsScrollerMobile({ partnerships }) {
   // Replace these with your actual image URLs/data
   const partnershipsSplit = Math.floor(partnerships.length / 2)
   const partnershipImageComponentsTop = partnerships.slice(0, partnershipsSplit).map((partnership, index) => {
-    return <a className="scroll-link" key={index + 1}><img src={`images/general/partners/${partnership.fileName}`} className="scroll-image h-auto w-36" /></a>
+    return <a className="scroll-link" key={index + 1}><img src={`images/partners/${partnership.fileName}`} className="scroll-image h-auto w-36 !grayscale opacity-75" /></a>
   })
   const partnershipImageComponentsBottom = partnerships.slice(partnershipsSplit).map((partnership, index) => {
-    return <a className="scroll-link" key={index + 1}><img src={`images/general/partners/${partnership.fileName}`} className="scroll-image h-auto w-36" /></a>
+    return <a className="scroll-link" key={index + 1}><img src={`images/partners/${partnership.fileName}`} className="scroll-image h-auto w-36 !grayscale opacity-75" /></a>
   })
 
   return (

@@ -30,7 +30,7 @@ export default function PartnershipsScroller({ partnerships }) {
 
   // Replace these with your actual image URLs/data
   const partnershipImageComponentsDesktop = partnerships.map((partnership, index) => {
-    return <a className="scroll-link" key={index}><img src={`images/general/partners/${partnership.fileName}`} className="scroll-image h-auto w-48" /></a>
+    return <a className={`scroll-link`} key={index}><img src={`images/partners/${partnership.fileName}`} className="scroll-image h-auto w-48 !grayscale opacity-75" /></a>
   })
 
   return (

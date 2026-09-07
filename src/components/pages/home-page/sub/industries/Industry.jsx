@@ -14,7 +14,7 @@ export default function Industry({ industry }) {
     
     // 2. Prepend 'ic:baseline-' for Google's official Material UI set
     const iconId = `ic:baseline-${kebabCase}`;
-    return <Icon key={index} icon={iconId} className={`inline w-8 h-auto mr-2`} />;
+    return <Icon key={index} icon={iconId} className={`inline w-8 h-auto md:mr-2`} />;
   })
 
   return (
@@ -23,10 +23,10 @@ export default function Industry({ industry }) {
       <div className="hidden lg:inline col-span-1"></div>
     }
     <div className="col-span-2">
-      <div className="mb-4">
+      <div className="flex mb-4 place-content-center md:place-content-start">
         {iconComponents}
       </div>
-      <h2 className="text-3xl font-bold mt-2">{industry.title}</h2>
+      <h2 className="text-3xl text-center md:text-left font-bold mt-2">{industry.title}</h2>
       
       <p className="mt-4">{industry.blurb}</p>
     </div>

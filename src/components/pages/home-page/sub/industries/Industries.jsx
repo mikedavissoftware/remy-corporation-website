@@ -19,7 +19,7 @@ export default function Industries() {
   })
 
   return (
-    <div className="bg-[radial-gradient(#ffffff,#DCDECD)] px-8 py-8 pb-12 md:py-12 md:pb-16 md:px-16" >
+    <div className="bg-[radial-gradient(#ffffff,#DCDECD)] px-8 py-16 md:py-8 md:pb-12 md:py-12 md:pb-16 md:px-16" >
       <h1 className="text-center text-4xl md:text-5xl font-semibold tracking-wide ">Supported Industries</h1>
 
       <hr className="border border-[1.5px] border-wdorange rounded-sm mx-auto my-8 w-[6%] md:w-[3%]"/>

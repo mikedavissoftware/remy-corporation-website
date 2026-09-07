@@ -10,7 +10,7 @@ export default function PartnershipImage({ imageObject }) {
 
   const imgRef = useRef(null)
 
-  const path = `images/general/partners/${fileName}`
+  const path = `images/partners/${fileName}`
 
   const [xPosition, setXPosition] = useState(initXPosition)
 
