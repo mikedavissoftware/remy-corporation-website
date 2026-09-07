@@ -25,7 +25,7 @@ export default function Partnerships() {
   const partnershipsShuffled = shuffle(partnerships)
 
   return (
-    <div className="bg-[radial-gradient(#ffffff,#DCDECD)] py-6" >
+    <div className="bg-white py-16" >
       {/* <h1 className="px-8 pt-8 md:[pt-16] text-center text-4xl md:text-5xl font-semibold tracking-wide">Partnerships</h1> */}
       {/* <h1 className="text-center text-5xl font-semibold tracking-wide">{timerID.current}</h1> */}
 

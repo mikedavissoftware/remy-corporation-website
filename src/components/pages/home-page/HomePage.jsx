@@ -1,9 +1,7 @@
 
 
-import HomeHero from "./sub/HomeHero"
 import AboutUs from "./sub/AboutUs"
 import Offerings from "./sub/offerings/Offerings"
-import FocusAreas from "./sub/focus-areas/FocusAreas"
 import Industries from "./sub/industries/Industries"
 import Partnerships from "./sub/partnerships/Partnerships"
 
@@ -20,13 +18,10 @@ export default function HomePage() {
       <div id="about" className="h-[7vh] mt-[-7vh]"></div>
       <AboutUs />
 
-      <div id="focus-areas" className="h-[7vh] mt-[-7vh]"><LogoBorder /></div>
-      <FocusAreas />
-
       <div id="industries" className="h-[7vh] mt-[-7vh]"></div>
       <Industries />
 
-      <div id="partnerships" className="h-[7vh] mt-[-7vh]"></div>
+      <div id="partnerships" className="h-[7vh] mt-[-7vh]"><LogoBorder /></div>
       <Partnerships />
     </div>
   )

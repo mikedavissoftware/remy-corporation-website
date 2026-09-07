@@ -14,18 +14,25 @@ export default function Industry({ industry }) {
     
     // 2. Prepend 'ic:baseline-' for Google's official Material UI set
     const iconId = `ic:baseline-${kebabCase}`;
-    return <Icon key={index} icon={iconId} className={`inline w-8 h-auto mx-1`} />;
+    return <Icon key={index} icon={iconId} className={`inline w-8 h-auto mr-2`} />;
   })
 
-  console.log(iconComponents)
-
   return (
-    <div className="">
-      
-      {iconComponents}
+    <>
+    {industry.id == 7 &&
+      <div className="hidden lg:inline col-span-1"></div>
+    }
+    <div className="col-span-2">
+      <div className="mb-4">
+        {iconComponents}
+      </div>
       <h2 className="text-3xl font-bold mt-2">{industry.title}</h2>
       
       <p className="mt-4">{industry.blurb}</p>
     </div>
+    {industry.id == 8 &&
+      <div className="hidden lg:inline col-span-1"></div>
+    }
+    </>
   )
 }

@@ -10,6 +10,7 @@ export default function LogoBorder() {
   const totalWidth = width + gap
 
   const LogoImage = ({ index }) => {
+    console.log(index)
     return (
       <img
         key={index}
@@ -18,7 +19,7 @@ export default function LogoBorder() {
         style={{
           transform: `translateX(-${totalWidth / 2}px)`,
           height: `${width}px`,
-          transform: `rotate(${rotation}deg)`,
+          transform: `rotate(${(index % 2 == 0) ? (rotation) : (360 - rotation)}deg)`,
           opacity: `${opacity}%`,
           filter: `blur(${blur}px)`
         }}
@@ -64,10 +65,10 @@ export default function LogoBorder() {
     <div
       className={`flex space-x-2`}
       style={{
-        transform: `translateY(${64 - width / 2}px)`,
+        transform: `translateY(${64 - width +6}px)`,
         gap: `${gap}px`,
         backgroundColor: "#FFF",
-        background: "linear-gradient(180deg,rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 50%,rgba(255, 255, 255, 1) 100%)"
+        background: "linear-gradient(180deg,rgba(255, 255, 255, 0) 0%,rgba(255, 255, 255, 1) 90%)"
       }}>
       {logoComponents}
     </div>
