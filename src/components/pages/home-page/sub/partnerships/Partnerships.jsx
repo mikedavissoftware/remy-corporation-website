@@ -8,6 +8,8 @@ import PlayVector from "../../../../../assets/svg/play-svgrepo-com.svg"
 import PauseVector from "../../../../../assets/svg/pause-svgrepo-com.svg"
 import NextPrevVector from "../../../../../assets/svg/fast-forward-svgrepo-com.svg"
 
+import "./Partnerships.css"
+
 
 export default function Partnerships() {
 
@@ -24,6 +26,41 @@ export default function Partnerships() {
 
   const partnershipsShuffled = shuffle(partnerships)
 
+  const partnershipImageComponents = partnershipsShuffled.map((partnership, index) => {
+    const fromColor = ""
+    const toColor = ""
+    return <a className={`scroll-link relative inline-block`} key={index}><img src={`images/partners/${partnership.fileName}`} className="scroll-image h-auto w-48 !grayscale"/>
+      <div 
+        className={`absolute inset-0 z-10 !mix-blend-lighten bg-gradient-to-r from-wdblue to-wdorange`}
+        style={{
+          filter: `brightness(${partnership.lighten}%)`,
+          maskImage: `url('images/partners/${partnership.fileName}')`,
+          WebkitMaskImage: `url('images/partners/${partnership.fileName}')`,
+          maskSize: 'contain',
+          WebkitMaskSize: 'contain',
+          maskRepeat: 'no-repeat',
+          WebkitMaskRepeat: 'no-repeat',
+          maskPosition: 'center',
+          WebkitMaskPosition: 'center'
+        }}
+      />
+      <div 
+        className={`absolute inset-0 z-10 !mix-blend-overlay bg-gradient-to-r from-wdblue to-wdorange`}
+        style={{
+          filter: `brightness(${partnership.overlay}%)`,
+          maskImage: `url('images/partners/${partnership.fileName}')`,
+          WebkitMaskImage: `url('images/partners/${partnership.fileName}')`,
+          maskSize: 'contain',
+          WebkitMaskSize: 'contain',
+          maskRepeat: 'no-repeat',
+          WebkitMaskRepeat: 'no-repeat',
+          maskPosition: 'center',
+          WebkitMaskPosition: 'center'
+        }}
+      />
+    </a>
+  })
+
   return (
     <div className="bg-[#f2f2ed] py-12" >
       {/* <h1 className="px-8 pt-8 md:[pt-16] text-center text-4xl md:text-5xl font-semibold tracking-wide">Partnerships</h1> */}
@@ -31,8 +68,8 @@ export default function Partnerships() {
 
       {/* <hr className="border border-[1.5px] border-wdblue rounded-sm mx-auto mt-8 w-[6%] md:w-[3%]"/> */}
 
-      <PartnershipsScroller partnerships={partnershipsShuffled} />
-      <PartnershipsScrollerMobile partnerships={partnershipsShuffled} />
+      <PartnershipsScroller partnershipImageComponents={partnershipImageComponents} />
+      <PartnershipsScrollerMobile partnershipImageComponents={partnershipImageComponents} />
 
     </div>
   )

@@ -1,8 +1,6 @@
 import { useRef, useLayoutEffect } from "react"
 
-import "./AutoScrollingPartnerships.css"
-
-export default function PartnershipsScroller({ partnerships }) {
+export default function PartnershipsScroller({ partnershipImageComponents }) {
 
   const trackRef = useRef(null)
   const groupRef = useRef(null)
@@ -28,19 +26,14 @@ export default function PartnershipsScroller({ partnerships }) {
     return () => window.removeEventListener('resize', updateLoopDistance);
   }, []);
 
-  // Replace these with your actual image URLs/data
-  const partnershipImageComponentsDesktop = partnerships.map((partnership, index) => {
-    return <a className={`scroll-link`} key={index}><img src={`images/partners/${partnership.fileName}`} className="scroll-image h-auto w-48 !grayscale opacity-75" /></a>
-  })
-
   return (
     <div className="scroll-container my-6 !hidden md:!flex" >
       <div className="scroll-track" ref={trackRef}>
         <div className="track-group" ref={groupRef}>
-          {partnershipImageComponentsDesktop}
+          {partnershipImageComponents}
         </div>
         <div className="track-group" aria-hidden="true">
-          {partnershipImageComponentsDesktop}
+          {partnershipImageComponents}
         </div>
       </div>
     </div>

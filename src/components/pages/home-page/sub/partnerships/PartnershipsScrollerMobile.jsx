@@ -1,8 +1,6 @@
 import { useRef, useLayoutEffect } from "react"
 
-import "./AutoScrollingPartnerships.css"
-
-export default function PartnershipsScrollerMobile({ partnerships }) {
+export default function PartnershipsScrollerMobile({ partnershipImageComponents }) {
 
   const trackTopRef = useRef(null)
   const trackBottomRef = useRef(null)
@@ -32,13 +30,9 @@ export default function PartnershipsScrollerMobile({ partnerships }) {
   }, []);
 
   // Replace these with your actual image URLs/data
-  const partnershipsSplit = Math.floor(partnerships.length / 2)
-  const partnershipImageComponentsTop = partnerships.slice(0, partnershipsSplit).map((partnership, index) => {
-    return <a className="scroll-link" key={index + 1}><img src={`images/partners/${partnership.fileName}`} className="scroll-image h-auto w-36 !grayscale opacity-75" /></a>
-  })
-  const partnershipImageComponentsBottom = partnerships.slice(partnershipsSplit).map((partnership, index) => {
-    return <a className="scroll-link" key={index + 1}><img src={`images/partners/${partnership.fileName}`} className="scroll-image h-auto w-36 !grayscale opacity-75" /></a>
-  })
+  const partnershipsSplit = Math.floor(partnershipImageComponents.length / 2)
+  const partnershipImageComponentsTop = partnershipImageComponents.slice(0, partnershipsSplit)
+  const partnershipImageComponentsBottom = partnershipImageComponents.slice(partnershipsSplit)
 
   return (
     <div className="scroll-container my-6 !flex md:!hidden" >
