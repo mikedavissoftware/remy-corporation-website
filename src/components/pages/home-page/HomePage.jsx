@@ -5,23 +5,32 @@ import Offerings from "./sub/offerings/Offerings"
 import Industries from "./sub/industries/Industries"
 import Partnerships from "./sub/partnerships/Partnerships"
 
-import LogoBorder from "../../LogoBorder"
+import NavAnchor from "../../global/NavAnchor"
+import LogoBorder from "../../global/dividers/LogoDivider"
+import BubbleDownDivider from "../../global/dividers/BubbleDownDivider"
+import BubbleDownDividerInverted from "../../global/dividers/BubbleDownDividerInverted"
 
 export default function HomePage() {
 
 
   return (
     <div id="home-page" className="overflow-hidden" >   
-      <div id="services" className="h-[7vh] mt-[-7vh]"></div>
+      <NavAnchor id={"services"} />
       <Offerings />
 
-      <div id="about" className="h-[7vh] mt-[-7vh]"></div>
+      <NavAnchor id={"about"} />
       <AboutUs />
 
-      <div id="industries" className="h-[7vh] mt-[-7vh]"></div>
+      
+
+      <NavAnchor id={"industries"} />
+      <BubbleDownDivider xScale={2} yScale={.5} xOffset={-50} fillColor={"#f2f2ed"}/>
       <Industries />
 
-      <div id="partnerships" className="h-[7vh] mt-[-7vh]"><LogoBorder /></div>
+      <BubbleDownDividerInverted xScale={2} yScale={.5} xOffset={-50} fillColor={"#f2f2ed"}/>
+
+      {/* <div id="partnerships" className="h-[7vh] mt-[-7vh]"><LogoDivider /></div> */}
+      <NavAnchor id={"partnerships"} />
       <Partnerships />
     </div>
   )

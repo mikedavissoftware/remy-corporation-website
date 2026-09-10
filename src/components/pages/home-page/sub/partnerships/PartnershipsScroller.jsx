@@ -27,7 +27,7 @@ export default function PartnershipsScroller({ partnershipImageComponents }) {
   }, []);
 
   return (
-    <div className="scroll-container my-6 !hidden md:!flex" >
+    <div className="scroll-container my-6 !hidden md:!flex saturate-50 drop-shadow-md" >
       <div className="scroll-track" ref={trackRef}>
         <div className="track-group" ref={groupRef}>
           {partnershipImageComponents}

@@ -37,7 +37,7 @@ export default function Header() {
       <header className="z-10 fixed w-full border-b-2 border-slate-300 shadow-md bg-black" >
         <nav className={`navbar p-4 bg-white transition-all duration-500 ${(scrollPosition < scrollRange) ? ("h-[10vh]") : ("h-[7vh]")}`}>
           <div className="flex-1">
-            <a href="/" className={`btn btn-ghost hover:translate-x-1 transition-all duration-500 ${(scrollPosition < scrollRange) ? ("h-[4rem]") : ("h-[3rem] -translate-x-4")}`}><img className="h-full p-1" src="images/header/remy_logo.png" /></a>
+            <a href="/" className={`btn btn-ghost hover:translate-x-1 transition-all duration-500 ${(scrollPosition < scrollRange) ? ("h-[4rem]") : ("h-[3rem] -translate-x-4")}`}><img className="h-full p-1" src={`images/header/remy_logo.png`} /></a>
           </div>
           <div className="flex-none">
             <ul className={`transition-all duration-500 menu menu-horizontal text-wdblue ${(scrollPosition < scrollRange) ? ("px-2") : ("px-0")}`}>
@@ -96,10 +96,10 @@ export default function Header() {
               </li>
 
               <div className="ml-3 grid grid-cols-1 content-center">
-                <button className="btn btn-contact btn-secondary hover:btn-info" onClick={() => {document.getElementById('contact-form-modal').showModal(); resetNav()}}>Contact Us</button>
+                <button className="btn btn-contact btn-secondary !text-black hover:btn-primary hover:!text-white" onClick={() => {document.getElementById('contact-form-modal').showModal(); resetNav()}}>Contact Us</button>
               </div>
               <div className="ml-4 grid grid-cols-1 content-center">
-                <button className="btn btn-contact btn-primary hover:btn-secondary" onClick={() => {openInNewTab("https://remy-arc.com/portal/"); resetNav()}}>Remy ARC</button>
+                <button className="btn btn-contact btn-primary text-white hover:btn-secondary" onClick={() => {openInNewTab("https://remy-arc.com/portal/"); resetNav()}}>Remy ARC</button>
               </div>              
             </ul>
           </div>

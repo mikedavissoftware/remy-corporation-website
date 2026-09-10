@@ -1,29 +1,50 @@
 import { useState, useEffect, useRef } from "react";
 
-export default function LogoBorder() {
+export default function LogoDivider() {
 
-  const width = 25
-  const gap = 30
-  const blur = 1
-  const rotation = 15
-  const opacity = 15
+  const width = 35
+  const gap = 60
+  const blur = 0
+
+  const rotation = 30
+  const numSteps = 180 / rotation
+  const yFactor = 6
+  
+  const opacity = 10
   const totalWidth = width + gap
 
   const LogoImage = ({ index }) => {
-    console.log(index)
+    const angleAndY = () => {
+      const angle = index * rotation
+      const currentStep = (angle % 180) / rotation
+      const yShift = () => {
+        if (Math.floor(angle / 180) % 2 === 0) {
+          return yFactor * currentStep
+        } else {
+          return yFactor * (numSteps - currentStep)
+        }
+      }
+      return [angle, yShift()]
+    }
     return (
-      <img
-        key={index}
-        src="images/general/remy_icon_alt.png"
-        className=""
+      <div
         style={{
-          transform: `translateX(-${totalWidth / 2}px)`,
-          height: `${width}px`,
-          transform: `rotate(${(index % 2 == 0) ? (rotation) : (360 - rotation)}deg)`,
-          opacity: `${opacity}%`,
-          filter: `blur(${blur}px)`
+          transform: `translateY(${(yFactor * numSteps / 2) - angleAndY()[1]}px)`,
         }}
-      />
+      >
+        <img
+          key={index}
+          src="images/general/remy_icon_alt.png"
+          className=""
+          style={{
+            transform: `translateX(-${totalWidth / 2}px)`,
+            height: `${width}px`,
+            transform: `rotate(${angleAndY()[0]}deg)`,
+            opacity: `${opacity}%`,
+            filter: `blur(${blur}px)`
+          }}
+        />
+      </div>
     )
   }
   const createLogoArray = (diffLength, totalLength = 0) => {
@@ -34,7 +55,7 @@ export default function LogoBorder() {
     } else {
       const logoArray = []
       for (let i = 0; i < diffLength; i++) {
-        logoArray.push(<LogoImage key={totalLength + i} />)
+        logoArray.push(<LogoImage key={totalLength + i} index={totalLength + i} />)
       }
       return logoArray
     }
@@ -67,8 +88,8 @@ export default function LogoBorder() {
       style={{
         transform: `translateY(${64 - width +6}px)`,
         gap: `${gap}px`,
-        backgroundColor: "#FFF",
-        background: "linear-gradient(180deg,rgba(255, 255, 255, 0) 0%,#f2f2ed 90%)"
+        // backgroundColor: "#FFF",
+        // background: "linear-gradient(180deg,rgba(255, 255, 255, 0) 0%,#f2f2ed 90%)"
       }}>
       {logoComponents}
     </div>

@@ -64,7 +64,7 @@ export default function HeaderMobile() {
   return (
     <div id="header-mobile" className="md:hidden" >
       <header className="z-10 fixed w-full border-b-2 border-slate-300 shadow-md bg-black">
-        <nav className="navbar p-4 bg-white h-[7vh]">
+        <nav className="navbar p-4 bg-white h-[7%]">
           <div className="flex-1">
             <a className={`btn btn-ghost transition-all duration-500`} href="/"><img className="h-full py-1 -translate-x-3" src="images/header/remy_logo.png" /></a>
           </div>
@@ -83,7 +83,7 @@ export default function HeaderMobile() {
             />
           </div>
         </nav>
-        <div className={`h-[93vh] w-[100vw] mr-0 fixed shadow-lg transition-all duration-300 ${(active) ? ("translate-x-[0vw]") : ("translate-x-[100vw]")}`}>
+        <div className={`h-[93%] w-[100vw] mr-0 fixed shadow-lg transition-all duration-300 ${(active) ? ("translate-x-[0vw]") : ("translate-x-[100vw]")}`}>
           <ul className="bg-white border-t-2">
 
             {/* ABOUT DROPDOWN */}
@@ -135,10 +135,10 @@ export default function HeaderMobile() {
             <Link onClick={() => {resetMenu(); document.getElementById('contact-form-modal').showModal()}}><li className={`${listItemStyle} !text-slate-900 bg-wdorange`}>Contact Us</li></Link>
             <Link onClick={() => resetMenu()} to="https://remy-arc.com/portal/" target="_blank" rel="noopener noreferrer"><li className={`${listItemStyle} text-white bg-wdblue`}>Remy ARC</li></Link>
           </ul>
-          <div className={`h-[93vh] bg-slate-400 bg-opacity-20 backdrop-blur-lg transition-opacity duration-500 ${(active) ? ("opacity-100") : ("opacity-0")}`} onPointerDown={() => setActive(false)}></div>
+          <div className={`h-[93%] bg-slate-400 bg-opacity-20 backdrop-blur-lg transition-opacity duration-500 ${(active) ? ("opacity-100") : ("opacity-0")}`} onPointerDown={() => setActive(false)}></div>
         </div>
       </header>
-      <div className="bg-white h-[7vh]"></div>
+      <div className="bg-white h-[7%]"></div>
     </div>
   )
 }

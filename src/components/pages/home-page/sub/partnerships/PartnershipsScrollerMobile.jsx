@@ -35,7 +35,7 @@ export default function PartnershipsScrollerMobile({ partnershipImageComponents 
   const partnershipImageComponentsBottom = partnershipImageComponents.slice(partnershipsSplit)
 
   return (
-    <div className="scroll-container my-6 !flex md:!hidden" >
+    <div className="scroll-container my-6 !flex md:!hidden saturate-50 drop-shadow-md" >
       <div className="scroll-track-mobile-regular" ref={trackTopRef}>
         <div className="track-group" ref={groupTopRef}>
           {partnershipImageComponentsTop}

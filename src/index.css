@@ -6,6 +6,7 @@
   /* @apply hover:translate-y-[-3px]; */
   @apply hover:scale-110;
   @apply transition-all duration-300;
+  @apply text-white;
 }
 
 [aria-current]:not([aria-current="false"]):not(.sub-category) {

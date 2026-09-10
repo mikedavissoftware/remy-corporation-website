@@ -144,7 +144,7 @@ export default function ContactFormModal({}) {
         
       </div>
 
-      <form method="dialog" className="modal-backdrop"><button onMouseOver={() => setCursorType('default')} onMouseOut={() => setCursorTypesetCursorType('auto')} style={{cursor: cursorType}}></button></form>
+      <form method="dialog" className="modal-backdrop backdrop-blur-lg"><button onMouseOver={() => setCursorType('default')} onMouseOut={() => setCursorTypesetCursorType('auto')} style={{cursor: cursorType}}></button></form>
     </dialog>
   )
 }
