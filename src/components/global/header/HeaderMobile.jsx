@@ -135,7 +135,7 @@ export default function HeaderMobile() {
             <Link onClick={() => {resetMenu(); document.getElementById('contact-form-modal').showModal()}}><li className={`${listItemStyle} !text-slate-900 bg-wdorange`}>Contact Us</li></Link>
             <Link onClick={() => resetMenu()} to="https://remy-arc.com/portal/" target="_blank" rel="noopener noreferrer"><li className={`${listItemStyle} text-white bg-wdblue`}>Remy ARC</li></Link>
           </ul>
-          <div className={`h-[93%] bg-slate-400 bg-opacity-20 backdrop-blur-lg transition-opacity duration-500 ${(active) ? ("opacity-100") : ("opacity-0")}`} onPointerDown={() => setActive(false)}></div>
+          <div className={`h-[93%] bg-slate-400 bg-opacity-20 backdrop-blur-md transition-opacity duration-500 ${(active) ? ("opacity-100") : ("opacity-0")}`} onPointerDown={() => setActive(false)}></div>
         </div>
       </header>
       <div className="bg-white h-[7%]"></div>

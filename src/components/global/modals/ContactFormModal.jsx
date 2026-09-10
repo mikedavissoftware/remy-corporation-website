@@ -76,13 +76,13 @@ export default function ContactFormModal({}) {
   // var x = document.getElementById("contact-select");
 
   return (
-    <dialog id="contact-form-modal" className="modal">
+    <dialog id="contact-form-modal" className="modal backdrop:backdrop-blur-sm">
       
       <div className={`modal-box p-8`}>
 
         <form method="dialog">
         {/* if there is a button in form, it will close the modal */}
-          <button className="btn btn-xs btn-circle btn-ghost absolute right-2 top-2">✕</button>
+          <button className="btn btn-xs btn-circle !btn-neutral btn-ghost absolute right-2 top-3">✕</button>
         </form>
 
         <h3 className="font-bold text-2xl mb-4">Contact Us</h3>
@@ -144,7 +144,7 @@ export default function ContactFormModal({}) {
         
       </div>
 
-      <form method="dialog" className="modal-backdrop backdrop-blur-lg"><button onMouseOver={() => setCursorType('default')} onMouseOut={() => setCursorTypesetCursorType('auto')} style={{cursor: cursorType}}></button></form>
+      <form method="dialog" className="modal-backdrop"><button onMouseOver={() => setCursorType('default')} onMouseOut={() => setCursorTypesetCursorType('auto')} style={{cursor: cursorType}}></button></form>
     </dialog>
   )
 }
