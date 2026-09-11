@@ -62,7 +62,7 @@ export default function Partnerships() {
   })
 
   return (
-    <div className="bg-[#f2f2ed] py-12" >
+    <div className="bg-[#f2f2ed] pt-8 pb-12 md:pb-10" >
       {/* <h1 className="px-8 pt-8 md:[pt-16] text-center text-4xl md:text-5xl font-semibold tracking-wide">Partnerships</h1> */}
       {/* <h1 className="text-center text-5xl font-semibold tracking-wide">{timerID.current}</h1> */}
 
