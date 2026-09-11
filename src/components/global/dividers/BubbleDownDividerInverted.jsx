@@ -31,13 +31,17 @@ export default function BubbleDownDividerInverted({ yHeight, fillColor, flip }) 
           width: "100%",
           // transform: "translatex(-.5%)",
           height: `${yHeight}px`,
-          // transform: "rotate(180deg)"
+          // transform: "rotate(180deg)",
+          
         }}
       >
         <path 
           d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z" 
           className="shape-fill origin-bottom scale-y-50 md:scale-y-100"
           fill={fillColor}
+          style={{
+            filter: "drop-shadow(0px 0px 30px rgba(0, 0, 0, .5))"
+          }}
         />
       </svg>
     </div>
