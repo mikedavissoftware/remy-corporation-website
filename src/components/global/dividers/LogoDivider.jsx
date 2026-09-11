@@ -6,16 +6,17 @@ export default function LogoDivider() {
   const gap = 60
   const blur = 0
 
-  const rotation = 30
+  const rotation = 45
+  const offset = 90
   const numSteps = 180 / rotation
-  const yFactor = 6
+  const yFactor = 8
   
   const opacity = 10
   const totalWidth = width + gap
 
   const LogoImage = ({ index }) => {
     const angleAndY = () => {
-      const angle = index * rotation
+      const angle = index * rotation + offset
       const currentStep = (angle % 180) / rotation
       const yShift = () => {
         if (Math.floor(angle / 180) % 2 === 0) {
@@ -84,12 +85,12 @@ export default function LogoDivider() {
 
   return (
     <div
-      className={`flex space-x-2`}
+      className={`hidden md:flex space-x-2`}
       style={{
         transform: `translateY(${64 - width +6}px)`,
         gap: `${gap}px`,
         // backgroundColor: "#FFF",
-        // background: "linear-gradient(180deg,rgba(255, 255, 255, 0) 0%,#f2f2ed 90%)"
+        background: "linear-gradient(180deg,rgba(255, 255, 255, 0) 0%,#f2f2ed 90%)"
       }}>
       {logoComponents}
     </div>

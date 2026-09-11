@@ -6,7 +6,8 @@ import Industries from "./sub/industries/Industries"
 import Partnerships from "./sub/partnerships/Partnerships"
 
 import NavAnchor from "../../global/NavAnchor"
-import LogoBorder from "../../global/dividers/LogoDivider"
+import LogoDivider from "../../global/dividers/LogoDivider"
+import LogoDividerMobile from "../../global/dividers/LogoDividerMobile"
 import BubbleDownDivider from "../../global/dividers/BubbleDownDivider"
 import BubbleDownDividerInverted from "../../global/dividers/BubbleDownDividerInverted"
 
@@ -21,15 +22,16 @@ export default function HomePage() {
       <NavAnchor id={"about"} />
       <AboutUs />
 
-      
-
       <NavAnchor id={"industries"} />
-      <BubbleDownDivider xScale={2} yScale={.5} xOffset={-50} fillColor={"#f2f2ed"}/>
+      <BubbleDownDividerInverted yHeight={60} fillColor={"#f2f2ed"} flip={true} />
       <Industries />
 
-      <BubbleDownDividerInverted xScale={2} yScale={.5} xOffset={-50} fillColor={"#f2f2ed"}/>
+      <BubbleDownDividerInverted yHeight={60} fillColor={"#f2f2ed"} flip={false} />
 
-      {/* <div id="partnerships" className="h-[7vh] mt-[-7vh]"><LogoDivider /></div> */}
+      {/* <div id="partnerships" className="h-[7vh] mt-[-7vh]">
+        <LogoDivider />
+        <LogoDividerMobile />
+      </div> */}
       <NavAnchor id={"partnerships"} />
       <Partnerships />
     </div>

@@ -15,8 +15,12 @@ import EventsPage from "./components/ARCHIVE/events-page/EventsPage"
 import FAQPage from "./components/ARCHIVE/faq-page/FAQPage"
 import HelpPage from "./components/ARCHIVE/help-page/HelpPage"
 
+import LogoDivider from "./components/global/dividers/LogoDivider"
+import LogoDividerMobile from "./components/global/dividers/LogoDividerMobile"
+
 import Footer from "./components/global/footer/Footer"
 import FooterBottom from "./components/global/footer/FooterBottom"
+import { LogoDev } from "@mui/icons-material"
 
 export const GlobalContext = createContext()
 
@@ -48,6 +52,10 @@ export default function App() {
           <Route path="help" element={<HelpPage />} />
         </Routes>
         
+        {/* <div className="z-99">
+          <LogoDivider />
+          <LogoDividerMobile />
+        </div> */}
 
         <Footer />
         <FooterBottom />
