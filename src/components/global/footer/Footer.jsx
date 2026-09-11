@@ -1,11 +1,11 @@
-
+import { useLocation } from "react-router-dom"
 
 import LogoDivider from "../dividers/LogoDivider"
 import LogoDividerMobile from "../dividers/LogoDividerMobile"
 
 export default function Footer() {
 
-
+  const location = useLocation()
 
   return (
     <>
@@ -13,7 +13,13 @@ export default function Footer() {
       <div>
         <img
           className="w-auto h-[70px] md:h-[100px] md:p-2"
-          src={`images/header/remy_logo.png`}
+          src={
+            (location.pathname === "/gsa-contract") ? (
+              "images/general/logo/remy_federal.png"
+            ) : (
+              "images/general/logo/remy_logo.png"
+            )
+          }
         />
       </div>
       <div>

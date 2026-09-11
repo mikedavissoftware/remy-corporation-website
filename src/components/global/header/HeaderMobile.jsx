@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Link, useNavigate } from "react-router-dom"
+import { Link, useNavigate, useLocation } from "react-router-dom"
 
 import HamMenu from "../../../assets/svg/ham-menu.svg"
 import HamMenuClose from "../../../assets/svg/ham-menu-close.svg"
@@ -13,6 +13,8 @@ export default function HeaderMobile() {
   const [partnershipsOpen, setPartnershipsOpen] = useState(false)
   const [servicesOpen, setServicesOpen] = useState(false)
   const [mediaOpen, setMediaOpen] = useState(false)
+
+  const location = useLocation()
 
   const listItemStyle = "py-4 text-center text-wdblue font-sans font-bold border-t-2 active:bg-slate-200"
 
@@ -66,7 +68,18 @@ export default function HeaderMobile() {
       <header className="z-10 fixed w-full border-b-2 border-slate-300 shadow-md bg-black">
         <nav className="navbar p-4 bg-white h-[7%]">
           <div className="flex-1">
-            <a className={`btn btn-ghost transition-all duration-500`} href="/"><img className="h-full py-1 -translate-x-3" src="images/header/remy_logo.png" /></a>
+            <a className={`btn btn-ghost transition-all duration-500`} href="/">
+              <img
+                className="h-full py-1 -translate-x-3"
+                src={
+                  (location.pathname === "/gsa-contract") ? (
+                    "images/general/logo/remy_federal.png"
+                  ) : (
+                    "images/general/logo/remy_logo.png"
+                  )
+                }
+              />
+            </a>
           </div>
           <div className="relative">
             <img

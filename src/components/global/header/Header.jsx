@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { Link, useNavigate } from "react-router-dom"
+import { Link, useNavigate, useLocation } from "react-router-dom"
 
 
 export default function Header() {
@@ -32,12 +32,25 @@ export default function Header() {
     window.open(url, '_blank', 'noopener,noreferrer');
   };
 
+  const location = useLocation()
+
   return (
     <div id="header-desktop" className="hidden md:block">
       <header className="z-10 fixed w-full border-b-2 border-slate-300 shadow-md bg-black" >
         <nav className={`navbar p-4 bg-white transition-all duration-500 ${(scrollPosition < scrollRange) ? ("h-[10vh]") : ("h-[7vh]")}`}>
           <div className="flex-1">
-            <a href="/" className={`btn btn-ghost hover:translate-x-1 transition-all duration-500 ${(scrollPosition < scrollRange) ? ("h-[4rem]") : ("h-[3rem] -translate-x-4")}`}><img className="h-full p-1" src={`images/header/remy_logo.png`} /></a>
+            <a href="/" className={`btn btn-ghost hover:translate-x-1 transition-all duration-500 ${(scrollPosition < scrollRange) ? ("h-[4rem]") : ("h-[3rem] -translate-x-4")}`}>
+              <img 
+                className="h-full p-1"
+                src={
+                  (location.pathname === "/gsa-contract") ? (
+                    "images/general/logo/remy_federal.png"
+                  ) : (
+                    "images/general/logo/remy_logo.png"
+                  )
+                }
+              />
+            </a>
           </div>
           <div className="flex-none">
             <ul className={`transition-all duration-500 menu menu-horizontal text-wdblue ${(scrollPosition < scrollRange) ? ("px-2") : ("px-0")}`}>
@@ -45,7 +58,7 @@ export default function Header() {
               {/* ABOUT DROPDOWN */}
               <li className={listItemStyle}>
                 <details id="about-nav" className={`transition-transform duration-100 ${(aboutOpen) ? ("translate-y-1") : ("")}`} open={aboutOpen} onMouseEnter={() => setAboutOpen(true)} onMouseLeave={() => setAboutOpen(false)}>
-                  <summary className={`transition-transform transition-colors duration-100 rounded-bl-none ${(aboutOpen) ? ("bg-base-100") : ("")}`} onClick={() => navigate("#about")} >About</summary>
+                  <summary className={`transition-transform duration-100 rounded-bl-none ${(aboutOpen) ? ("bg-base-100") : ("")}`} onClick={() => navigate("#about")} >About</summary>
 
                   <ul className="bg-base-100 w-[130px] -translate-y-4 rounded-tl-none">
                     {/* <li className="m-1"><Link to="/#commitment" className="sub-category">Our Commitment</Link></li> */}
