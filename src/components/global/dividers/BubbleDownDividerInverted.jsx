@@ -5,6 +5,12 @@ export default function BubbleDownDividerInverted({ yHeight, fillColor, flip }) 
     return((flip) ? (180) : (0))
   }
 
+  const marginTop = () => {
+    return (
+      (flip) ? (`-${yHeight}px`) : (`-${yHeight * 1.5}px`)
+    )
+  }
+
   return (
     <div
       className=""
@@ -14,13 +20,15 @@ export default function BubbleDownDividerInverted({ yHeight, fillColor, flip }) 
         width: "100%",
         overflow: "hidden",
         lineHeight: "0",
-        marginTop: `-${yHeight}px`,
+        marginTop: marginTop(),
         // transform: `translatey(-${yHeight}px)`,
         transformOrigin: "bottom",
         transform: `rotate(${angle()}deg)`,
-        paddingTop: "30px"
+        paddingTop: "30px",
+        // paddingBottom: paddingBottom()
       }}
     >
+      {/* <div className="h-10"></div> */}
       <svg 
         data-name="Layer 1" 
         xmlns="http://www.w3.org/2000/svg" 
@@ -33,6 +41,7 @@ export default function BubbleDownDividerInverted({ yHeight, fillColor, flip }) 
           // transform: "translatex(-.5%)",
           height: `${yHeight}px`,
           // transform: "rotate(180deg)",
+          overflow: "visible"
         }}
       >
         <path 

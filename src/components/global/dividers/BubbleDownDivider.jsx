@@ -24,7 +24,8 @@ export default function BubbleDownDivider({ xScale, yHeight, xOffset, fillColor 
           width: "101%",
           transform: "translatex(-.5%)",
           height: `${yHeight}px`,
-          mixBlendMode: "lighten"
+          mixBlendMode: "lighten",
+          overflow: "visible"
         }}
       >
         <path 
