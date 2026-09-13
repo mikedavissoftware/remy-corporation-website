@@ -17,7 +17,8 @@ export default function BubbleDownDividerInverted({ yHeight, fillColor, flip }) 
         marginTop: `-${yHeight}px`,
         // transform: `translatey(-${yHeight}px)`,
         transformOrigin: "bottom",
-        transform: `rotate(${angle()}deg)`
+        transform: `rotate(${angle()}deg)`,
+        paddingTop: "30px"
       }}
     >
       <svg 
@@ -32,7 +33,6 @@ export default function BubbleDownDividerInverted({ yHeight, fillColor, flip }) 
           // transform: "translatex(-.5%)",
           height: `${yHeight}px`,
           // transform: "rotate(180deg)",
-          
         }}
       >
         <path 

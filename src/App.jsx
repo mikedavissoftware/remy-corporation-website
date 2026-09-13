@@ -41,6 +41,11 @@ export default function App() {
         <Routes>
           <Route index element={<HomePage />} />
 
+          {/* <Route path="" element={</>}
+          <Route path="" element={</>}
+          <Route path="" element={</>}
+          <Route path="" element={</>} */}
+
           <Route path="workforce-solutions" element={<WorkforceSolutionsPage />} />
           <Route path="tech-consulting" element={<TechConsultingPage />} />
           <Route path="managed-operations" element={<ManagedOperationsPage />} />

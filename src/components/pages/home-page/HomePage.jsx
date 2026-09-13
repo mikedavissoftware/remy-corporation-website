@@ -1,6 +1,6 @@
 
 
-import AboutUs from "./sub/AboutUs"
+import AboutUs from "./sub/about/AboutUs"
 import Offerings from "./sub/offerings/Offerings"
 import Industries from "./sub/industries/Industries"
 import Partnerships from "./sub/partnerships/Partnerships"
