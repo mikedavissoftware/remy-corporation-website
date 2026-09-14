@@ -26,6 +26,10 @@ export default function Partnerships() {
 
   const partnershipsShuffled = shuffle(partnerships)
 
+  const randX = () => {
+    return Math.floor(Math.random(-40, 40))
+  }
+
   const partnershipImageComponents = partnershipsShuffled.map((partnership, index) => {
     const fromColor = ""
     const toColor = ""
@@ -41,7 +45,7 @@ export default function Partnerships() {
           maskRepeat: 'no-repeat',
           WebkitMaskRepeat: 'no-repeat',
           maskPosition: 'center',
-          WebkitMaskPosition: 'center'
+          WebkitMaskPosition: 'center',
         }}
       />
       <div 
@@ -55,7 +59,7 @@ export default function Partnerships() {
           maskRepeat: 'no-repeat',
           WebkitMaskRepeat: 'no-repeat',
           maskPosition: 'center',
-          WebkitMaskPosition: 'center'
+          WebkitMaskPosition: 'center',
         }}
       />
     </a>

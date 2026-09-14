@@ -38,12 +38,12 @@
 
 /* Pause the scrolling animation when a user hovers over an image */
 .scroll-track:has(.scroll-link:hover) {
-  animation-play-state: paused;
+  /* animation-play-state: paused; */
 }
 
 /* Pause the scrolling animation when a user hovers over an image */
 .scroll-track-reverse:has(.scroll-link:hover) {
-  animation-play-state: paused;
+  /* animation-play-state: paused; */
 }
 
 .scroll-link {
@@ -59,7 +59,7 @@
 
 /* Brings the hovered hyperlinked image to the front and lifts it */
 .scroll-link:hover {
-  transform: scale(1.1);
+  /* transform: scale(1.1); */
   /* transform: scale(1.1) translateY(-10px); */
   /* z-index: 10; */
 }
