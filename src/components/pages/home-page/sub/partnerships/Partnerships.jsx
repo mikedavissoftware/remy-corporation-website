@@ -67,7 +67,7 @@ export default function Partnerships() {
 
   return (
     <div className="bg-[#f2f2ed] pt-4 md:pt-8 pb-8 md:pb-10" >
-      {/* <h1 className="px-8 pt-8 md:[pt-16] text-center text-4xl md:text-5xl font-semibold tracking-wide">Partnerships</h1> */}
+      <h2 className="w-fit mx-auto my-6 md:mt-8 mb-10 text-center text-3xl uppercase tracking-widest text-slate-600 drop-shadow-md">Trusted by</h2>
       {/* <h1 className="text-center text-5xl font-semibold tracking-wide">{timerID.current}</h1> */}
 
       {/* <hr className="border border-[1.5px] border-wdblue rounded-sm mx-auto mt-8 w-[6%] md:w-[3%]"/> */}
