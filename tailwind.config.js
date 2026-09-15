@@ -68,10 +68,6 @@ module.exports = withMT({
           "success": "#84cc16",                
           "warning": "#ef4444",                
           "error": "#ffffff",
-          ".btn-contact": {
-            "height": "2.2rem",
-            "min-height": "2.2rem",
-          },
         },
       },
     ],

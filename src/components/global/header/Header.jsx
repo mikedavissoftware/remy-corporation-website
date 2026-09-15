@@ -53,7 +53,7 @@ export default function Header() {
             </a>
           </div>
           <div className="flex-none">
-            <ul className={`transition-all duration-500 menu menu-horizontal text-wdblue ${(scrollPosition < scrollRange) ? ("px-2") : ("px-0")}`}>
+            <ul className={`items-center transition-all duration-500 menu menu-horizontal text-wdblue ${(scrollPosition < scrollRange) ? ("px-2") : ("px-0")}`}>
 
               {/* ABOUT DROPDOWN */}
               <li className={listItemStyle}>
@@ -109,11 +109,11 @@ export default function Header() {
                 </details>
               </li>
 
-              <div className="ml-3 grid grid-cols-1 content-center">
-                <button className="btn btn-contact btn-secondary !text-black hover:btn-primary hover:!text-white" onClick={() => {document.getElementById('contact-form-modal').showModal(); resetNav()}}>Contact Us</button>
+              <div className="ml-3 grid grid-cols-1">
+                <button className="btn btn-sm btn-secondary !text-black hover:btn-primary hover:!text-white" onClick={() => {document.getElementById('contact-form-modal').showModal(); resetNav()}}>Contact Us</button>
               </div>
-              <div className="ml-4 grid grid-cols-1 content-center">
-                <button className="btn btn-contact btn-primary text-white hover:btn-secondary" onClick={() => {openInNewTab("https://remy-arc.com/portal/"); resetNav()}}>Remy ARC</button>
+              <div className="ml-4 grid grid-cols-1">
+                <button className="btn btn-sm btn-primary text-white hover:btn-secondary" onClick={() => {openInNewTab("https://remy-arc.com/portal/"); resetNav()}}>Remy ARC</button>
               </div>              
             </ul>
           </div>
