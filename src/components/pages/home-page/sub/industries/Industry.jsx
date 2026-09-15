@@ -19,17 +19,24 @@ export default function Industry({ industry }) {
 
   return (
     <>
+    {/* Empty grid cell in last row to center the distribution on larger screens */}
     {industry.id == 7 &&
       <div className="hidden lg:inline col-span-1"></div>
     }
+
     <div className="col-span-2">
-      <div className="flex mb-4 place-content-center md:place-content-start">
-        {iconComponents}
+      <div>
+        <div className="hidden md:flex mb-4 place-content-center md:place-content-start bg-gradient-to-r from-black to-white bg-clip-text">
+          {iconComponents}
+        </div>
+        <h2 className="text-2xl md:text-3xl font-bold mt-2"><span className="mr-3 md:hidden">{iconComponents}</span><span className="align-sub">{industry.title}</span></h2>
       </div>
-      <h2 className="text-3xl text-center md:text-left font-bold mt-2">{industry.title}</h2>
+      
       
       <p className="mt-4">{industry.blurb}</p>
     </div>
+
+    {/* Empty grid cell in last row to center the distribution on larger screens */}
     {industry.id == 8 &&
       <div className="hidden lg:inline col-span-1"></div>
     }

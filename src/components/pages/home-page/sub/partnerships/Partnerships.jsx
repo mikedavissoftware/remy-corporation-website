@@ -33,7 +33,7 @@ export default function Partnerships() {
   const partnershipImageComponents = partnershipsShuffled.map((partnership, index) => {
     const fromColor = ""
     const toColor = ""
-    return <a className={`scroll-link relative inline-block`} key={index}><img src={`images/partners/${partnership.fileName}`} className="scroll-image h-auto w-48 !grayscale"/>
+    return <a className={`scroll-link relative inline-block`} key={index}><img src={`images/partners/${partnership.fileName}`} className="scroll-image h-auto w-36 md:w-48 !grayscale"/>
       <div 
         className={`absolute inset-0 z-10 !mix-blend-lighten bg-gradient-to-r from-wdblue to-wdorange`}
         style={{
@@ -66,7 +66,7 @@ export default function Partnerships() {
   })
 
   return (
-    <div className="bg-[#f2f2ed] pt-8 pb-12 md:pb-10" >
+    <div className="bg-[#f2f2ed] pt-4 md:pt-8 pb-8 md:pb-10" >
       {/* <h1 className="px-8 pt-8 md:[pt-16] text-center text-4xl md:text-5xl font-semibold tracking-wide">Partnerships</h1> */}
       {/* <h1 className="text-center text-5xl font-semibold tracking-wide">{timerID.current}</h1> */}
 

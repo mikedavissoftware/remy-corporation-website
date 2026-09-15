@@ -24,7 +24,7 @@ export default function Industries() {
 
       <hr className="border border-[1.5px] border-wdorange rounded-sm mx-auto my-8 w-[6%] md:w-[3%]"/>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-12 md:gap-16 max-w-7xl mx-auto place-content-around">
+      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 md:gap-16 md:mb-12 max-w-7xl mx-auto place-content-around">
         {industryComponents}
       </div>
     </div>
