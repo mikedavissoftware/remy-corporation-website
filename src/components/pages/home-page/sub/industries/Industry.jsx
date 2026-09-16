@@ -25,8 +25,8 @@ export default function Industry({ industry }) {
     }
 
     <div className="col-span-2">
-      <div>
-        <div className="hidden md:flex mb-4 place-content-center md:place-content-start bg-gradient-to-r from-black to-white bg-clip-text">
+      <div className="text-center md:text-left">
+        <div className="hidden md:flex mb-4 place-content-center md:place-content-start">
           {iconComponents}
         </div>
         <h2 className="text-2xl md:text-3xl font-bold mt-2"><span className="mr-3 md:hidden">{iconComponents}</span><span className="align-sub">{industry.title}</span></h2>

@@ -22,7 +22,7 @@ export default function HomePage() {
       <NavAnchor id={"about"} />
       <AboutUs />
 
-      <NavAnchor id={"industries"} />
+      {/* <NavAnchor id={"industries"} /> */}
       <BubbleDownDividerInverted yHeight={60} fillColor={"#f2f2ed"} flip={true} />
       <Industries />
 

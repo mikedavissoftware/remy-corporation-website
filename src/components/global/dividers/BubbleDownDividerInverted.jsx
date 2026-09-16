@@ -7,7 +7,7 @@ export default function BubbleDownDividerInverted({ yHeight, fillColor, flip }) 
 
   const marginTop = () => {
     return (
-      (flip) ? (`-${yHeight}px`) : (`-${yHeight * 1.5}px`)
+      (flip) ? (`-${yHeight * 2}px`) : (`-${yHeight * 2}px`)
     )
   }
 
