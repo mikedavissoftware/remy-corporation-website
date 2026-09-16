@@ -1,7 +1,8 @@
 import { useEffect } from "react"
 
 import ServicesHero from "./sub/ServicesHero"
-
+import ServicesBanner from "./sub/ServicesBanner"
+import FloatingList from "./sub/FloatingList"
 
 export default function ServicesPage() {
 
@@ -12,7 +13,8 @@ export default function ServicesPage() {
 
   return (
     <div className="" >
-      <ServicesHero/>
+      <ServicesBanner />
+      <FloatingList />
       <div className="h-96 border-4 border-black"><p>Services</p></div>
     </div>
   )
