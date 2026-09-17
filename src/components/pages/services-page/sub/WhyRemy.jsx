@@ -20,7 +20,7 @@ export default function WhyRemy() {
           </div>
         </div>
         <div className="md:col-span-3 mb-12">
-          <img src="public/images/services-page/services-page-animation.gif" className="w-full h-auto rounded-3xl shadow-[inset_0_0_60px_15px_rgba(0,0,0,0.3)]"/>
+          <img src="images/services-page/services-page-animation.gif" className="w-full h-auto rounded-3xl shadow-[inset_0_0_60px_15px_rgba(0,0,0,0.3)]"/>
         </div>
       </div>
     </div>
