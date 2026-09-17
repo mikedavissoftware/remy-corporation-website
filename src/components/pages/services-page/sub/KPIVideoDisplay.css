@@ -1,0 +1,38 @@
+
+
+/* 2. The Video Element */
+.section-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* Crops and scales the video perfectly inside the 500px height */
+  z-index: -1;
+}
+
+/* 3. Dark Overlay layer (Optional) */
+.video-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Helps white text pop against moving video */
+  z-index: 0;
+}
+
+/* 4. Text Content */
+.section-content {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  text-align: center;
+  padding: 0 20px;
+}

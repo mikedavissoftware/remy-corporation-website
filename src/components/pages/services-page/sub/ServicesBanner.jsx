@@ -1,13 +1,11 @@
-import { SwiperSlide } from 'swiper/react';
 
-
-export default function OfferingSlide() {
+export default function ServicesBanner() {
 
 
 
   return (
-    <div style={{backgroundImage: `url(images/offerings/${1}.jpg)`}} className="hero h-[80vh] md:h-[70vh] bg-opacity-55 bg-center">
-      <div className="hero-overlay bg-opacity-40 align-middle"></div>
+    <div style={{backgroundImage: `url(images/services-page/services-page-banner.png)`}} className="hero h-[80vh] md:h-[70vh] bg-opacity-55 bg-center">
+      <div className="hero-overlay bg-black bg-opacity-60"></div>
       <div className="hero-content text-white py-24">
         <div className="my-auto mx-4 max-w-4xl space-y-3 md:space-y-5">
           <h1 className="text-4xl md:text-6xl font-bold drop-shadow-medium2 animate fade slide-left">The Right People.</h1>

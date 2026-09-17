@@ -1,8 +1,9 @@
 import { useEffect } from "react"
 
-import ServicesHero from "./sub/ServicesHero"
 import ServicesBanner from "./sub/ServicesBanner"
 import FloatingList from "./sub/FloatingList"
+import WhyRemy from "./sub/WhyRemy"
+import KPIVideoDisplay from "./sub/KPIVideoDisplay"
 
 export default function ServicesPage() {
 
@@ -15,7 +16,8 @@ export default function ServicesPage() {
     <div className="" >
       <ServicesBanner />
       <FloatingList />
-      <div className="h-96 border-4 border-black"><p>Services</p></div>
+      <WhyRemy />
+      <KPIVideoDisplay />
     </div>
   )
 }
