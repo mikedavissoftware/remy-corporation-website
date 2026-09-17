@@ -10,7 +10,7 @@ export default function Modals() {
 
 
   return (
-    <div className="absolute h-full w-full" >
+    <div className="" >
       <ContactFormModal />
       <FocusAreasModal />
     </div>

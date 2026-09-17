@@ -36,7 +36,7 @@ export default function App() {
 
         <HeaderContainer />
 
-        <Modals />
+        
 
         <Routes>
           <Route index element={<HomePage />} />
@@ -64,6 +64,8 @@ export default function App() {
 
         <Footer />
         <FooterBottom />
+
+        <Modals />
       </GlobalContext.Provider>
       </div>
     </>

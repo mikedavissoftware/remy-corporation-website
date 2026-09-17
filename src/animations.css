@@ -269,6 +269,24 @@
 .delay-6 {
   animation-delay: 2s !important;
 }
+.delay-7 {
+  animation-delay: 2.5s !important;
+}
+.delay-8 {
+  animation-delay: 3s !important;
+}
+.delay-9 {
+  animation-delay: 3.5s !important;
+}
+.delay-10 {
+  animation-delay: 4s !important;
+}
+.delay-11 {
+  animation-delay: 4.5s !important;
+}
+.delay-12 {
+  animation-delay: 5s !important;
+}
 
 @media screen and (prefers-reduced-motion: reduce) {
   .animate {

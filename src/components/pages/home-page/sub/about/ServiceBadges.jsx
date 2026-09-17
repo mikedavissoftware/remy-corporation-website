@@ -7,7 +7,7 @@ export default function ServiceBadges() {
 
 
   return (
-    <div className="grid grid-cols-8 md:grid-cols-7 gap-x-4 gap-y-8 md:gap-8 md:mt-4 mb-12 mx-8 md:mx-auto max-w-4xl place-items-center drop-shadow-light1" >
+    <div className="grid grid-cols-8 md:grid-cols-7 gap-x-4 gap-y-8 md:gap-8 md:mt-4 mx-auto md:max-w-4xl place-items-center drop-shadow-light1" >
 
       {/* Workday */}
       <Link to="" className="w-auto col-span-2 md:col-span-1 mx-auto transition-all duration-300 scale-90 hover:scale-100 hover:brightness-125 hover:contrast-110 hover:opacity-85" >

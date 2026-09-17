@@ -31,13 +31,13 @@ export default function AboutUs() {
   return (
     <div className={`${(isVisible) ? ("animate delay-1") : ("d-none")} bg-[#f2f2ed] bg-opacity-65 pb-16`} ref={containerRef}>
       
-      <div className="px-8 pt-16 pb-8 md:pr-16 md:pl-0">
+      <div className="px-8 pt-16 pb-8 md:pr-16">
         <div>
           <h1 className="text-center text-4xl md:text-5xl font-semibold tracking-wide">Our Story</h1>
         </div>
         <hr className="border-[1.5px] border-wdorange rounded-sm mx-auto my-8 w-[6%] md:w-[3%]"/>
         <div className="md:grid grid-cols-5 gap-x-16 max-w-5xl mx-auto" >
-          <div className="col-start-1 col-span-2 overflow-visible place-items-end md:ml-[-40px]">
+          <div className="col-start-1 col-span-2 overflow-visible place-items-end md:-ml-36">
             <img src="images/home/home-about-image.png" className=""/>
           </div>
           <div className="col-start-3 col-span-3 prose-md md:prose-lg">
@@ -52,8 +52,10 @@ export default function AboutUs() {
             </p>
           </div>
         </div>
+        <div className="mt-6">
+          <ServiceBadges />
+        </div>
       </div>
-      <ServiceBadges />
     </div>
   )
 }
