@@ -11,7 +11,7 @@ export default function Footer() {
     <>
     <footer className="footer bg-slate-300 border-t-2 border-slate-300 text-base-content p-12 md:p-10 drop-shadow-[0_-2px_10px_rgba(0,0,0,.15)]">
 
-      <div className="w-full max-w-7xl grid grid-cols-1 gap-8 md:gap-y-12 md:grid-cols-2 md:grid-flow-row md:mx-auto lg:grid-cols-4">
+      <div className="w-full max-w-8xl grid grid-cols-1 gap-8 md:gap-y-12 md:grid-cols-2 md:grid-flow-row md:mx-auto lg:grid-cols-4">
         <div className="col-span-1">
           <img
             className="w-auto h-[70px] md:h-[100px] md:p-2"

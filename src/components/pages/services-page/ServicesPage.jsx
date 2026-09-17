@@ -4,6 +4,7 @@ import ServicesBanner from "./sub/ServicesBanner"
 import FloatingList from "./sub/FloatingList"
 import WhyRemy from "./sub/WhyRemy"
 import KPIVideoDisplay from "./sub/KPIVideoDisplay"
+import TechConsulting from "./sub/TechConsulting"
 
 export default function ServicesPage() {
 
@@ -18,6 +19,7 @@ export default function ServicesPage() {
       <FloatingList />
       <WhyRemy />
       <KPIVideoDisplay />
+      <TechConsulting />
     </div>
   )
 }

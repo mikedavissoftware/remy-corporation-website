@@ -1,9 +1,3 @@
-// import AccountBalance from '@mui/icons-material';
-// import EmojiTransportation from '@mui/icons-material';
-// import Commute from '@mui/icons-material';
-// import Language from '@mui/icons-material';
-// import Public from '@mui/icons-material';
-
 import { Icon } from '@iconify/react';
 
 export default function Industry({ industry }) {
