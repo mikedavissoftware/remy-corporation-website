@@ -9,8 +9,8 @@ export default function KPIVideoDisplay() {
   return (
     <div className="video-section relative w-auto md:h-[70vh] overflow-hidden" >
       <video autoPlay muted loop playsInline id="globe-video" className="section-video saturate-60 brightness-80 contrast-50">
-        <source src="public/images/services-page/globe-video.mp4" type="video/mp4" />
-        <img src="public/images/services-page/globe-video-fallback.png" />
+        <source src="images/services-page/globe-video.mp4" type="video/mp4" />
+        <img src="images/services-page/globe-video-fallback.png" />
       </video>
       {/* Overlay */}
       <div className="absolute top-0 left-0 w-full h-full bg-wdbluepastel/70 z-0 mix-blend-hard-light"/>
