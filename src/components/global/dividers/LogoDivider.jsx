@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 
-export default function LogoDivider() {
+export default function LogoDivider({ topColor, bottomColor }) {
 
   const width = 35
   const gap = 60
@@ -11,7 +11,7 @@ export default function LogoDivider() {
   const numSteps = 180 / rotation
   const yFactor = 8
   
-  const opacity = 10
+  const opacity = 15
   const totalWidth = width + gap
 
   const LogoImage = ({ index }) => {
@@ -45,6 +45,13 @@ export default function LogoDivider() {
             filter: `blur(${blur}px)`
           }}
         />
+        {/* <div
+          style={{
+            transform: `translate(${width / 2 - 6}px ${(yFactor * numSteps / 2)[1]}px)`
+          }}
+        >
+          .
+        </div> */}
       </div>
     )
   }
@@ -55,7 +62,7 @@ export default function LogoDivider() {
       return []
     } else {
       const logoArray = []
-      for (let i = 0; i < diffLength; i++) {
+      for (let i = 0; i <= diffLength; i++) {
         logoArray.push(<LogoImage key={totalLength + i} index={totalLength + i} />)
       }
       return logoArray
@@ -85,12 +92,12 @@ export default function LogoDivider() {
 
   return (
     <div
-      className={`hidden md:flex space-x-2`}
+      className="h-fit hidden md:flex space-x-2 -mt-8"
       style={{
-        transform: `translateY(${64 - width +6}px)`,
+        transform: `translateY(${48 - width}px)`,
         gap: `${gap}px`,
         // backgroundColor: "#FFF",
-        background: "linear-gradient(180deg,rgba(255, 255, 255, 0) 0%,#f2f2ed 90%)"
+        background: `linear-gradient(180deg,#${topColor},#${bottomColor})`
       }}>
       {logoComponents}
     </div>

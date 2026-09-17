@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 
-export default function LogoDividerMobile() {
+export default function LogoDividerMobile({ topColor, bottomColor }) {
 
   const width = 25
   const gap = 20
@@ -8,9 +8,9 @@ export default function LogoDividerMobile() {
 
   const rotation = 60
   const numSteps = 180 / rotation
-  const yFactor = 4
+  const yFactor = 6
   
-  const opacity = 10
+  const opacity = 15
   const totalWidth = width + gap
 
   const LogoImage = ({ index }) => {
@@ -47,6 +47,7 @@ export default function LogoDividerMobile() {
       </div>
     )
   }
+
   const createLogoArray = (diffLength, totalLength = 0) => {
     console.log("logo adjustment")
     if (diffLength < 1) {
@@ -54,7 +55,7 @@ export default function LogoDividerMobile() {
       return []
     } else {
       const logoArray = []
-      for (let i = 0; i < diffLength; i++) {
+      for (let i = 0; i <= diffLength; i++) {
         logoArray.push(<LogoImage key={totalLength + i} index={totalLength + i} />)
       }
       return logoArray
@@ -84,12 +85,12 @@ export default function LogoDividerMobile() {
 
   return (
     <div
-      className={`flex md:hidden space-x-2 z-100`}
+      className={`flex md:hidden space-x-2 z-100 -mt-8`}
       style={{
-        transform: `translateY(${64 - width}px)`,
+        transform: `translateY(${48 - width}px)`,
         gap: `${gap}px`,
         // backgroundColor: "#FFF",
-        background: "linear-gradient(180deg,rgba(255, 255, 255, 0) 0%,#f2f2ed 90%)"
+        background: `linear-gradient(180deg,#${topColor},#${bottomColor})`
       }}>
       {logoComponents}
     </div>
