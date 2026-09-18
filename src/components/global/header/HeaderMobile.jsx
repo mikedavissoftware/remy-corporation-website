@@ -66,7 +66,7 @@ export default function HeaderMobile() {
   return (
     <div id="header-mobile" className="md:hidden" >
       <header className="z-10 fixed w-full border-b-2 border-slate-300 shadow-md bg-black">
-        <nav className="navbar p-4 bg-white h-[7%]">
+        <nav className="navbar p-4 bg-white h-[7vh]">
           <div className="flex-1">
             <a className={`btn btn-ghost transition-all duration-500`} href="/">
               <img
@@ -96,7 +96,7 @@ export default function HeaderMobile() {
             />
           </div>
         </nav>
-        <div className={`h-[93%] w-[100vw] mr-0 fixed shadow-lg transition-all duration-300 ${(active) ? ("translate-x-[0vw]") : ("translate-x-[100vw]")}`}>
+        <div className={`h-[93vh] w-[100vw] mr-0 fixed shadow-lg transition-all duration-300 ${(active) ? ("translate-x-[0vw]") : ("translate-x-[100vw]")}`}>
           <ul className="bg-white border-t-2">
 
             {/* ABOUT DROPDOWN */}
@@ -153,7 +153,7 @@ export default function HeaderMobile() {
           <div className={`h-[93%] bg-slate-400 bg-opacity-20 backdrop-blur-md transition-opacity duration-500 ${(active) ? ("opacity-100") : ("opacity-0")}`} onPointerDown={() => setActive(false)}></div>
         </div>
       </header>
-      <div className="bg-white h-[7%]"></div>
+      <div className="bg-white h-[7vh]"></div>
     </div>
   )
 }

@@ -9,6 +9,7 @@ import HomePage from "./components/pages/home-page/HomePage"
 import WorkforceSolutionsPage from "./components/pages/workforce-solutions-page/WorkforceSolutionsPage"
 import TechConsultingPage from "./components/pages/tech-consulting-page/TechConsultingPage"
 import ManagedOperationsPage from "./components/pages/managed-operations-page/ManagedOperationsPage"
+import WorkdayPage from "./components/pages/workday-page/WorkdayPage"
 import ServicesPage from "./components/pages/services-page/ServicesPage"
 import BlogPage from "./components/ARCHIVE/blog-page/BlogPage"
 import EventsPage from "./components/pages/events-page/EventsPage"
@@ -50,7 +51,10 @@ export default function App() {
           <Route path="tech-consulting" element={<TechConsultingPage />} />
           <Route path="managed-operations" element={<ManagedOperationsPage />} />
 
+          <Route path="workday-services-partner" element={<WorkdayPage />} />
+
           <Route path="services" element={<ServicesPage />} />
+
           <Route path="blog" element={<BlogPage />} />
           <Route path="events" element={<EventsPage />} />
           <Route path="faq" element={<FAQPage />} />
