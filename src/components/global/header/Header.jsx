@@ -39,7 +39,7 @@ export default function Header() {
       <header className="z-10 fixed w-full border-b-2 border-slate-300 shadow-md bg-black" >
         <nav className={`navbar p-4 bg-white transition-all duration-500 ${(scrollPosition < scrollRange) ? ("h-[10vh]") : ("h-[7vh]")}`}>
           <div className="flex-1">
-            <a href="/" className={`btn btn-ghost hover:translate-x-1 transition-all duration-500 ${(scrollPosition < scrollRange) ? ("h-[4rem]") : ("h-[3rem] -translate-x-4")}`}>
+            <Link to="/#services" className={`btn btn-ghost hover:translate-x-1 transition-all duration-500 ${(scrollPosition < scrollRange) ? ("h-[4rem]") : ("h-[3rem] -translate-x-4")}`}>
               <img 
                 className="h-full p-1"
                 src={
@@ -50,7 +50,7 @@ export default function Header() {
                   )
                 }
               />
-            </a>
+            </Link>
           </div>
           <div className="flex-none">
             <ul className={`items-center transition-all duration-500 menu menu-horizontal text-wdblue ${(scrollPosition < scrollRange) ? ("px-2") : ("px-0")}`}>
@@ -62,7 +62,7 @@ export default function Header() {
 
                   <ul className="bg-base-100 w-[130px] -translate-y-4 rounded-tl-none">
                     {/* <li className="m-1"><Link to="/#commitment" className="sub-category">Our Commitment</Link></li> */}
-                    <li className="m-1"><Link to="./#industries" className="sub-category">Industries</Link></li>
+                    <li className="m-1"><Link to="/#industries" className="sub-category">Industries</Link></li>
                     <li className="m-1"><Link to="https://www.linkedin.com/newsletters/the-remy-report-7293316723514974209/" target="_blank" className="sub-category">News</Link></li>
                     <li className="m-1 text-black bg-wdorange/75 rounded-lg drop-shadow-sm"><Link onClick={(e) => {e.preventDefault(); document.getElementById('contact-form-modal').showModal()}} className="sub-category">Contact Us</Link></li>
                   </ul>

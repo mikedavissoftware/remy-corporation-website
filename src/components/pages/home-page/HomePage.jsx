@@ -16,13 +16,13 @@ export default function HomePage() {
 
   return (
     <div id="home-page" className="overflow-hidden" >   
-      <NavAnchor id={"services"} />
+      <NavAnchor height={7} id={"services"} />
       <Offerings />
 
-      <NavAnchor id={"about"} />
+      <NavAnchor height={7} id={"about"} />
       <AboutUs />
 
-      {/* <NavAnchor id={"industries"} /> */}
+      <NavAnchor height={10} id={"industries"} />
       <BubbleDownDividerInverted yHeight={60} fillColor={"#f2f2ed"} flip={true} />
       <Industries />
 
@@ -32,7 +32,7 @@ export default function HomePage() {
         <LogoDivider />
         <LogoDividerMobile />
       </div> */}
-      <NavAnchor id={"partnerships"} />
+      <NavAnchor height={7} id={"partnerships"} />
       <Partnerships />
     </div>
   )

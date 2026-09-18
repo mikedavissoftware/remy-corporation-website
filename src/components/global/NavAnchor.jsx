@@ -1,8 +1,11 @@
 
 
 
-export default function NavAnchor({ id }) {
+export default function NavAnchor({ height, id }) {
   return (
-    <div id={id} className="h-[7vh] mt-[-7vh]"></div>
+    <div id={id} style={{
+      height: `${height}vh`,
+      marginTop: `-${height}vh`
+    }}/>
   )
 }

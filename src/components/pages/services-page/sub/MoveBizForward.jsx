@@ -33,7 +33,7 @@ export default function MoveBizForward() {
         <div>
           <div className="text-white px-6 py-12 md:px-32 md:py-24">
             <div className="my-auto mx-4 max-w-lg xl:max-w-3xl space-y-3 md:space-y-3">
-              <h1 className="text-4xl md:text-6xl font-bold drop-shadow-medium2 text-white/10 bg-[url(images/services-page/text-gradient.jpg)] bg-cover bg-bottom bg-clip-text ">Let's Move Your Business Forward</h1>
+              <h1 className="text-4xl md:text-6xl font-bold drop-shadow-medium2 text-white/10 bg-[url(/images/services-page/text-gradient.jpg)] bg-cover bg-bottom bg-clip-text ">Let's Move Your Business Forward</h1>
               <div className="gap-x-4 md:scale-125 origin-left text-wdorange flex">
                 <ArrowComponents numArrows={40} />
               </div>
