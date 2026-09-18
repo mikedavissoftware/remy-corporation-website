@@ -40,7 +40,7 @@ export default function MoveBizForward() {
               <p className="drop-shadow-dark2 text-lg md:text-xl">
                 Whatever your business needs, Remy provides the expertise and support to move it forward.
               </p>
-              <button className="btn btn-secondary text-xl !text-darkblue !mt-6" onClick={()=>document.getElementById('contact-form-modal').showModal()}>Contact Us</button>
+              <button className="btn btn-secondary text-xl !text-darkblue hover:!text-white !mt-6" onClick={()=>document.getElementById('contact-form-modal').showModal()}>Contact Us</button>
             </div>
           </div>
         </div>

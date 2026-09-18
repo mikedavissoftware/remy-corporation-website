@@ -72,7 +72,7 @@ export default function Header() {
               {/* PARTNERSHIPS DROPDOWN */}
               <li className={listItemStyle}>
                 <details id="partnerships-nav" className={`transition-transform duration-100 ${(partnershipsOpen) ? ("translate-y-1") : ("")}`} open={partnershipsOpen} onMouseEnter={() => setPartnershipsOpen(true)} onMouseLeave={() => setPartnershipsOpen(false)}>
-                  <summary className={`transition-transform transition-colors duration-100 rounded-bl-none ${(partnershipsOpen) ? ("bg-base-100") : ("")}`} onClick={() => navigate("./#partnerships")}>Partnerships</summary>
+                  <summary className={`transition-colors duration-100 rounded-bl-none ${(partnershipsOpen) ? ("bg-base-100") : ("")}`} onClick={() => navigate("./#partnerships")}>Partnerships</summary>
 
                   <ul className="bg-base-100 w-[232px] -translate-y-4 rounded-tl-none">
                     <li className="m-1"><Link to="/workday-services-partner" className="sub-category">Workday Services Partner</Link></li>
@@ -100,7 +100,7 @@ export default function Header() {
               {/* MEDIA DROPDOWN */}
               <li className={listItemStyle}>
                 <details id="partnerships-nav" className={`transition-transform duration-100 ${(mediaOpen) ? ("translate-y-1") : ("")}`} open={mediaOpen} onMouseLeave={() => setMediaOpen(false)}>
-                  <summary className={`transition-transform transition-colors duration-100 rounded-bl-none ${(mediaOpen) ? ("bg-base-100") : ("")}`} onClick={() => navigate("./#media")} onMouseEnter={() => setMediaOpen(true)}>Media</summary>
+                  <summary className={`transition-colors duration-100 rounded-bl-none ${(mediaOpen) ? ("bg-base-100") : ("")}`} onClick={() => navigate("./#media")} onMouseEnter={() => setMediaOpen(true)}>Media</summary>
 
                   <ul className="bg-base-100 w-[175px] -translate-y-4 rounded-tl-none">
                     <li className="m-1"><Link to="/events" className="sub-category">Upcoming Events</Link></li>
