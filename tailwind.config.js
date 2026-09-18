@@ -20,6 +20,7 @@ module.exports = withMT({
         "secondarylite": "#ffb870",
         "orred": "#F80000",
         "darkblue": "#14284f",
+        "gsa": "#ffc000",
         ...colors
       },
       backgroundImage: {
@@ -199,6 +200,7 @@ module.exports = withMT({
           "success": "#84cc16",
           "warning": "#ef4444",                
           "error": "#ffffff",
+          
         },
       },
     ],
