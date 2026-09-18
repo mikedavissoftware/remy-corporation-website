@@ -2,7 +2,7 @@
 
 
 
-export default function TEMPLATE() {
+export default function WhatGSAMeans() {
 
 
 

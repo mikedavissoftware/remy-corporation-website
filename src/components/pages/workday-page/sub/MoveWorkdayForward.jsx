@@ -15,20 +15,23 @@ export default function MoveWorkdayForward() {
 
   return (
     <div className="relative">
-      <div className="h-[50vh] overflow-hidden hidden md:grid grid-cols-5 z-0">
+
+      <div className="h-[93vh] overflow-hidden hidden md:grid grid-cols-5 z-0">
         <div className="col-span-2 bg-darkblue"></div>
         <div className="relative col-span-3 overflow-hidden">
           <img src="images/workday-page/workday-page-banner.png" className="absolute z-[-1] object-cover bottom-0 origin-bottom h-[100vh]"/>
           <div className="absolute w-full h-full bg-gradient-to-r from-darkblue via-darkblue/50 via-80% to-wdblue/75"/>
         </div>
       </div>
-      <div className="md:hidden h-[80vh] md:h-[50vh] overflow-hidden z-0">
+      
+      <div className="md:hidden h-[93vh] md:h-[50vh] overflow-hidden z-0">
         <div className="bg-darkblue h-[30%] w-full"></div>
         <div className="relative overflow-hidden h-[70%]">
-          <img src="images/workday-page/workday-page-banner.png" className="absolute z-[-1] object-cover bottom-0 origin-bottom h-[60vh]"/>
+          <img src="images/workday-page/workday-page-banner.png" className="absolute z-[-1] object-cover bottom-0 origin-bottom h-[80vh]"/>
           <div className="absolute w-full h-full bg-gradient-to-b from-darkblue via-darkblue/30 via-80% to-wdblue/75"/>
         </div>
       </div>
+      
       <div className="absolute top-0 left-0 h-full w-full z-1">
         <div>
           <div className="text-white px-6 py-12 md:px-32 md:py-24">

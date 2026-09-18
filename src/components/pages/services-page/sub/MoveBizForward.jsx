@@ -22,6 +22,7 @@ export default function MoveBizForward() {
           <div className="absolute w-full h-full bg-gradient-to-r from-darkblue via-darkblue/50 via-80% to-wdblue/75"/>
         </div>
       </div>
+
       <div className="md:hidden h-[80vh] md:h-[50vh] overflow-hidden z-0">
         <div className="bg-darkblue h-[30%] w-full"></div>
         <div className="relative overflow-hidden h-[70%]">
@@ -29,6 +30,7 @@ export default function MoveBizForward() {
           <div className="absolute w-full h-full bg-gradient-to-b from-darkblue via-darkblue/30 via-80% to-wdblue/75"/>
         </div>
       </div>
+      
       <div className="absolute top-0 left-0 h-full w-full z-1">
         <div>
           <div className="text-white px-6 py-12 md:px-32 md:py-24">
