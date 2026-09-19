@@ -27,23 +27,24 @@ export default function MoveWorkdayForward() {
       <div className="md:hidden h-[93vh] md:h-[50vh] overflow-hidden z-0">
         <div className="bg-darkblue h-[30%] w-full"></div>
         <div className="relative overflow-hidden h-[70%]">
-          <img src="images/workday-page/workday-page-banner.png" className="absolute z-[-1] object-cover bottom-0 origin-bottom h-[80vh]"/>
+          <img src="images/workday-page/workday-page-banner.png" className="absolute z-[-1] object-cover bottom-0 right-0 h-full"/>
           <div className="absolute w-full h-full bg-gradient-to-b from-darkblue via-darkblue/30 via-80% to-wdblue/75"/>
         </div>
       </div>
       
       <div className="absolute top-0 left-0 h-full w-full z-1">
         <div>
-          <div className="text-white px-6 py-12 md:px-32 md:py-24">
-            <div className="my-auto mx-4 max-w-lg xl:max-w-3xl space-y-3 md:space-y-3">
-              <h1 className="text-4xl md:text-6xl font-bold drop-shadow-medium2 text-white/10 bg-[url(/images/services-page/text-gradient.jpg)] bg-cover bg-bottom bg-clip-text ">Let's Move Your Business Forward</h1>
-              <div className="gap-x-4 md:scale-125 origin-left text-wdorange flex">
-                <ArrowComponents numArrows={40} />
+          <div className="text-white px-6 py-24 md:px-32 md:py-48">
+            <div className="my-auto mx-4 max-w-lg xl:max-w-3xl space-y-3 md:space-y-6">
+              <div className="flex h-24 md:h-32 mb-8 gap-8">
+                <img src="images/workday-page/services-partner.png" className="transition-all duration-300 drop-shadow-glow2 hover:drop-shadow-glow4"></img>
+                <img src="images/workday-page/partner-since-2019.png" className="transition-all duration-300 drop-shadow-glow2 hover:drop-shadow-glow4"></img>
               </div>
+              <h1 className="text-4xl md:text-6xl font-bold drop-shadow-medium2 text-white/10 bg-[url(/images/services-page/text-gradient.jpg)] bg-cover bg-bottom bg-clip-text ">Move Your Workday Forward.</h1>
               <p className="drop-shadow-dark2 text-lg md:text-xl">
-                Whatever your business needs, Remy provides the expertise and support to move it forward.
+                Strategic consulting, specialized expertise, ​and flexible support for  every stage of your ​Workday journey.​
               </p>
-              <button className="btn btn-secondary text-xl !text-darkblue hover:!text-white !mt-6" onClick={()=>document.getElementById('contact-form-modal').showModal()}>Contact Us</button>
+              <div className="text-xl text-white font-bold w-fit h-fit px-3 py-3 !mt-8 rounded-md border-2 border-wdorange">Customized Solutions</div>
             </div>
           </div>
         </div>
