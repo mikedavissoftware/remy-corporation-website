@@ -7,13 +7,11 @@ export default function ServicesAndCapabilities() {
   const cardComponents = servicesAndCapabilities.map((cardInfo) => {
 
     const itemComponents = cardInfo.items.map((item) => {
-      return <h3 className="text-xl font-semibold">{item}</h3>
+      return <h3 className="text-md md:text-xl font-semibold">{item}</h3>
     })
 
-    console.log(itemComponents)
-
     return (
-      <div className="relative bg-wdblue rounded-b-md rounded-t-3xl md:rounded-t-5xl text-white h-60 overflow-hidden text-center transition-all duration-200 scale-95 hover:scale-100 hover:drop-shadow-light3">
+      <div className="relative h-48 bg-wdblue rounded-b-md rounded-t-3xl md:rounded-t-5xl text-white overflow-hidden text-center transition-all duration-200 scale-95 hover:scale-100 hover:drop-shadow-light3">
         <div className="h-full w-full p-6 cursor-default place-content-center text-lg md:text-3xl font-bold">
           <h3>{cardInfo.heading}</h3>
         </div>
@@ -26,7 +24,7 @@ export default function ServicesAndCapabilities() {
 
   return (
     <div className="">
-      <div className="max-w-9xl h-[90vh] mx-auto px-8 py-12 md:p-24 space-y-12">
+      <div className="max-w-9xl h-fit mx-auto px-8 py-12 md:p-24 space-y-12">
         <div className="text-center space-y-4">
           <h1 className="text-3xl md:text-6xl font-bold">Services and Capabilities​</h1>
           <p className="text-lg md:text-3xl text-slate-800">
@@ -34,7 +32,7 @@ export default function ServicesAndCapabilities() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-x-6 h-96 md:h-72">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-x-6">
           {cardComponents}
         </div>
       </div>

@@ -27,7 +27,7 @@ export default function LetsTalkWorkday() {
               {/* <div className="text-xl text-white font-bold w-fit h-fit px-3 py-3 !mt-8 rounded-md border-2 border-wdorange">Customized Solutions</div> */}
               
             </div>
-            <div className="flex justify-around mt-12">
+            <div className="flex flex-wrap gap-y-6 justify-around mt-12">
               <button className="btn btn-secondary text-xl !text-black" onClick={()=>document.getElementById('contact-form-modal').showModal()}>Individual Workday Specialist</button>
               <button className="btn btn-secondary text-xl !text-black" onClick={()=>document.getElementById('contact-form-modal').showModal()}>Dedicated Project Team</button>
               <button className="btn btn-secondary text-xl !text-black" onClick={()=>document.getElementById('contact-form-modal').showModal()}>Ongoing Flexible Support</button>
