@@ -12,7 +12,6 @@ export default function ContractInfo() {
         return line.info
       }
     } 
-    console.log(information())
     return (
       <h3 className=""><span className="font-bold">{line.title}: <br className="md:hidden"/></span>{information()}</h3>
     )

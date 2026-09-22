@@ -75,16 +75,16 @@ export default function Header() {
                   <summary className={`transition-colors duration-100 rounded-bl-none ${(partnershipsOpen) ? ("bg-base-100") : ("")}`} onClick={() => navigate("./#partnerships")}>Partnerships</summary>
 
                   <ul className="bg-base-100 w-[232px] -translate-y-4 rounded-tl-none">
-                    <li className="m-1"><Link to="/workday-services-partner" className="sub-category">Workday Services Partner</Link></li>
+                    <li className="m-1"><Link to="/workday-services-partner#top" className="sub-category">Workday Services Partner</Link></li>
                     {/* <li className="m-1"><Link to="/oracle-gold-partner" className="sub-category">Oracle Gold Partner</Link></li> */}
-                    <li className="m-1"><Link to="/gsa-contract" className="sub-category">GSA Contract</Link></li>
+                    <li className="m-1"><Link to="/gsa-contract#top" className="sub-category">GSA Contract</Link></li>
                     {/* <li className="m-1"><Link to="/service-now" className="sub-category">ServiceNow</Link></li> */}
                   </ul>
                 </details>
               </li>
 
               {/* SERVICES DROPDOWN */}
-              <li className={listItemStyle}><Link onClick={() => handleClick()} to="/services" className="sub-category">Services</Link></li>
+              <li className={listItemStyle}><Link to="/services#top" className="sub-category">Services</Link></li>
               {/* <li className={listItemStyle}>
                 <details id="services-nav" className={`transition-transform duration-100 ${(servicesOpen) ? ("translate-y-1") : ("")}`} open={servicesOpen} onMouseLeave={() => setServicesOpen(false)}>
                   <summary className={`transition-transform transition-colors duration-100 rounded-bl-none ${(servicesOpen) ? ("bg-base-100") : ("")}`} onClick={() => navigate("#services")} onMouseEnter={() => setServicesOpen(true)}>Services</summary>
@@ -110,7 +110,7 @@ export default function Header() {
               </li> */}
 
               <div className="ml-3 grid grid-cols-1">
-                <button className="btn btn-sm btn-secondary !text-black hover:btn-primary hover:!text-white" onClick={() => {document.getElementById('contact-form-modal').showModal(); resetNav()}}>Contact Us</button>
+                <button className="btn btn-sm btn-secondary !text-black hover:btn-primary hover:!text-white" onClick={() => {document.getElementById('contact-form-modal').showModal()}}>Contact Us</button>
               </div>
               <div className="ml-4 grid grid-cols-1">
                 <button className="btn btn-sm btn-primary text-white hover:btn-secondary" onClick={() => {openInNewTab("https://remy-arc.com/portal/"); resetNav()}}>Remy ARC</button>

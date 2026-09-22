@@ -56,7 +56,8 @@ export default function LogoDivider({ topColor, bottomColor }) {
     )
   }
   const createLogoArray = (diffLength, totalLength = 0) => {
-    console.log("logo adjustment")
+    // console.log("logo adjustment")
+
     if (diffLength < 1) {
       console.error("This function should not be called if difference is negative or zero.")
       return []
@@ -72,7 +73,8 @@ export default function LogoDivider({ topColor, bottomColor }) {
   const [logoComponents, setLogoComponents] = useState(createLogoArray(Math.floor(window.innerWidth / totalWidth)))
 
   useEffect(() => {
-    console.log("resize")
+    // console.log("resize")
+
     const updateLogoComponents = () => {
       const newWidthDivisions = Math.floor(window.innerWidth / totalWidth)
       const oldWidthDivisions = logoComponents.length - 2

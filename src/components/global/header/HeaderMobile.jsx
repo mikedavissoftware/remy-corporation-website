@@ -116,15 +116,15 @@ export default function HeaderMobile() {
             <Link onClick={() => togglePartnerships()}><li className={`${listItemStyle} transition-all duration-200 ${(partnershipsOpen) ? ("bg-slate-300/80") : ("")}`}>Partnerships<IoIosArrowUp className={`ml-2 inline-block scale-[1.3] -translate-y-[1px] transition-rotate duration-300 ${(partnershipsOpen) ? ("") : ("rotate-180")}`}/></li></Link>
             { (partnershipsOpen) &&
               <div className="bg-slate-100 drop-shadow-md">
-              <Link onClick={() => resetMenu()} to="/workday-services-partner"><li className={`${listItemStyle} bg-slate-200 w-[95%] mx-auto border-white rounded-b-[10px]`}>Workday Services Partner</li></Link>
+              <Link onClick={() => resetMenu()} to="/workday-services-partner#top"><li className={`${listItemStyle} bg-slate-200 w-[95%] mx-auto border-white rounded-b-[10px]`}>Workday Services Partner</li></Link>
               {/* <Link onClick={() => resetMenu()} to="/oracle-gold-partner"><li className={`${listItemStyle} bg-slate-200 w-[90%] mx-auto border-white rounded-b-[10px]`}>Oracle Gold Partner</li></Link> */}
-              <Link onClick={() => resetMenu()} to="/gsa-contract"><li className={`${listItemStyle} bg-slate-200 w-[90%] mx-auto border-white rounded-b-[10px]`}>GSA Contract</li></Link>
+              <Link onClick={() => resetMenu()} to="/gsa-contract#top"><li className={`${listItemStyle} bg-slate-200 w-[90%] mx-auto border-white rounded-b-[10px]`}>GSA Contract</li></Link>
               {/* <Link onClick={() => resetMenu()} to="/service-now"><li className={`${listItemStyle} bg-slate-200 w-[80%] mx-auto border-white rounded-b-[10px]`}>ServiceNow</li></Link> */}
               <div className="block bg-white h-[10px]"></div>
               </div>
             }
 
-            <Link to="/services" onClick={() => resetMenu()}><li className={`${listItemStyle} transition-all duration-200`}>Services</li></Link>
+            <Link to="/services#top" onClick={() => resetMenu()}><li className={`${listItemStyle} transition-all duration-200`}>Services</li></Link>
 
             {/* SERVICES DROPDOWN */}
             {/* <Link onClick={() => toggleServices()}><li className={`${listItemStyle} transition-all duration-200 ${(servicesOpen) ? ("bg-slate-300/80") : ("")}`}>Services<IoIosArrowUp className={`ml-2 inline-block scale-[1.3] -translate-y-[1px] transition-rotate duration-300 ${(servicesOpen) ? ("") : ("rotate-180")}`}/></li></Link>
