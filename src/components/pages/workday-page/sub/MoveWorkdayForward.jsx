@@ -19,7 +19,7 @@ export default function MoveWorkdayForward() {
       <div className="h-[93vh] overflow-hidden hidden md:grid grid-cols-5 z-0">
         <div className="col-span-2 bg-darkblue"></div>
         <div className="relative col-span-3 overflow-hidden">
-          <img src="images/workday-page/workday-page-banner.png" className="absolute z-[-1] object-cover bottom-0 origin-bottom h-[100vh]"/>
+          <img src="images/workday-page/workday-page-banner-reduced.jpg" className="absolute z-[-1] object-cover bottom-0 origin-bottom h-[100vh]"/>
           <div className="absolute w-full h-full bg-gradient-to-r from-darkblue via-darkblue/50 via-80% to-wdblue/75"/>
         </div>
       </div>
@@ -27,7 +27,7 @@ export default function MoveWorkdayForward() {
       <div className="md:hidden h-[93vh] md:h-[50vh] overflow-hidden z-0">
         <div className="bg-darkblue h-[30%] w-full"></div>
         <div className="relative overflow-hidden h-[70%]">
-          <img src="images/workday-page/workday-page-banner.png" className="absolute z-[-1] object-cover bottom-0 right-0 h-full"/>
+          <img src="images/workday-page/workday-page-banner-reduced.jpg" className="absolute z-[-1] object-cover bottom-0 right-0 h-full"/>
           <div className="absolute w-full h-full bg-gradient-to-b from-darkblue via-darkblue/30 via-80% to-wdblue/75"/>
         </div>
       </div>

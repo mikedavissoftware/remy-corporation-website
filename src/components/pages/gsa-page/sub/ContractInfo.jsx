@@ -24,7 +24,7 @@ export default function ContractInfo() {
       <div className="h-[40vh] overflow-hidden hidden md:grid grid-cols-5 z-0">
         <div className="col-span-2 bg-white"></div>
         <div className="relative col-span-3 overflow-hidden">
-          <img src="images/gsa-page/gsa-contract-info.png" className="absolute z-[-1] object-cover bottom-0 right-0 w-full origin-bottom h-full"/>
+          <img src="images/gsa-page/gsa-contract-info-reduced.jpg" className="absolute z-[-1] object-cover bottom-0 right-0 w-full origin-bottom h-full"/>
           {/* <div className="absolute w-full h-full bg-gradient-to-r from-white to-transparent to-70%"/> */}
         </div>
       </div>
@@ -32,7 +32,7 @@ export default function ContractInfo() {
       <div className="md:hidden h-[67vh] overflow-hidden z-0">
         {/* <div className="bg-white h-[30%] w-full"></div> */}
         <div className="relative overflow-hidden h-full">
-          <img src="images/gsa-page/gsa-contract-info.png" className="absolute z-[-1] object-cover object-right top-0 right-0 h-full origin-right"/>
+          <img src="images/gsa-page/gsa-contract-info-reduced.jpg" className="absolute z-[-1] object-cover object-right top-0 right-0 h-full origin-right"/>
           {/* <div className="absolute w-full h-full bg-gradient-to-b from-white to-transparent"/> */}
         </div>
       </div>

@@ -1,4 +1,3 @@
-import { SwiperSlide } from 'swiper/react';
 
 
 export default function OfferingSlide({ offering, isActive }) {
@@ -6,7 +5,7 @@ export default function OfferingSlide({ offering, isActive }) {
 
 
   return (
-    <div style={{backgroundImage: `url(images/offerings/${offering.id}.png)`}} className={`offering-container hero h-[93vh] md:h-[90vh] bg-opacity-55 bg-center`}>
+    <div style={{backgroundImage: `url(images/offerings/offerings-${offering.id}-reduced.jpg)`}} className={`offering-container hero h-[93vh] md:h-[90vh] bg-opacity-55 bg-center`}>
       <div className="hero-overlay bg-black bg-opacity-40"></div>
       <div className="hero-content text-white py-24">
         <div className="my-auto mx-4 max-w-4xl space-y-5">

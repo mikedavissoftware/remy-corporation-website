@@ -4,7 +4,7 @@ export default function GSABanner() {
 
 
   return (
-    <div style={{backgroundImage: `url(images/gsa-page/gsa-banner-image.png)`}} className="hero h-[80vh] md:h-[70vh] bg-opacity-55 bg-center">
+    <div style={{backgroundImage: `url(images/gsa-page/gsa-banner-image-reduced.jpg)`}} className="hero h-[80vh] md:h-[70vh] bg-opacity-55 bg-center">
       <div className="hero-overlay bg-black bg-opacity-60"></div>
       <div className="hero-content text-white py-24">
         <div className="my-auto mx-4 max-w-4xl space-y-6 md:space-y-5">

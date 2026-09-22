@@ -4,7 +4,7 @@ export default function NeedsIT() {
 
 
   return (
-    <div style={{backgroundImage: `url(images/workday-page/needs-it.png)`}} className="hero h-[80vh] md:h-[70vh] bg-opacity-55 bg-center">
+    <div style={{backgroundImage: `url(images/workday-page/needs-it-reduced.jpg)`}} className="hero h-[80vh] md:h-[70vh] bg-opacity-55 bg-center">
       <div className="hero-overlay bg-black bg-opacity-60"></div>
       <div className="hero-content text-white">
         <div className="mx-4 md:max-w-9xl space-y-6 md:space-y-4">

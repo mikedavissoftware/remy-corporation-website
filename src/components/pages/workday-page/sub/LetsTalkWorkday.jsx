@@ -8,7 +8,7 @@ export default function LetsTalkWorkday() {
 
       <div className="h-[80vh] overflow-hidden z-0">
         <div className="relative overflow-hidden h-full">
-          <img src="images/workday-page/lets-talk-workday.png" className="absolute z-[-1] object-top object-cover w-full h-full"/>
+          <img src="images/workday-page/lets-talk-workday-reduced.jpg" className="absolute z-[-1] object-top object-cover w-full h-full"/>
           {/* <div className="absolute w-full h-full bg-gradient-to-r from-darkblue via-darkblue/50 via-80% to-wdblue/75"/> */}
         </div>
       </div>

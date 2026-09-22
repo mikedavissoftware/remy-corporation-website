@@ -102,26 +102,26 @@ export default function HeaderMobile() {
             {/* ABOUT DROPDOWN */}
             <Link onClick={() => {toggleAbout()}}><li className={`${listItemStyle} transition-all duration-200 ${(aboutOpen) ? ("bg-slate-300/80") : ("")}`}>About<IoIosArrowUp className={`ml-2 inline-block scale-[1.3] -translate-y-[1px] transition-rotate duration-300 ${(aboutOpen) ? ("") : ("rotate-180")}`}/></li></Link>
             { (aboutOpen) &&
-              <>
+              <div className="bg-slate-100 drop-shadow-md">
               {/* <Link onClick={() => resetMenu()} to="/#commitment"><li className={`${listItemStyle} bg-slate-200 w-[95%] mx-auto border-white rounded-b-[10px]`}>Our Commitment</li></Link> */}
-              <Link onClick={() => resetMenu()} to="/#our-story"><li className={`${listItemStyle} bg-slate-200 w-[95%] mx-auto border-white rounded-b-[10px]`}>Our Commitment</li></Link>
-              <Link onClick={() => resetMenu()} to="/#focus-areas"><li className={`${listItemStyle} bg-slate-200 w-[90%] mx-auto border-white rounded-b-[10px]`}>Industries</li></Link>
+              {/* <Link onClick={() => resetMenu()} to="/#our-story"><li className={`${listItemStyle} bg-slate-200 w-[95%] mx-auto border-white rounded-b-[10px]`}>Our Commitment</li></Link> */}
+              <Link onClick={() => resetMenu()} to="/#industries"><li className={`${listItemStyle} bg-slate-200 w-[90%] mx-auto border-white rounded-b-[10px]`}>Industries</li></Link>
               <Link onClick={() => {resetMenu(); window.open("https://www.linkedin.com/newsletters/the-remy-report-7293316723514974209/", "_blank")}}><li className={`${listItemStyle} bg-slate-200 w-[85%] mx-auto border-white rounded-b-[10px]`}>News</li></Link>
               {/* <Link onClick={() => {resetMenu(); document.getElementById('contact-form-modal').showModal()}} ><li className={`${listItemStyle} bg-secondary/75 w-[80%] mx-auto border-white rounded-b-[10px]`}>Contact Us</li></Link> */}
-              <div className="block bg-white h-[5px]"></div>
-              </>
+              <div className="block h-[10px]"></div>
+              </div>
             }
 
             {/* PARTNERSHIPS DROPDOWN */}
             <Link onClick={() => togglePartnerships()}><li className={`${listItemStyle} transition-all duration-200 ${(partnershipsOpen) ? ("bg-slate-300/80") : ("")}`}>Partnerships<IoIosArrowUp className={`ml-2 inline-block scale-[1.3] -translate-y-[1px] transition-rotate duration-300 ${(partnershipsOpen) ? ("") : ("rotate-180")}`}/></li></Link>
             { (partnershipsOpen) &&
-              <>
+              <div className="bg-slate-100 drop-shadow-md">
               <Link onClick={() => resetMenu()} to="/workday-services-partner"><li className={`${listItemStyle} bg-slate-200 w-[95%] mx-auto border-white rounded-b-[10px]`}>Workday Services Partner</li></Link>
               {/* <Link onClick={() => resetMenu()} to="/oracle-gold-partner"><li className={`${listItemStyle} bg-slate-200 w-[90%] mx-auto border-white rounded-b-[10px]`}>Oracle Gold Partner</li></Link> */}
               <Link onClick={() => resetMenu()} to="/gsa-contract"><li className={`${listItemStyle} bg-slate-200 w-[90%] mx-auto border-white rounded-b-[10px]`}>GSA Contract</li></Link>
               {/* <Link onClick={() => resetMenu()} to="/service-now"><li className={`${listItemStyle} bg-slate-200 w-[80%] mx-auto border-white rounded-b-[10px]`}>ServiceNow</li></Link> */}
-              <div className="block bg-white h-[5px]"></div>
-              </>
+              <div className="block bg-white h-[10px]"></div>
+              </div>
             }
 
             <Link to="/services" onClick={() => resetMenu()}><li className={`${listItemStyle} transition-all duration-200`}>Services</li></Link>
@@ -129,22 +129,22 @@ export default function HeaderMobile() {
             {/* SERVICES DROPDOWN */}
             {/* <Link onClick={() => toggleServices()}><li className={`${listItemStyle} transition-all duration-200 ${(servicesOpen) ? ("bg-slate-300/80") : ("")}`}>Services<IoIosArrowUp className={`ml-2 inline-block scale-[1.3] -translate-y-[1px] transition-rotate duration-300 ${(servicesOpen) ? ("") : ("rotate-180")}`}/></li></Link>
             { (servicesOpen) &&
-              <>
+              <div className="bg-slate-100 drop-shadow-md">
               <Link onClick={() => resetMenu()} to="/workforce-solutions"><li className={`${listItemStyle} bg-slate-200 w-[95%] mx-auto border-white rounded-b-[10px]`}>Workforce Solutions</li></Link>
               <Link onClick={() => resetMenu()} to="/tech-consulting"><li className={`${listItemStyle} bg-slate-200 w-[90%] mx-auto border-white rounded-b-[10px]`}>Technology Consulting</li></Link>
               <Link onClick={() => resetMenu()} to="/managed-operations"><li className={`${listItemStyle} bg-slate-200 w-[85%] mx-auto border-white rounded-b-[10px]`}>Managed Operations</li></Link>
-              <div className="block bg-white h-[5px]"></div>
-              </>
+              <div className="block bg-white h-[10px]"></div>
+              </div>
             } */}
 
             {/* MEDIA DROPDOWN */}
             {/* <Link onClick={() => toggleMedia()}><li className={`${listItemStyle} transition-all duration-200 ${(mediaOpen) ? ("bg-slate-300/80") : ("")}`}>Media<IoIosArrowUp className={`ml-2 inline-block scale-[1.3] -translate-y-[1px] transition-rotate duration-300 ${(mediaOpen) ? ("") : ("rotate-180")}`}/></li></Link>
             { (mediaOpen) &&
-              <>
+              <div className="bg-slate-100 drop-shadow-md">
               <Link onClick={() => resetMenu()} to="/events"><li className={`${listItemStyle} bg-slate-200 w-[95%] mx-auto border-white rounded-b-[10px]`}>Upcoming Events</li></Link>
               <Link onClick={() => resetMenu()} to="https://www.linkedin.com/newsletters/the-remy-report-7293316723514974209/" target="_blank"><li className={`${listItemStyle} bg-slate-200 w-[90%] mx-auto border-white rounded-b-[10px]`}>News</li></Link>
-              <div className="block bg-white h-[5px]"></div>
-              </>
+              <div className="block bg-white h-[10px]"></div>
+              </div>
             } */}
 
             <Link onClick={() => {resetMenu(); document.getElementById('contact-form-modal').showModal()}}><li className={`${listItemStyle} !text-slate-900 bg-wdorange`}>Contact Us</li></Link>
