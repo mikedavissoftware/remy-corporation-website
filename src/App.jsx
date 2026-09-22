@@ -17,8 +17,7 @@ import EventsPage from "./components/pages/events-page/EventsPage"
 import FAQPage from "./components/ARCHIVE/faq-page/FAQPage"
 import HelpPage from "./components/ARCHIVE/help-page/HelpPage"
 
-import LogoDivider from "./components/global/dividers/LogoDivider"
-import LogoDividerMobile from "./components/global/dividers/LogoDividerMobile"
+import NavAnchor from "./components/global/NavAnchor"
 
 import Footer from "./components/global/footer/Footer"
 import FooterBottom from "./components/global/footer/FooterBottom"
@@ -30,16 +29,24 @@ export default function App() {
 
   const [currentModal, setCurrentModal] = useState("")
 
+  const scrollToSection = (id, position = "start") => {
+    console.log("scrollToSection triggered")
+    const element = document.getElementById(id);
+    element.scrollIntoView({ 
+      behavior: 'smooth', 
+      block: position 
+    });
+  }
+
   return (
     <>
       <div className="App">
-      <GlobalContext.Provider value={{currentModal, setCurrentModal}}>
+      <GlobalContext.Provider value={{currentModal, setCurrentModal, scrollToSection}}>
         <ScrollToHashElement behavior="smooth" />
+        <NavAnchor height={10} id={"top"}/>
 
         <HeaderContainer />
-
         
-
         <Routes>
           <Route index element={<HomePage />} />
 

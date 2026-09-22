@@ -31,7 +31,7 @@ export default function AboutUs() {
   return (
     <div className={`${(isVisible) ? ("animate delay-1") : ("d-none")} bg-[#f2f2ed] bg-opacity-65 pb-16`} ref={containerRef}>
       
-      <div className="px-8 pt-16 pb-8 md:pr-16">
+      <div className="px-8 pt-16 pb-8">
         <div>
           <h1 className="text-center text-4xl md:text-5xl font-semibold tracking-wide">Our Story</h1>
         </div>

@@ -13,6 +13,7 @@ import BubbleDownDividerInverted from "../../global/dividers/BubbleDownDividerIn
 
 export default function HomePage() {
 
+  
 
   return (
     <div id="home-page" className="overflow-hidden" >   

@@ -5,7 +5,7 @@ import HamMenu from "../../../assets/svg/ham-menu.svg"
 import HamMenuClose from "../../../assets/svg/ham-menu-close.svg"
 import { IoIosArrowUp } from "react-icons/io";
 
-export default function HeaderMobile() {
+export default function HeaderMobile({ scrollToSection }) {
 
   const [active, setActive] = useState(false)
 

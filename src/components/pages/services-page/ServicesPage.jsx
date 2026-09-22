@@ -1,4 +1,3 @@
-import { useEffect } from "react"
 
 import ServicesBanner from "./sub/ServicesBanner"
 import FloatingList from "./sub/FloatingList"
@@ -8,21 +7,13 @@ import TechConsulting from "./sub/TechConsulting"
 import ManagedOperations from "./sub/ManagedOperations"
 import MoveBizForward from "./sub/MoveBizForward"
 
-import NavAnchor from "../../global/NavAnchor"
 import LogoDivider from "../../global/dividers/LogoDivider"
 import LogoDividerMobile from "../../global/dividers/LogoDividerMobile"
 
 export default function ServicesPage() {
 
-  // Scroll to the top when the component mounts
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   return (
-    <div className="overflow-hidden" >
-      <NavAnchor height={10} id={"top"}/>
-      
+    <div className="overflow-hidden" >      
       <ServicesBanner />
       <FloatingList />
       <WhyRemy />

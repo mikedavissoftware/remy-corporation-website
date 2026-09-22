@@ -24,7 +24,7 @@ export default function ManagedOperations() {
           </div>
         </div>
         <div className="md:col-span-3 mb-12">
-          <img src="images/services-page/infinity-reduced.jpg" className="w-full h-auto"/>
+          <img src="images/services-page/infinity.png" className="w-full h-auto"/>
         </div>
       </div>
     </div>

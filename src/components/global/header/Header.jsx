@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react"
-import { Link, useNavigate, useLocation } from "react-router-dom"
+import { Link, useLocation, useNavigate } from "react-router-dom"
 
 
-export default function Header() {
+export default function Header({ scrollToSection }) {
 
   // SCROLL-BASED HEIGHT CHANGE //
   const [scrollPosition, setScrollPosition] = useState(0)
@@ -19,8 +19,6 @@ export default function Header() {
   }, []);
   //
 
-  const navigate = useNavigate()
-
   const [aboutOpen, setAboutOpen] = useState(false)
   const [partnershipsOpen, setPartnershipsOpen] = useState(false)
   const [servicesOpen, setServicesOpen] = useState(false)
@@ -34,12 +32,19 @@ export default function Header() {
 
   const location = useLocation()
 
+  const navigate = useNavigate()
+  const handleNavigate = async (path, id, position = "start") => {
+    await navigate(path, { replace: true })
+    console.log("nav triggered", path, id)
+    scrollToSection(id, position)
+  }
+
   return (
     <div id="header-desktop" className="hidden md:block">
       <header className="z-10 fixed w-full border-b-2 border-slate-300 shadow-md bg-black" >
         <nav className={`navbar p-4 bg-white transition-all duration-500 ${(scrollPosition < scrollRange) ? ("h-[10vh]") : ("h-[7vh]")}`}>
           <div className="flex-1">
-            <Link to="/#services" className={`btn btn-ghost hover:translate-x-1 transition-all duration-500 ${(scrollPosition < scrollRange) ? ("h-[4rem]") : ("h-[3rem] -translate-x-4")}`}>
+            <Link to="/" onClick={() => scrollToSection("top")} className={`btn btn-ghost hover:translate-x-1 transition-all duration-500 ${(scrollPosition < scrollRange) ? ("h-[4rem]") : ("h-[3rem] -translate-x-4")}`}>
               <img 
                 className="h-full p-1"
                 src={
@@ -72,19 +77,19 @@ export default function Header() {
               {/* PARTNERSHIPS DROPDOWN */}
               <li className={listItemStyle}>
                 <details id="partnerships-nav" className={`transition-transform duration-100 ${(partnershipsOpen) ? ("translate-y-1") : ("")}`} open={partnershipsOpen} onMouseEnter={() => setPartnershipsOpen(true)} onMouseLeave={() => setPartnershipsOpen(false)}>
-                  <summary className={`transition-colors duration-100 rounded-bl-none ${(partnershipsOpen) ? ("bg-base-100") : ("")}`} onClick={() => navigate("./#partnerships")}>Partnerships</summary>
+                  <summary className={`transition-colors duration-100 rounded-bl-none ${(partnershipsOpen) ? ("bg-base-100") : ("")}`} onClick={() => handleNavigate("./", "partnerships")}>Partnerships</summary>
 
                   <ul className="bg-base-100 w-[232px] -translate-y-4 rounded-tl-none">
-                    <li className="m-1"><Link to="/workday-services-partner#top" className="sub-category">Workday Services Partner</Link></li>
+                    <li className="m-1"><Link to="/workday-services-partner" onClick={() => scrollToSection("top")} className="sub-category">Workday Services Partner</Link></li>
                     {/* <li className="m-1"><Link to="/oracle-gold-partner" className="sub-category">Oracle Gold Partner</Link></li> */}
-                    <li className="m-1"><Link to="/gsa-contract#top" className="sub-category">GSA Contract</Link></li>
+                    <li className="m-1"><Link to="/gsa-contract" onClick={() => scrollToSection("top")} className="sub-category">GSA Contract</Link></li>
                     {/* <li className="m-1"><Link to="/service-now" className="sub-category">ServiceNow</Link></li> */}
                   </ul>
                 </details>
               </li>
 
               {/* SERVICES DROPDOWN */}
-              <li className={listItemStyle}><Link to="/services#top" className="sub-category">Services</Link></li>
+              <li className={listItemStyle}><Link to="/services" onClick={() => scrollToSection("top")} className="sub-category">Services</Link></li>
               {/* <li className={listItemStyle}>
                 <details id="services-nav" className={`transition-transform duration-100 ${(servicesOpen) ? ("translate-y-1") : ("")}`} open={servicesOpen} onMouseLeave={() => setServicesOpen(false)}>
                   <summary className={`transition-transform transition-colors duration-100 rounded-bl-none ${(servicesOpen) ? ("bg-base-100") : ("")}`} onClick={() => navigate("#services")} onMouseEnter={() => setServicesOpen(true)}>Services</summary>
