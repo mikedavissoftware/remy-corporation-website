@@ -4,7 +4,7 @@ import { contractInfo } from "../../../../../db/contract-info.js"
 
 export default function ContractInfo() {
 
-  const lineComponents = contractInfo.map((line) => {
+  const lineComponents = contractInfo.map((line, index) => {
     const information = () => {
       if (line.email) {
         return <a className="underline text-darkblue hover:text-wdorange transition-all duration-200" href={`mailto:${line.info}`} target="_blank">{line.info}</a>
@@ -13,7 +13,7 @@ export default function ContractInfo() {
       }
     } 
     return (
-      <h3 className=""><span className="font-bold">{line.title}: <br className="md:hidden"/></span>{information()}</h3>
+      <h3 key={index + 1} className=""><span className="font-bold">{line.title}: <br className="md:hidden"/></span>{information()}</h3>
     )
   })
 

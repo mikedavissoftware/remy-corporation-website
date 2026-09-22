@@ -6,16 +6,12 @@ import * as industries from "../../../../../../db/industries"
 
 export default function Industries() {
 
-  
-
   const industriesSorted = Object.values(industries).sort((a, b) => {
     return a.id - b.id
   })
 
-  console.log(industriesSorted)
-
-  const industryComponents = industriesSorted.map((industry) => {
-    return <Industry industry={industry} />
+  const industryComponents = industriesSorted.map((industry, index) => {
+    return <Industry key={index + 1} industry={industry} />
   })
 
   return (

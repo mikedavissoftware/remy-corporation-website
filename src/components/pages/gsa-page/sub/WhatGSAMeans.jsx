@@ -4,11 +4,9 @@ import { whatGSAMeans } from "../../../../../db/what-gsa-means.js"
 
 export default function WhatGSAMeans() {
 
-  console.log(...whatGSAMeans)
-
-  const cardComponents = whatGSAMeans.map((cardInfo) => {
+  const cardComponents = whatGSAMeans.map((cardInfo, index) => {
     return (
-      <div className="relative bg-wdblue rounded-3xl md:rounded-5xl text-white h-full overflow-hidden text-center transition-all duration-200 scale-95 hover:scale-100 hover:drop-shadow-light3">
+      <div key={index + 1} className="relative bg-wdblue rounded-3xl md:rounded-5xl text-white h-full overflow-hidden text-center transition-all duration-200 scale-95 hover:scale-100 hover:drop-shadow-light3">
         <div className="h-full w-full p-6 cursor-default place-content-center text-lg md:text-3xl font-bold">
           <h3>{cardInfo.heading}</h3>
         </div>
