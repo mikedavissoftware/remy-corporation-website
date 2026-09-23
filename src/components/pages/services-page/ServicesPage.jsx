@@ -20,8 +20,8 @@ export default function ServicesPage() {
       <KPIVideoDisplay />
       <TechConsulting />
 
-      <LogoDivider topColor={"e2e8f0"} bottomColor={"eeedec"} />
-      <LogoDividerMobile topColor={"e2e8f0"} bottomColor={"eeedec"} />
+      {/* <LogoDivider topColor={""} bottomColor={""} />
+      <LogoDividerMobile topColor={""} bottomColor={""} /> */}
 
       <ManagedOperations />
       <MoveBizForward />
