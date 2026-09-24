@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 
 import WhereIdeas from "./sub/WhereIdeas"
-import EventsHero from "./sub/EventsHero"
+import EventsList from "./sub/EventsList"
 
 export default function EventsPage() {
 
@@ -12,8 +12,8 @@ export default function EventsPage() {
 
   return (
     <div className="" >
-      <EventsHero />
       <WhereIdeas />
+      <EventsList />
 
     </div>
   )

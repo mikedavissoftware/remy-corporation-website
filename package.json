@@ -19,6 +19,7 @@
     "@mui/icons-material": "^7.3.11",
     "@mui/material": "^7.3.11",
     "@mui/styles": "^6.4.8",
+    "add-to-calendar-button": "^3.1.1",
     "flickity": "^2.3.0",
     "html-react-parser": "^5.2.5",
     "node": "^21.6.1",
