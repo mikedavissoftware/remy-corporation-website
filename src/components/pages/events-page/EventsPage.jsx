@@ -1,8 +1,7 @@
 import { useEffect } from "react"
 
+import WhereIdeas from "./sub/WhereIdeas"
 import EventsHero from "./sub/EventsHero"
-
-
 
 export default function EventsPage() {
 
@@ -13,8 +12,9 @@ export default function EventsPage() {
 
   return (
     <div className="" >
-      <EventsHero/>
-      <div className="h-96 border-4 border-black"><p>Events</p></div>
+      <EventsHero />
+      <WhereIdeas />
+
     </div>
   )
 }

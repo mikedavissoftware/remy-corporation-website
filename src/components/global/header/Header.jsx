@@ -103,7 +103,7 @@ export default function Header({ scrollToSection }) {
               </li> */}
 
               {/* MEDIA DROPDOWN */}
-              {/* <li className={listItemStyle}>
+              <li className={listItemStyle}>
                 <details id="partnerships-nav" className={`transition-transform duration-100 ${(mediaOpen) ? ("translate-y-1") : ("")}`} open={mediaOpen} onMouseLeave={() => setMediaOpen(false)}>
                   <summary className={`transition-colors duration-100 rounded-bl-none ${(mediaOpen) ? ("bg-base-100") : ("")}`} onClick={() => navigate("./#media")} onMouseEnter={() => setMediaOpen(true)}>Media</summary>
 
@@ -112,7 +112,7 @@ export default function Header({ scrollToSection }) {
                     <li className="m-1"><Link to="https://www.linkedin.com/newsletters/the-remy-report-7293316723514974209/" target="_blank" className="sub-category">News</Link></li>
                   </ul>
                 </details>
-              </li> */}
+              </li>
 
               <div className="ml-3 grid grid-cols-1">
                 <button className="btn btn-sm btn-secondary !text-black hover:btn-primary hover:!text-white" onClick={() => {document.getElementById('contact-form-modal').showModal()}}>Contact Us</button>

@@ -138,14 +138,14 @@ export default function HeaderMobile({ scrollToSection }) {
             } */}
 
             {/* MEDIA DROPDOWN */}
-            {/* <Link onClick={() => toggleMedia()}><li className={`${listItemStyle} transition-all duration-200 ${(mediaOpen) ? ("bg-slate-300/80") : ("")}`}>Media<IoIosArrowUp className={`ml-2 inline-block scale-[1.3] -translate-y-[1px] transition-rotate duration-300 ${(mediaOpen) ? ("") : ("rotate-180")}`}/></li></Link>
+            <Link onClick={() => toggleMedia()}><li className={`${listItemStyle} transition-all duration-200 ${(mediaOpen) ? ("bg-slate-300/80") : ("")}`}>Media<IoIosArrowUp className={`ml-2 inline-block scale-[1.3] -translate-y-[1px] transition-rotate duration-300 ${(mediaOpen) ? ("") : ("rotate-180")}`}/></li></Link>
             { (mediaOpen) &&
               <div className="bg-slate-100 drop-shadow-md">
               <Link onClick={() => resetMenu()} to="/events"><li className={`${listItemStyle} bg-slate-200 w-[95%] mx-auto border-white rounded-b-[10px]`}>Upcoming Events</li></Link>
               <Link onClick={() => resetMenu()} to="https://www.linkedin.com/newsletters/the-remy-report-7293316723514974209/" target="_blank"><li className={`${listItemStyle} bg-slate-200 w-[90%] mx-auto border-white rounded-b-[10px]`}>News</li></Link>
               <div className="block bg-white h-[10px]"></div>
               </div>
-            } */}
+            }
 
             <Link onClick={() => {resetMenu(); document.getElementById('contact-form-modal').showModal()}}><li className={`${listItemStyle} !text-slate-900 bg-wdorange`}>Contact Us</li></Link>
             <Link onClick={() => resetMenu()} to="https://remy-arc.com/portal/" target="_blank" rel="noopener noreferrer"><li className={`${listItemStyle} text-white bg-wdblue`}>Remy ARC</li></Link>
