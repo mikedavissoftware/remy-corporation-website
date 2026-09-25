@@ -1,7 +1,7 @@
 
 import Event from "./Event"
 
-import { events } from "../../../../../db/events"
+import { events } from "../../../../../db/events/events"
 
 export default function EventsList() {
 

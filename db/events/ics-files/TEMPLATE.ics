@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Remy Corporation//Calendar Event//EN
+BEGIN:VEVENT
+SUMMARY:Summary
+DESCRIPTION:Description
+LOCATION:Location
+DTSTART;TZID=America/New_York:YYYYMMDDTHHMMSSZ
+DTEND;TZID=America/New_York:YYYYMMDDTHHMMSSZ
+COMMENT:Date is in YYYYMMDDTHHMMSSZ format, with T being a literal for the beginning of the Timecode
+COMMENT:TZID is the timezone ID
+END:VEVENT
+END:VCALENDAR
+

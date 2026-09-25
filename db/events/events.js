@@ -5,18 +5,17 @@ export const events = [
         description: "Workday’s premier annual event brings together HR, finance, and IT leaders for learning, innovation and meaningful connections.",
         imageURL: "",
 
-        startDate: "10-12-2026",
-        startTime: "00:00",
-        endDate: "10-15-2026",
-        endTime: "00:00",
-        timeZone: "",
-        calendarURL: "",
+        startTime: new Date("2026-10-12T00:00:00-07:00"), // Las Vegas GMT-07:00
+        endDate: new Date("2026-10-12T00:00:00-07:00"), // Las Vegas GMT-07:00
+        
+        addToCalendarURL: "",
 
-        livestreamURL: "",
-        livestreamText: "",
-
-        linkURL: "https://rising.workday.com/us.html",
-        linkText: "",
+        buttons: [
+            {
+                buttonLink: "https://rising.workday.com/us.html",
+                buttonText: "Learn More",
+            },
+        ]
     },
     
     {
@@ -35,8 +34,14 @@ export const events = [
         livestreamURL: "",
         livestreamText: "",
 
-        linkURL: "https://rising.workday.com/emea.html",
-        linkText: "",
+        buttons: [
+            {
+                buttonLink: "https://rising.workday.com/emea.html",
+                buttonText: "Learn More",
+            },
+        ]
+
+        
     },
 
     {
@@ -47,7 +52,7 @@ export const events = [
 
         startDate: "03-03-2027",
         startTime: "00:00",
-        endDate: "00-00-0000",
+        endDate: "03-03-2027",
         endTime: "00:00",
         timeZone: "",
         calendarURL: "",
@@ -55,7 +60,11 @@ export const events = [
         livestreamURL: "",
         livestreamText: "",
 
-        linkURL: "https://www.alliance-conference.com/home)",
-        linkText: "",
+        buttons: [
+            {
+                buttonLink: "https://www.alliance-conference.com/home",
+                buttonText: "Learn More",
+            },
+        ]
     },
 ]

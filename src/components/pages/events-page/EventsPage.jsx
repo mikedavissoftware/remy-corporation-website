@@ -5,6 +5,9 @@ import EventsList from "./sub/EventsList"
 
 export default function EventsPage() {
 
+  const now = new Date()
+  console.log(now)
+
   // Scroll to the top when the component mounts
   useEffect(() => {
     window.scrollTo(0, 0);
