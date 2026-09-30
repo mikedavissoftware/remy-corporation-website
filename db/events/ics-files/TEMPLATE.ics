@@ -5,10 +5,9 @@ BEGIN:VEVENT
 SUMMARY:Summary
 DESCRIPTION:Description
 LOCATION:Location
-DTSTART;TZID=America/New_York:YYYYMMDDTHHMMSSZ
-DTEND;TZID=America/New_York:YYYYMMDDTHHMMSSZ
-COMMENT:Date is in YYYYMMDDTHHMMSSZ format, with T being a literal for the beginning of the Timecode
+DTSTART;TZID=America/New_York:20261012T000000Z
+DTEND;TZID=America/New_York:20261015T000000Z
+COMMENT:Date is in YYYYMMDDTHHMMSSZ format (T for timecode start)
 COMMENT:TZID is the timezone ID
 END:VEVENT
 END:VCALENDAR
-
